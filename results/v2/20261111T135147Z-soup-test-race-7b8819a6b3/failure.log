@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/denis/vs_code/SOUP_BACK/tests/common.py", line 222, in run
+    body(h, args)
+    ~~~~^^^^^^^^^
+  File "/Users/denis/vs_code/SOUP_BACK/tests/race.py", line 15, in race
+    h.verify()
+    ~~~~~~~~^^
+  File "/Users/denis/vs_code/SOUP_BACK/tests/common.py", line 175, in verify
+    assert not errors, errors[:10]
+           ^^^^^^^^^^
+AssertionError: ["not terminal {'id': 1, 'idempotency_key': 'outbox', 'status': 'queued', 'attempts': 0, 'max_attempts': 5, 'token': 0, 'lease_until': None, 'effect_token': None, 'effects': 0}"]

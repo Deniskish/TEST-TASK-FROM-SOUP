@@ -1,0 +1,62 @@
+db-1   | 2026-11-11T12:22:00.554260715Z The files belonging to this database system will be owned by user "postgres".
+db-1   | 2026-11-11T12:22:00.554297465Z This user must also own the server process.
+db-1   | 2026-11-11T12:22:00.554299506Z 
+db-1   | 2026-11-11T12:22:00.554361548Z The database cluster will be initialized with locale "en_US.utf8".
+db-1   | 2026-11-11T12:22:00.554369465Z The default database encoding has accordingly been set to "UTF8".
+db-1   | 2026-11-11T12:22:00.554371215Z The default text search configuration will be set to "english".
+db-1   | 2026-11-11T12:22:00.554372256Z 
+db-1   | 2026-11-11T12:22:00.554373131Z Data page checksums are disabled.
+db-1   | 2026-11-11T12:22:00.554374006Z 
+db-1   | 2026-11-11T12:22:00.555667173Z fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db-1   | 2026-11-11T12:22:00.559306340Z creating subdirectories ... ok
+db-1   | 2026-11-11T12:22:00.559312048Z selecting dynamic shared memory implementation ... posix
+db-1   | 2026-11-11T12:22:00.567813590Z selecting default "max_connections" ... 100
+db-1   | 2026-11-11T12:22:00.579159548Z selecting default "shared_buffers" ... 128MB
+db-1   | 2026-11-11T12:22:00.603608298Z selecting default time zone ... UTC
+db-1   | 2026-11-11T12:22:00.604066048Z creating configuration files ... ok
+db-1   | 2026-11-11T12:22:00.685245423Z running bootstrap script ... ok
+db-1   | 2026-11-11T12:22:00.841283673Z sh: locale: not found
+db-1   | 2026-11-11T12:22:00.841294840Z 2026-11-11 12:22:00.841 UTC [35] WARNING:  no usable system locales were found
+db-1   | 2026-11-11T12:22:01.076263215Z performing post-bootstrap initialization ... ok
+db-1   | 2026-11-11T12:22:01.160170298Z syncing data to disk ... ok
+db-1   | 2026-11-11T12:22:01.160188840Z 
+db-1   | 2026-11-11T12:22:01.160189632Z 
+db-1   | 2026-11-11T12:22:01.160190298Z Success. You can now start the database server using:
+db-1   | 2026-11-11T12:22:01.160191465Z 
+db-1   | 2026-11-11T12:22:01.160192090Z     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db-1   | 2026-11-11T12:22:01.160192840Z 
+db-1   | 2026-11-11T12:22:01.160195757Z initdb: warning: enabling "trust" authentication for local connections
+db-1   | 2026-11-11T12:22:01.160202673Z initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+db-1   | 2026-11-11T12:22:01.186946840Z waiting for server to start....2026-11-11 12:22:01.186 UTC [41] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1   | 2026-11-11T12:22:01.187854465Z 2026-11-11 12:22:01.187 UTC [41] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1   | 2026-11-11T12:22:01.190655382Z 2026-11-11 12:22:01.190 UTC [44] LOG:  database system was shut down at 2026-11-11 12:22:01 UTC
+db-1   | 2026-11-11T12:22:01.194683715Z 2026-11-11 12:22:01.194 UTC [41] LOG:  database system is ready to accept connections
+db-1   | 2026-11-11T12:22:01.275019173Z  done
+db-1   | 2026-11-11T12:22:01.275034090Z server started
+db-1   | 2026-11-11T12:22:01.322703798Z CREATE DATABASE
+db-1   | 2026-11-11T12:22:01.323011382Z 
+db-1   | 2026-11-11T12:22:01.323100798Z 
+db-1   | 2026-11-11T12:22:01.323111048Z /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db-1   | 2026-11-11T12:22:01.323113090Z 
+db-1   | 2026-11-11T12:22:01.323831548Z waiting for server to shut down....2026-11-11 12:22:01.323 UTC [41] LOG:  received fast shutdown request
+db-1   | 2026-11-11T12:22:01.324976923Z 2026-11-11 12:22:01.324 UTC [41] LOG:  aborting any active transactions
+db-1   | 2026-11-11T12:22:01.327354173Z 2026-11-11 12:22:01.327 UTC [41] LOG:  background worker "logical replication launcher" (PID 47) exited with exit code 1
+db-1   | 2026-11-11T12:22:01.327465798Z 2026-11-11 12:22:01.327 UTC [42] LOG:  shutting down
+db-1   | 2026-11-11T12:22:01.328226215Z 2026-11-11 12:22:01.328 UTC [42] LOG:  checkpoint starting: shutdown immediate
+db-1   | 2026-11-11T12:22:01.359095215Z 2026-11-11 12:22:01.358 UTC [42] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.013 s, sync=0.017 s, total=0.032 s; sync files=301, longest=0.005 s, average=0.001 s; distance=4266 kB, estimate=4266 kB; lsn=0/191E830, redo lsn=0/191E830
+db-1   | 2026-11-11T12:22:01.364132007Z 2026-11-11 12:22:01.363 UTC [41] LOG:  database system is shut down
+db-1   | 2026-11-11T12:22:01.429061715Z  done
+db-1   | 2026-11-11T12:22:01.429080132Z server stopped
+db-1   | 2026-11-11T12:22:01.429697549Z 
+db-1   | 2026-11-11T12:22:01.429709174Z PostgreSQL init process complete; ready for start up.
+db-1   | 2026-11-11T12:22:01.429711090Z 
+db-1   | 2026-11-11T12:22:01.445000590Z 2026-11-11 12:22:01.444 UTC [1] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1   | 2026-11-11T12:22:01.445035590Z 2026-11-11 12:22:01.444 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1   | 2026-11-11T12:22:01.445039882Z 2026-11-11 12:22:01.444 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1   | 2026-11-11T12:22:01.446262757Z 2026-11-11 12:22:01.446 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1   | 2026-11-11T12:22:01.448631632Z 2026-11-11 12:22:01.448 UTC [57] LOG:  database system was shut down at 2026-11-11 12:22:01 UTC
+db-1   | 2026-11-11T12:22:01.451412257Z 2026-11-11 12:22:01.451 UTC [1] LOG:  database system is ready to accept connections
+db-1   | 2026-11-11T12:22:09.791289678Z 2026-11-11 12:22:09.790 UTC [134] ERROR:  injected effect failure
+db-1   | 2026-11-11T12:22:09.791351553Z 2026-11-11 12:22:09.790 UTC [134] CONTEXT:  PL/pgSQL function reject_effect() line 1 at RAISE
+db-1   | 2026-11-11T12:22:09.791354261Z 2026-11-11 12:22:09.790 UTC [134] STATEMENT:  INSERT INTO job_effects(job_id,token,result) VALUES($1,$2,jsonb_build_object('model',$3::text))
+api-1  | 2026-11-11T12:22:03.778112883Z 2026/11/11 12:22:03 INFO API started address=:8080

@@ -1,0 +1,16 @@
+=== RUN   TestDoubleClaim
+--- PASS: TestDoubleClaim (0.03s)
+=== RUN   TestConcurrentDuplicate
+--- PASS: TestConcurrentDuplicate (0.04s)
+=== RUN   TestZombieAndExhaustion
+--- PASS: TestZombieAndExhaustion (0.03s)
+=== RUN   TestCancelCompleteRace
+    store_test.go:188: race outcomes: map[cancelled:56 succeeded:44]
+--- PASS: TestCancelCompleteRace (0.20s)
+=== RUN   TestAtomicRollback
+--- PASS: TestAtomicRollback (0.02s)
+=== RUN   TestReadCommittedAndLockWaitExpiry
+--- PASS: TestReadCommittedAndLockWaitExpiry (0.63s)
+=== RUN   TestRetryBudgetAndCancelOrders
+--- PASS: TestRetryBudgetAndCancelOrders (0.04s)
+PASS

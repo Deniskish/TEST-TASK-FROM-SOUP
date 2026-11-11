@@ -1,0 +1,12 @@
+{"time": "2026-11-11T09:23:15.708997+00:00", "event": "run_started", "directory": "/Users/denis/vs_code/SOUP_BACK/results/20261111T092315Z-soup-test-integration-0da85a424d", "seed": 42}
+{"time": "2026-11-11T09:23:22.070926+00:00", "event": "ready", "url": "http://127.0.0.1:60796", "workers": 0}
+{"time": "2026-11-11T09:23:23.374873+00:00", "event": "storage_scenarios_passed"}
+{"time": "2026-11-11T09:23:23.608486+00:00", "event": "http_contract_duplicate_pagination_injection_passed"}
+{"time": "2026-11-11T09:23:26.261294+00:00", "event": "double_process_claim_and_running_cancel_passed"}
+{"time": "2026-11-11T09:23:27.869032+00:00", "event": "zombie_paused", "container": "be9305bd8a76c1862aecad71f125d2dfd9fb6d4c48bb65341f6f1d093b6fbc62", "job": 58}
+{"time": "2026-11-11T09:23:34.245931+00:00", "event": "zombie_resume_fenced"}
+{"time": "2026-11-11T09:23:40.121464+00:00", "event": "clock_offset_passed", "offsets": ["+24h", "-24h"], "limitation": "injected process wall time, not host clock or DB clock jumps"}
+{"time": "2026-11-11T09:23:48.212175+00:00", "event": "db_outage_recovered"}
+{"time": "2026-11-11T09:23:48.392693+00:00", "event": "negative_control_detected", "invariant": "cancelled job must not have an effect"}
+{"time": "2026-11-11T09:23:52.041971+00:00", "event": "overload_backpressure_passed", "busy": 32, "total": 96}
+{"time": "2026-11-11T09:23:52.542877+00:00", "event": "run_finished", "passed": true, "summary": "/Users/denis/vs_code/SOUP_BACK/results/20261111T092315Z-soup-test-integration-0da85a424d/summary.json"}

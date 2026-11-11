@@ -1,0 +1,17 @@
+=== RUN   TestDoubleClaim
+--- PASS: TestDoubleClaim (0.16s)
+=== RUN   TestConcurrentDuplicate
+--- PASS: TestConcurrentDuplicate (0.42s)
+=== RUN   TestZombieAndExhaustion
+--- PASS: TestZombieAndExhaustion (0.16s)
+=== RUN   TestCancelCompleteRace
+    store_test.go:188: race outcomes: map[cancelled:48 succeeded:52]
+--- PASS: TestCancelCompleteRace (5.45s)
+=== RUN   TestAtomicRollback
+--- PASS: TestAtomicRollback (0.11s)
+=== RUN   TestReadCommittedAndLockWaitExpiry
+--- PASS: TestReadCommittedAndLockWaitExpiry (0.76s)
+=== RUN   TestRetryBudgetAndCancelOrders
+--- PASS: TestRetryBudgetAndCancelOrders (0.11s)
+PASS
+ok  	soup-job-queue/internal/storage	10.325s

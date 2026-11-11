@@ -1,0 +1,42 @@
+{
+  "kind": "integration",
+  "seed": 42,
+  "project": "soup-test-integration-921323351a",
+  "started_at": "2026-11-11T09:17:38.733316+00:00",
+  "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "host": "macOS-15.1-arm64-arm-64bit-Mach-O",
+  "passed": true,
+  "workers": 0,
+  "lease": "2s",
+  "heartbeat": "400ms",
+  "api_pool": 8,
+  "worker_pool": 8,
+  "api_url": "http://127.0.0.1:61764",
+  "docker_info": "\"29.9.2\" \"linux\" \"aarch64\" CPUs=8 Memory=8319705088",
+  "resources": "{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"2.06%\",\"Container\":\"be507b19b1933d857e239c555346a566dbfb4da9160277bebbc4f3e7adb28bec\",\"ID\":\"be507b19b193\",\"MemPerc\":\"0.11%\",\"MemUsage\":\"8.543MiB / 7.748GiB\",\"Name\":\"soup-test-integration-921323351a-api-1\",\"NetIO\":\"2.77kB / 2.06kB\",\"PIDs\":\"9\"}\n{\"BlockIO\":\"0B / 52.9MB\",\"CPUPerc\":\"0.16%\",\"Container\":\"7e3c212c12f722f524feaf028977d1da8202f991a0e9acf7402f468d1b97d36a\",\"ID\":\"7e3c212c12f7\",\"MemPerc\":\"0.35%\",\"MemUsage\":\"27.39MiB / 7.748GiB\",\"Name\":\"soup-test-integration-921323351a-db-1\",\"NetIO\":\"5.82kB / 2.94kB\",\"PIDs\":\"7\"}",
+  "image_ids": "[{\"ID\":\"sha256:b3ae63a3f8b1d0c51a7630cc8003f6cc31b1129898e967de03a825e496f329d5\",\"ContainerName\":\"soup-test-integration-921323351a-api-1\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":79852201,\"Created\":\"2026-11-11T09:17:07.043869846Z\",\"LastTagTime\":\"2026-11-11T09:17:08.06540893Z\"},{\"ID\":\"sha256:b3ae63a3f8b1d0c51a7630cc8003f6cc31b1129898e967de03a825e496f329d5\",\"ContainerName\":\"soup-test-integration-921323351a-migrate-1\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":79852201,\"Created\":\"2026-11-11T09:17:07.043869846Z\",\"LastTagTime\":\"2026-11-11T09:17:08.06540893Z\"},{\"ID\":\"sha256:3540c0362c809df084ffac0ae69fe794515f9de92692f02178bcdce0ef0302ac\",\"ContainerName\":\"soup-test-integration-921323351a-db-1\",\"Repository\":\"postgres\",\"Tag\":\"17-alpine\",\"Platform\":\"linux/arm64/v8\",\"Size\":414812043,\"Created\":\"2026-11-05T19:03:57.181599785Z\",\"LastTagTime\":\"2026-11-11T09:08:44.144698002Z\"}]",
+  "invariant_errors": [],
+  "states": {
+    "queued": 0,
+    "running": 0,
+    "succeeded": 112,
+    "failed": 1,
+    "cancelled": 2
+  },
+  "reclaimed_jobs": 4,
+  "effects": 112,
+  "scenarios": [
+    "double_claim",
+    "zombie_pause_resume",
+    "cancel_complete_race_go",
+    "duplicate_request",
+    "read_committed_go",
+    "clock_offset",
+    "atomic_rollback_go",
+    "attempt_exhaustion",
+    "db_outage",
+    "http_validation",
+    "sql_injection_literal"
+  ],
+  "ended_at": "2026-11-11T09:18:14.734773+00:00"
+}

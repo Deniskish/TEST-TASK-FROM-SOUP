@@ -1,0 +1,142 @@
+ Image soup-queue:local Building 
+ Image soup-queue:local Building 
+ Image soup-queue:local Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.37kB done
+#1 DONE 0.0s
+
+#2 [api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 476B done
+#2 DONE 0.0s
+
+#3 [api internal] load metadata for docker.io/library/alpine:3.23
+#3 DONE 2.2s
+
+#4 [worker internal] load metadata for docker.io/library/golang:1.26-alpine
+#4 DONE 2.2s
+
+#5 [migrate internal] load .dockerignore
+#5 transferring context: 81B done
+#5 DONE 0.0s
+
+#6 [worker internal] load build context
+#6 transferring context: 42.48kB done
+#6 DONE 0.0s
+
+#7 [worker stage-1 1/3] FROM docker.io/library/alpine:3.23@sha256:469c9ea410b9215eaee7976ba6c0639039b444be8e5d638f7abbada189971eb2
+#7 resolve docker.io/library/alpine:3.23@sha256:469c9ea410b9215eaee7976ba6c0639039b444be8e5d638f7abbada189971eb2 0.0s done
+#7 sha256:0aeae9e5c96856ad8a51ac2a81bf4ce73766c2199992b92fd9302dd7ec7a38de 0B / 4.19MB 0.2s
+#7 sha256:0aeae9e5c96856ad8a51ac2a81bf4ce73766c2199992b92fd9302dd7ec7a38de 1.05MB / 4.19MB 0.5s
+#7 sha256:0aeae9e5c96856ad8a51ac2a81bf4ce73766c2199992b92fd9302dd7ec7a38de 2.10MB / 4.19MB 0.6s
+#7 sha256:0aeae9e5c96856ad8a51ac2a81bf4ce73766c2199992b92fd9302dd7ec7a38de 4.19MB / 4.19MB 0.8s done
+#7 extracting sha256:0aeae9e5c96856ad8a51ac2a81bf4ce73766c2199992b92fd9302dd7ec7a38de
+#7 extracting sha256:0aeae9e5c96856ad8a51ac2a81bf4ce73766c2199992b92fd9302dd7ec7a38de 0.2s done
+#7 DONE 1.0s
+
+#8 [migrate build 1/7] FROM docker.io/library/golang:1.26-alpine@sha256:30b1e546a9c7fa3b747c2bdba3a0c7bdf3a02ebb4c5b8405d2f948d7e8aac4ec
+#8 resolve docker.io/library/golang:1.26-alpine@sha256:30b1e546a9c7fa3b747c2bdba3a0c7bdf3a02ebb4c5b8405d2f948d7e8aac4ec 0.0s done
+#8 sha256:99b7399f206fd45db739f7b8e63c29d1160b8f1574ebc96d161130b1ed4d710a 124B / 124B 0.2s done
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 1.05MB / 64.31MB 0.9s
+#8 sha256:b90627b8f4292fd3cb63f0f27f0b11c37f04ba88ef3b78d4948ea0ace18c85e9 0B / 4.19MB 0.9s
+#8 sha256:a78c41665b6816791dd9f26a92b13e850ecc855c335e60f40404dd412f8722d2 0B / 246.93kB 0.8s
+#8 sha256:a78c41665b6816791dd9f26a92b13e850ecc855c335e60f40404dd412f8722d2 246.93kB / 246.93kB 1.0s done
+#8 ...
+
+#9 [api stage-1 2/3] RUN addgroup -g 10001 app && adduser -D -u 10001 -G app app
+#9 DONE 0.4s
+
+#8 [migrate build 1/7] FROM docker.io/library/golang:1.26-alpine@sha256:30b1e546a9c7fa3b747c2bdba3a0c7bdf3a02ebb4c5b8405d2f948d7e8aac4ec
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 5.24MB / 64.31MB 1.5s
+#8 sha256:b90627b8f4292fd3cb63f0f27f0b11c37f04ba88ef3b78d4948ea0ace18c85e9 1.05MB / 4.19MB 1.5s
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 9.44MB / 64.31MB 2.1s
+#8 sha256:b90627b8f4292fd3cb63f0f27f0b11c37f04ba88ef3b78d4948ea0ace18c85e9 2.10MB / 4.19MB 2.0s
+#8 sha256:b90627b8f4292fd3cb63f0f27f0b11c37f04ba88ef3b78d4948ea0ace18c85e9 3.15MB / 4.19MB 2.4s
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 13.63MB / 64.31MB 2.9s
+#8 sha256:b90627b8f4292fd3cb63f0f27f0b11c37f04ba88ef3b78d4948ea0ace18c85e9 4.19MB / 4.19MB 3.0s done
+#8 extracting sha256:b90627b8f4292fd3cb63f0f27f0b11c37f04ba88ef3b78d4948ea0ace18c85e9 0.1s done
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 17.83MB / 64.31MB 3.3s
+#8 extracting sha256:b90627b8f4292fd3cb63f0f27f0b11c37f04ba88ef3b78d4948ea0ace18c85e9 0.1s done
+#8 extracting sha256:a78c41665b6816791dd9f26a92b13e850ecc855c335e60f40404dd412f8722d2 0.0s done
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 22.02MB / 64.31MB 3.9s
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 27.26MB / 64.31MB 4.5s
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 31.46MB / 64.31MB 5.3s
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 36.70MB / 64.31MB 5.9s
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 40.89MB / 64.31MB 6.5s
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 45.09MB / 64.31MB 7.1s
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 49.28MB / 64.31MB 7.5s
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 53.48MB / 64.31MB 8.1s
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 57.67MB / 64.31MB 8.9s
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 61.87MB / 64.31MB 9.6s
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 64.31MB / 64.31MB 10.0s done
+#8 sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 64.31MB / 64.31MB 10.0s done
+#8 extracting sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830
+#8 extracting sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 1.8s done
+#8 extracting sha256:1514190aeb5e21dad803afaccc1bdbe153c525b2ab471d788f6c40253acc5830 1.8s done
+#8 extracting sha256:99b7399f206fd45db739f7b8e63c29d1160b8f1574ebc96d161130b1ed4d710a done
+#8 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 done
+#8 DONE 12.0s
+
+#10 [migrate build 2/7] WORKDIR /src
+#10 DONE 0.3s
+
+#11 [worker build 3/7] COPY go.mod go.sum ./
+#11 DONE 0.0s
+
+#12 [migrate build 4/7] RUN go mod download
+#12 DONE 2.9s
+
+#13 [api build 5/7] COPY . .
+#13 DONE 0.0s
+
+#14 [worker build 6/7] RUN CGO_ENABLED=0 go build -trimpath -o /out/api ./cmd/api && CGO_ENABLED=0 go build -trimpath -o /out/worker ./cmd/worker
+#14 DONE 6.9s
+
+#15 [worker build 7/7] RUN CGO_ENABLED=0 go test -c -o /out/storage.test ./internal/storage
+#15 DONE 6.1s
+
+#16 [api stage-1 3/3] COPY --from=build /out/ /app/
+#16 DONE 0.0s
+
+#17 [migrate] exporting to image
+#17 exporting layers
+#17 exporting layers 0.9s done
+#17 exporting manifest sha256:c0a02f73b92ddc185ab44b9ece70c2113c9e12f816014b155bf45628120bf1e5 0.0s done
+#17 exporting config sha256:7f83821bff9c47e98611d9b0029eff950a1c9242b9253b65f8f49155fad0d28b 0.0s done
+#17 exporting attestation manifest sha256:df0f35d7f223049296174d61011ab7345cd6996fa465aece8d09e68d7aa68c82 0.0s done
+#17 exporting manifest list sha256:e1e2710e0794b0490fa6561aa7915271df0baab409e6733775eb1241861473c8 done
+#17 naming to docker.io/library/soup-queue:local done
+#17 unpacking to docker.io/library/soup-queue:local
+#17 unpacking to docker.io/library/soup-queue:local 0.3s done
+#17 DONE 1.3s
+
+#18 [api] exporting to image
+#18 exporting layers 0.9s done
+#18 exporting manifest sha256:63b66278c9802a99495252b5ef4a5e9e7c1a6125ff3715015f8c84382e4721f8 done
+#18 exporting config sha256:2a90f80466d893e274df5499aa9fa82df8a5908f86da00118d57f4321bf1a0d5 0.0s done
+#18 exporting attestation manifest sha256:b247a788fe44a71edb1f7d4b6cf402df96fc5656b5bb920711ced966e91fe636 0.0s done
+#18 exporting manifest list sha256:a6b8ef67893f0ede7a9295bd2eea126819ec346eed6a5af90d21bca6537d9f05 done
+#18 naming to docker.io/library/soup-queue:local done
+#18 unpacking to docker.io/library/soup-queue:local 0.3s done
+#18 DONE 1.2s
+
+#19 [worker] exporting to image
+#19 exporting layers 0.9s done
+#19 exporting manifest sha256:3f8c69c0a53dd653597d4041cf4c072b8b44bf17ab081452559e98540dbee293 done
+#19 exporting config sha256:361d15085f5fdbe4f8d775d352cd38f5c383efd2ad0ebaa2dd2736bbbe6c5187 0.0s done
+#19 exporting attestation manifest sha256:3e11d206c787b327624128efd8c9ec029406462d288acb31e34a1ed7bc2961b1 0.0s done
+#19 exporting manifest list sha256:ad09bc2c91d0c3a40de5886549f842dff2382f5ed7cc2fbdc5492a65a1473b7f done
+#19 naming to docker.io/library/soup-queue:local done
+#19 unpacking to docker.io/library/soup-queue:local 0.3s done
+#19 DONE 1.3s
+
+#20 [worker] resolving provenance for metadata file
+#20 DONE 0.0s
+
+#21 [migrate] resolving provenance for metadata file
+#21 DONE 0.0s
+
+#22 [api] resolving provenance for metadata file
+#22 DONE 0.0s
+ Image soup-queue:local Built 
+ Image soup-queue:local Built 
+ Image soup-queue:local Built 

@@ -1,0 +1,42 @@
+{
+  "kind": "integration",
+  "seed": 42,
+  "project": "soup-test-integration-0da85a424d",
+  "started_at": "2026-11-11T09:23:15.695548+00:00",
+  "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "host": "macOS-15.1-arm64-arm-64bit-Mach-O",
+  "passed": true,
+  "workers": 0,
+  "lease": "2s",
+  "heartbeat": "400ms",
+  "api_pool": 8,
+  "worker_pool": 8,
+  "api_url": "http://127.0.0.1:60796",
+  "docker_info": "\"29.9.2\" \"linux\" \"aarch64\" CPUs=8 Memory=8319705088",
+  "resources": "{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"2.33%\",\"Container\":\"eeaffe379d28272ff904878029e81253a4940e34bc1b3a5c2b52ab8754eca018\",\"ID\":\"eeaffe379d28\",\"MemPerc\":\"0.10%\",\"MemUsage\":\"8.008MiB / 7.748GiB\",\"Name\":\"soup-test-integration-0da85a424d-api-1\",\"NetIO\":\"2.77kB / 2.06kB\",\"PIDs\":\"10\"}\n{\"BlockIO\":\"0B / 52.9MB\",\"CPUPerc\":\"2.48%\",\"Container\":\"84bb60bad914ed13e2b21edc198061314676b3782d6aa6a2d7a2b294eb5a5539\",\"ID\":\"84bb60bad914\",\"MemPerc\":\"0.35%\",\"MemUsage\":\"27.76MiB / 7.748GiB\",\"Name\":\"soup-test-integration-0da85a424d-db-1\",\"NetIO\":\"5.54kB / 2.79kB\",\"PIDs\":\"7\"}",
+  "image_ids": "[{\"ID\":\"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010\",\"ContainerName\":\"soup-test-integration-0da85a424d-api-1\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":79857964,\"Created\":\"2026-11-11T09:23:05.915045512Z\",\"LastTagTime\":\"2026-11-11T09:23:06.927568346Z\"},{\"ID\":\"sha256:3540c0362c809df084ffac0ae69fe794515f9de92692f02178bcdce0ef0302ac\",\"ContainerName\":\"soup-test-integration-0da85a424d-db-1\",\"Repository\":\"postgres\",\"Tag\":\"17-alpine\",\"Platform\":\"linux/arm64/v8\",\"Size\":414812043,\"Created\":\"2026-11-05T19:03:57.181599785Z\",\"LastTagTime\":\"2026-11-11T09:08:44.144698002Z\"},{\"ID\":\"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010\",\"ContainerName\":\"soup-test-integration-0da85a424d-migrate-1\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":79857964,\"Created\":\"2026-11-11T09:23:05.915045512Z\",\"LastTagTime\":\"2026-11-11T09:23:06.927568346Z\"}]",
+  "invariant_errors": [],
+  "states": {
+    "queued": 0,
+    "running": 0,
+    "succeeded": 112,
+    "failed": 1,
+    "cancelled": 2
+  },
+  "reclaimed_jobs": 4,
+  "effects": 112,
+  "scenarios": [
+    "double_claim",
+    "zombie_pause_resume",
+    "cancel_complete_race_go",
+    "duplicate_request",
+    "read_committed_go",
+    "clock_offset",
+    "atomic_rollback_go",
+    "attempt_exhaustion",
+    "db_outage",
+    "http_validation",
+    "sql_injection_literal"
+  ],
+  "ended_at": "2026-11-11T09:23:52.042415+00:00"
+}

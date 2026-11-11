@@ -1,0 +1,175 @@
+
+$ docker compose --env-file /dev/null -p soup-test-race-d146e00634 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122200Z-soup-test-race-d146e00634/compose.test.yaml up -d --no-build --scale worker=0
+ Volume soup-test-race-d146e00634_pgdata Creating 
+ Network soup-test-race-d146e00634_queue Creating 
+ Volume soup-test-race-d146e00634_pgdata Creating 
+ Network soup-test-race-d146e00634_queue Creating 
+ Volume soup-test-race-d146e00634_pgdata Created 
+ Volume soup-test-race-d146e00634_pgdata Created 
+ Network soup-test-race-d146e00634_queue Created 
+ Network soup-test-race-d146e00634_queue Created 
+ Container soup-test-race-d146e00634-db-1 Creating 
+ Container soup-test-race-d146e00634-db-1 Created 
+ Container soup-test-race-d146e00634-migrate-1 Creating 
+ Container soup-test-race-d146e00634-migrate-1 Created 
+ Container soup-test-race-d146e00634-api-1 Creating 
+ Container soup-test-race-d146e00634-api-1 Created 
+ Container soup-test-race-d146e00634-db-1 Starting 
+ Container soup-test-race-d146e00634-db-1 Started 
+ Container soup-test-race-d146e00634-db-1 Waiting 
+ Container soup-test-race-d146e00634-db-1 Healthy 
+ Container soup-test-race-d146e00634-migrate-1 Starting 
+ Container soup-test-race-d146e00634-migrate-1 Started 
+ Container soup-test-race-d146e00634-migrate-1 Waiting 
+ Container soup-test-race-d146e00634-migrate-1 Exited 
+ Container soup-test-race-d146e00634-api-1 Starting 
+ Container soup-test-race-d146e00634-api-1 Started 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-race-d146e00634 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122200Z-soup-test-race-d146e00634/compose.test.yaml port api 8080
+127.0.0.1:49437
+
+exit=0
+
+$ docker info --format {{json .ServerVersion}} {{json .OSType}} {{json .Architecture}} CPUs={{.NCPU}} Memory={{.MemTotal}}
+"29.9.2" "linux" "aarch64" CPUs=8 Memory=8319705088
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-race-d146e00634 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122200Z-soup-test-race-d146e00634/compose.test.yaml ps -q
+4d162d2adb4421fb5dd92d2c996c1230b1d07d7fa23a42bfd377a700617bd329
+95c9423984b1e2814550f74ebc5aadccb89a23415dc139e523f487658d9994b3
+
+exit=0
+
+$ docker stats --no-stream --format {{json .}} 4d162d2adb4421fb5dd92d2c996c1230b1d07d7fa23a42bfd377a700617bd329 95c9423984b1e2814550f74ebc5aadccb89a23415dc139e523f487658d9994b3
+{"BlockIO":"0B / 0B","CPUPerc":"0.01%","Container":"4d162d2adb4421fb5dd92d2c996c1230b1d07d7fa23a42bfd377a700617bd329","ID":"4d162d2adb44","MemPerc":"0.11%","MemUsage":"8.398MiB / 7.748GiB","Name":"soup-test-race-d146e00634-api-1","NetIO":"2.13kB / 1.73kB","PIDs":"9"}
+{"BlockIO":"0B / 52.9MB","CPUPerc":"2.74%","Container":"95c9423984b1e2814550f74ebc5aadccb89a23415dc139e523f487658d9994b3","ID":"95c9423984b1","MemPerc":"0.35%","MemUsage":"27.74MiB / 7.748GiB","Name":"soup-test-race-d146e00634-db-1","NetIO":"5.54kB / 2.79kB","PIDs":"7"}
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-race-d146e00634 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122200Z-soup-test-race-d146e00634/compose.test.yaml images --format json
+[{"ID":"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010","ContainerName":"soup-test-race-d146e00634-migrate-1","Repository":"soup-queue","Tag":"local","Platform":"linux/arm64","Size":79857964,"Created":"2026-11-11T09:23:05.915045512Z","LastTagTime":"2026-11-11T09:23:06.927568346Z"},{"ID":"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010","ContainerName":"soup-test-race-d146e00634-api-1","Repository":"soup-queue","Tag":"local","Platform":"linux/arm64","Size":79857964,"Created":"2026-11-11T09:23:05.915045512Z","LastTagTime":"2026-11-11T09:23:06.927568346Z"},{"ID":"sha256:3540c0362c809df084ffac0ae69fe794515f9de92692f02178bcdce0ef0302ac","ContainerName":"soup-test-race-d146e00634-db-1","Repository":"postgres","Tag":"17-alpine","Platform":"linux/arm64/v8","Size":414812043,"Created":"2026-11-05T19:03:57.181599785Z","LastTagTime":"2026-11-11T09:08:44.144698002Z"}]
+
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-race-d146e00634 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122200Z-soup-test-race-d146e00634/compose.test.yaml port db 5432
+127.0.0.1:49436
+
+exit=0
+
+$ go test -race -count=1 -v ./internal/storage
+=== RUN   TestDoubleClaim
+--- PASS: TestDoubleClaim (0.12s)
+=== RUN   TestConcurrentDuplicate
+--- PASS: TestConcurrentDuplicate (0.12s)
+=== RUN   TestZombieAndExhaustion
+--- PASS: TestZombieAndExhaustion (0.05s)
+=== RUN   TestCancelCompleteRace
+    store_test.go:188: race outcomes: map[cancelled:52 succeeded:48]
+--- PASS: TestCancelCompleteRace (0.88s)
+=== RUN   TestAtomicRollback
+--- PASS: TestAtomicRollback (0.04s)
+=== RUN   TestReadCommittedAndLockWaitExpiry
+--- PASS: TestReadCommittedAndLockWaitExpiry (0.64s)
+=== RUN   TestRetryBudgetAndCancelOrders
+--- PASS: TestRetryBudgetAndCancelOrders (0.08s)
+PASS
+ok  	soup-job-queue/internal/storage	4.730s
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-race-d146e00634 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122200Z-soup-test-race-d146e00634/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT coalesce(json_agg(t),'[]'::json) FROM (SELECT j.id,j.idempotency_key,j.status,j.attempts,j.max_attempts,j.token, j.lease_until, e.token AS effect_token, (SELECT count(*) FROM job_effects x WHERE x.job_id=j.id) AS effects FROM jobs j LEFT JOIN job_effects e ON e.job_id=j.id ORDER BY j.id) t
+[{"id":1,"idempotency_key":"retry","status":"failed","attempts":2,"max_attempts":2,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":2,"idempotency_key":"cancel-first","status":"cancelled","attempts":1,"max_attempts":5,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":3,"idempotency_key":"finish-first","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}]
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-race-d146e00634 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122200Z-soup-test-race-d146e00634/compose.test.yaml logs --no-color --timestamps
+db-1   | 2026-11-11T12:22:00.554260715Z The files belonging to this database system will be owned by user "postgres".
+db-1   | 2026-11-11T12:22:00.554297465Z This user must also own the server process.
+db-1   | 2026-11-11T12:22:00.554299506Z 
+db-1   | 2026-11-11T12:22:00.554361548Z The database cluster will be initialized with locale "en_US.utf8".
+db-1   | 2026-11-11T12:22:00.554369465Z The default database encoding has accordingly been set to "UTF8".
+db-1   | 2026-11-11T12:22:00.554371215Z The default text search configuration will be set to "english".
+db-1   | 2026-11-11T12:22:00.554372256Z 
+db-1   | 2026-11-11T12:22:00.554373131Z Data page checksums are disabled.
+db-1   | 2026-11-11T12:22:00.554374006Z 
+db-1   | 2026-11-11T12:22:00.555667173Z fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db-1   | 2026-11-11T12:22:00.559306340Z creating subdirectories ... ok
+db-1   | 2026-11-11T12:22:00.559312048Z selecting dynamic shared memory implementation ... posix
+db-1   | 2026-11-11T12:22:00.567813590Z selecting default "max_connections" ... 100
+db-1   | 2026-11-11T12:22:00.579159548Z selecting default "shared_buffers" ... 128MB
+db-1   | 2026-11-11T12:22:00.603608298Z selecting default time zone ... UTC
+db-1   | 2026-11-11T12:22:00.604066048Z creating configuration files ... ok
+db-1   | 2026-11-11T12:22:00.685245423Z running bootstrap script ... ok
+db-1   | 2026-11-11T12:22:00.841283673Z sh: locale: not found
+db-1   | 2026-11-11T12:22:00.841294840Z 2026-11-11 12:22:00.841 UTC [35] WARNING:  no usable system locales were found
+db-1   | 2026-11-11T12:22:01.076263215Z performing post-bootstrap initialization ... ok
+db-1   | 2026-11-11T12:22:01.160170298Z syncing data to disk ... ok
+db-1   | 2026-11-11T12:22:01.160188840Z 
+db-1   | 2026-11-11T12:22:01.160189632Z 
+db-1   | 2026-11-11T12:22:01.160190298Z Success. You can now start the database server using:
+db-1   | 2026-11-11T12:22:01.160191465Z 
+db-1   | 2026-11-11T12:22:01.160192090Z     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db-1   | 2026-11-11T12:22:01.160192840Z 
+db-1   | 2026-11-11T12:22:01.160195757Z initdb: warning: enabling "trust" authentication for local connections
+db-1   | 2026-11-11T12:22:01.160202673Z initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+db-1   | 2026-11-11T12:22:01.186946840Z waiting for server to start....2026-11-11 12:22:01.186 UTC [41] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1   | 2026-11-11T12:22:01.187854465Z 2026-11-11 12:22:01.187 UTC [41] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1   | 2026-11-11T12:22:01.190655382Z 2026-11-11 12:22:01.190 UTC [44] LOG:  database system was shut down at 2026-11-11 12:22:01 UTC
+db-1   | 2026-11-11T12:22:01.194683715Z 2026-11-11 12:22:01.194 UTC [41] LOG:  database system is ready to accept connections
+db-1   | 2026-11-11T12:22:01.275019173Z  done
+db-1   | 2026-11-11T12:22:01.275034090Z server started
+db-1   | 2026-11-11T12:22:01.322703798Z CREATE DATABASE
+db-1   | 2026-11-11T12:22:01.323011382Z 
+db-1   | 2026-11-11T12:22:01.323100798Z 
+db-1   | 2026-11-11T12:22:01.323111048Z /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db-1   | 2026-11-11T12:22:01.323113090Z 
+db-1   | 2026-11-11T12:22:01.323831548Z waiting for server to shut down....2026-11-11 12:22:01.323 UTC [41] LOG:  received fast shutdown request
+db-1   | 2026-11-11T12:22:01.324976923Z 2026-11-11 12:22:01.324 UTC [41] LOG:  aborting any active transactions
+db-1   | 2026-11-11T12:22:01.327354173Z 2026-11-11 12:22:01.327 UTC [41] LOG:  background worker "logical replication launcher" (PID 47) exited with exit code 1
+db-1   | 2026-11-11T12:22:01.327465798Z 2026-11-11 12:22:01.327 UTC [42] LOG:  shutting down
+db-1   | 2026-11-11T12:22:01.328226215Z 2026-11-11 12:22:01.328 UTC [42] LOG:  checkpoint starting: shutdown immediate
+db-1   | 2026-11-11T12:22:01.359095215Z 2026-11-11 12:22:01.358 UTC [42] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.013 s, sync=0.017 s, total=0.032 s; sync files=301, longest=0.005 s, average=0.001 s; distance=4266 kB, estimate=4266 kB; lsn=0/191E830, redo lsn=0/191E830
+db-1   | 2026-11-11T12:22:01.364132007Z 2026-11-11 12:22:01.363 UTC [41] LOG:  database system is shut down
+db-1   | 2026-11-11T12:22:01.429061715Z  done
+db-1   | 2026-11-11T12:22:01.429080132Z server stopped
+db-1   | 2026-11-11T12:22:01.429697549Z 
+db-1   | 2026-11-11T12:22:01.429709174Z PostgreSQL init process complete; ready for start up.
+db-1   | 2026-11-11T12:22:01.429711090Z 
+db-1   | 2026-11-11T12:22:01.445000590Z 2026-11-11 12:22:01.444 UTC [1] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1   | 2026-11-11T12:22:01.445035590Z 2026-11-11 12:22:01.444 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1   | 2026-11-11T12:22:01.445039882Z 2026-11-11 12:22:01.444 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1   | 2026-11-11T12:22:01.446262757Z 2026-11-11 12:22:01.446 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1   | 2026-11-11T12:22:01.448631632Z 2026-11-11 12:22:01.448 UTC [57] LOG:  database system was shut down at 2026-11-11 12:22:01 UTC
+db-1   | 2026-11-11T12:22:01.451412257Z 2026-11-11 12:22:01.451 UTC [1] LOG:  database system is ready to accept connections
+db-1   | 2026-11-11T12:22:09.791289678Z 2026-11-11 12:22:09.790 UTC [134] ERROR:  injected effect failure
+db-1   | 2026-11-11T12:22:09.791351553Z 2026-11-11 12:22:09.790 UTC [134] CONTEXT:  PL/pgSQL function reject_effect() line 1 at RAISE
+db-1   | 2026-11-11T12:22:09.791354261Z 2026-11-11 12:22:09.790 UTC [134] STATEMENT:  INSERT INTO job_effects(job_id,token,result) VALUES($1,$2,jsonb_build_object('model',$3::text))
+api-1  | 2026-11-11T12:22:03.778112883Z 2026/11/11 12:22:03 INFO API started address=:8080
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-race-d146e00634 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122200Z-soup-test-race-d146e00634/compose.test.yaml down --volumes --remove-orphans
+ Container soup-test-race-d146e00634-api-1 Stopping 
+ Container soup-test-race-d146e00634-api-1 Stopped 
+ Container soup-test-race-d146e00634-api-1 Removing 
+ Container soup-test-race-d146e00634-api-1 Removed 
+ Container soup-test-race-d146e00634-migrate-1 Stopping 
+ Container soup-test-race-d146e00634-migrate-1 Stopped 
+ Container soup-test-race-d146e00634-migrate-1 Removing 
+ Container soup-test-race-d146e00634-migrate-1 Removed 
+ Container soup-test-race-d146e00634-db-1 Stopping 
+ Container soup-test-race-d146e00634-db-1 Stopped 
+ Container soup-test-race-d146e00634-db-1 Removing 
+ Container soup-test-race-d146e00634-db-1 Removed 
+ Network soup-test-race-d146e00634_queue Removing 
+ Volume soup-test-race-d146e00634_pgdata Removing 
+ Volume soup-test-race-d146e00634_pgdata Removed 
+ Network soup-test-race-d146e00634_queue Removed 
+
+exit=0

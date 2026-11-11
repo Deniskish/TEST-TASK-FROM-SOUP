@@ -1,0 +1,102 @@
+api-1  | 2026-11-11T09:08:47.914142296Z 2026/11/11 09:08:47 INFO API started address=:8080
+db-1   | 2026-11-11T09:08:44.670050461Z The files belonging to this database system will be owned by user "postgres".
+db-1   | 2026-11-11T09:08:44.670078211Z This user must also own the server process.
+db-1   | 2026-11-11T09:08:44.670079919Z 
+db-1   | 2026-11-11T09:08:44.670186961Z The database cluster will be initialized with locale "en_US.utf8".
+db-1   | 2026-11-11T09:08:44.670194336Z The default database encoding has accordingly been set to "UTF8".
+db-1   | 2026-11-11T09:08:44.670195169Z The default text search configuration will be set to "english".
+db-1   | 2026-11-11T09:08:44.670196044Z 
+db-1   | 2026-11-11T09:08:44.670196669Z Data page checksums are disabled.
+db-1   | 2026-11-11T09:08:44.670197461Z 
+db-1   | 2026-11-11T09:08:44.670198086Z fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db-1   | 2026-11-11T09:08:44.674772502Z creating subdirectories ... ok
+db-1   | 2026-11-11T09:08:44.674782127Z selecting dynamic shared memory implementation ... posix
+db-1   | 2026-11-11T09:08:44.688349627Z selecting default "max_connections" ... 100
+db-1   | 2026-11-11T09:08:44.703649336Z selecting default "shared_buffers" ... 128MB
+db-1   | 2026-11-11T09:08:44.728371127Z selecting default time zone ... UTC
+db-1   | 2026-11-11T09:08:44.728862169Z creating configuration files ... ok
+db-1   | 2026-11-11T09:08:44.819968961Z running bootstrap script ... ok
+db-1   | 2026-11-11T09:08:44.928215003Z sh: locale: not found
+db-1   | 2026-11-11T09:08:44.928227544Z 2026-11-11 09:08:44.928 UTC [35] WARNING:  no usable system locales were found
+db-1   | 2026-11-11T09:08:45.154335711Z performing post-bootstrap initialization ... ok
+db-1   | 2026-11-11T09:08:45.233693711Z syncing data to disk ... ok
+db-1   | 2026-11-11T09:08:45.233709044Z 
+db-1   | 2026-11-11T09:08:45.233710419Z 
+db-1   | 2026-11-11T09:08:45.233711128Z Success. You can now start the database server using:
+db-1   | 2026-11-11T09:08:45.233712753Z 
+db-1   | 2026-11-11T09:08:45.233713544Z     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db-1   | 2026-11-11T09:08:45.233714336Z 
+db-1   | 2026-11-11T09:08:45.233712669Z initdb: warning: enabling "trust" authentication for local connections
+db-1   | 2026-11-11T09:08:45.233721544Z initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+db-1   | 2026-11-11T09:08:45.264462086Z waiting for server to start....2026-11-11 09:08:45.264 UTC [41] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1   | 2026-11-11T09:08:45.265225711Z 2026-11-11 09:08:45.265 UTC [41] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1   | 2026-11-11T09:08:45.268039419Z 2026-11-11 09:08:45.267 UTC [44] LOG:  database system was shut down at 2026-11-11 09:08:45 UTC
+db-1   | 2026-11-11T09:08:45.271625128Z 2026-11-11 09:08:45.271 UTC [41] LOG:  database system is ready to accept connections
+db-1   | 2026-11-11T09:08:45.352655753Z  done
+db-1   | 2026-11-11T09:08:45.352666628Z server started
+db-1   | 2026-11-11T09:08:45.403669503Z CREATE DATABASE
+db-1   | 2026-11-11T09:08:45.403932003Z 
+db-1   | 2026-11-11T09:08:45.403939336Z 
+db-1   | 2026-11-11T09:08:45.403940294Z /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db-1   | 2026-11-11T09:08:45.403941919Z 
+db-1   | 2026-11-11T09:08:45.404691169Z waiting for server to shut down....2026-11-11 09:08:45.404 UTC [41] LOG:  received fast shutdown request
+db-1   | 2026-11-11T09:08:45.405667253Z 2026-11-11 09:08:45.405 UTC [41] LOG:  aborting any active transactions
+db-1   | 2026-11-11T09:08:45.407974169Z 2026-11-11 09:08:45.407 UTC [41] LOG:  background worker "logical replication launcher" (PID 47) exited with exit code 1
+worker-1  | 2026-11-11T09:08:54.330684007Z 2026/11/11 09:08:54 INFO claimed job_id=55 token=1 attempt=1 process_wall_time=2026-11-11T09:08:54.330Z
+db-1      | 2026-11-11T09:08:45.408097544Z 2026-11-11 09:08:45.408 UTC [42] LOG:  shutting down
+worker-1  | 2026-11-11T09:08:54.347329299Z 2026/11/11 09:08:54 INFO attempt committed job_id=55 token=1
+worker-1  | 2026-11-11T09:08:54.348489007Z 2026/11/11 09:08:54 INFO claimed job_id=55 token=2 attempt=2 process_wall_time=2026-11-11T09:08:54.348Z
+db-1      | 2026-11-11T09:08:45.408718211Z 2026-11-11 09:08:45.408 UTC [42] LOG:  checkpoint starting: shutdown immediate
+db-1      | 2026-11-11T09:08:45.451434878Z 2026-11-11 09:08:45.451 UTC [42] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.020 s, sync=0.022 s, total=0.044 s; sync files=301, longest=0.010 s, average=0.001 s; distance=4266 kB, estimate=4266 kB; lsn=0/191E830, redo lsn=0/191E830
+db-1      | 2026-11-11T09:08:45.456080128Z 2026-11-11 09:08:45.455 UTC [41] LOG:  database system is shut down
+db-1      | 2026-11-11T09:08:45.509019669Z  done
+db-1      | 2026-11-11T09:08:45.509038503Z server stopped
+worker-1  | 2026-11-11T09:08:54.359808257Z 2026/11/11 09:08:54 INFO attempt committed job_id=55 token=2
+worker-1  | 2026-11-11T09:08:54.360997465Z 2026/11/11 09:08:54 INFO claimed job_id=55 token=3 attempt=3 process_wall_time=2026-11-11T09:08:54.360Z
+worker-1  | 2026-11-11T09:08:54.419540049Z 2026/11/11 09:08:54 INFO attempt committed job_id=55 token=3
+worker-1  | 2026-11-11T09:08:56.863197800Z 2026/11/11 09:08:56 INFO claimed job_id=58 token=1 attempt=1 process_wall_time=2026-11-11T09:08:56.862Z
+worker-1  | 2026-11-11T09:09:03.384514678Z 2026/11/11 09:09:03 WARN ownership lost or heartbeat unavailable job_id=58 token=1
+worker-1  | 2026-11-11T09:09:11.130405376Z 2026/11/11 09:09:11 INFO claimed job_id=67 token=1 attempt=1 process_wall_time=2026-11-11T09:09:11.130Z
+worker-1  | 2026-11-11T09:09:11.531070543Z 2026/11/11 09:09:11 WARN ownership lost or heartbeat unavailable job_id=67 token=1
+worker-1  | 2026-11-11T09:09:11.629441543Z 2026/11/11 09:09:11 WARN claim unavailable
+worker-1  | 2026-11-11T09:09:11.660801709Z 2026/11/11 09:09:11 WARN claim unavailable
+db-1      | 2026-11-11T09:08:45.509635294Z 
+db-1      | 2026-11-11T09:08:45.509642628Z PostgreSQL init process complete; ready for start up.
+worker-1  | 2026-11-11T09:09:11.691724168Z 2026/11/11 09:09:11 WARN claim unavailable
+db-1      | 2026-11-11T09:08:45.509644086Z 
+db-1      | 2026-11-11T09:08:45.524394378Z 2026-11-11 09:08:45.524 UTC [1] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1      | 2026-11-11T09:08:45.524476878Z 2026-11-11 09:08:45.524 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1      | 2026-11-11T09:08:45.524479169Z 2026-11-11 09:08:45.524 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1      | 2026-11-11T09:08:45.525999336Z 2026-11-11 09:08:45.525 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1      | 2026-11-11T09:08:45.528004128Z 2026-11-11 09:08:45.527 UTC [57] LOG:  database system was shut down at 2026-11-11 09:08:45 UTC
+worker-1  | 2026-11-11T09:09:13.146484710Z 2026/11/11 09:09:13 INFO claimed job_id=67 token=2 attempt=2 process_wall_time=2026-11-11T09:09:13.146Z
+worker-1  | 2026-11-11T09:09:17.157957920Z 2026/11/11 09:09:17 INFO attempt committed job_id=67 token=2
+db-1      | 2026-11-11T09:08:45.530603669Z 2026-11-11 09:08:45.530 UTC [1] LOG:  database system is ready to accept connections
+db-1      | 2026-11-11T09:08:51.653150006Z 2026-11-11 09:08:51.652 UTC [127] ERROR:  injected effect failure
+db-1      | 2026-11-11T09:08:51.653163547Z 2026-11-11 09:08:51.652 UTC [127] CONTEXT:  PL/pgSQL function reject_effect() line 1 at RAISE
+db-1      | 2026-11-11T09:08:51.653166006Z 2026-11-11 09:08:51.652 UTC [127] STATEMENT:  INSERT INTO job_effects(job_id,token,result) VALUES($1,$2,jsonb_build_object('model',$3::text))
+db-1      | 2026-11-11T09:09:11.320961251Z 2026-11-11 09:09:11.320 UTC [139] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.320979251Z 2026-11-11 09:09:11.320 UTC [140] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.320980751Z 2026-11-11 09:09:11.320 UTC [69] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.320981876Z 2026-11-11 09:09:11.320 UTC [141] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.320982917Z 2026-11-11 09:09:11.320 UTC [142] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.320984084Z 2026-11-11 09:09:11.320 UTC [143] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.320986917Z 2026-11-11 09:09:11.320 UTC [144] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.321094042Z 2026-11-11 09:09:11.321 UTC [145] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.321300834Z 2026-11-11 09:09:11.321 UTC [407] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.418097126Z 2026-11-11 09:09:11.418 UTC [1] LOG:  received fast shutdown request
+db-1      | 2026-11-11T09:09:11.419343918Z 2026-11-11 09:09:11.419 UTC [1] LOG:  aborting any active transactions
+db-1      | 2026-11-11T09:09:11.421830751Z 2026-11-11 09:09:11.421 UTC [1] LOG:  background worker "logical replication launcher" (PID 60) exited with exit code 1
+db-1      | 2026-11-11T09:09:11.422095918Z 2026-11-11 09:09:11.422 UTC [55] LOG:  shutting down
+db-1      | 2026-11-11T09:09:11.422851126Z 2026-11-11 09:09:11.422 UTC [55] LOG:  checkpoint starting: shutdown immediate
+db-1      | 2026-11-11T09:09:11.436586376Z 2026-11-11 09:09:11.436 UTC [55] LOG:  checkpoint complete: wrote 91 buffers (0.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.009 s, total=0.015 s; sync files=156, longest=0.003 s, average=0.001 s; distance=553 kB, estimate=553 kB; lsn=0/19A8EA0, redo lsn=0/19A8EA0
+db-1      | 2026-11-11T09:09:11.440011626Z 2026-11-11 09:09:11.439 UTC [1] LOG:  database system is shut down
+db-1      | 2026-11-11T09:09:11.678145376Z 
+db-1      | 2026-11-11T09:09:11.678156543Z PostgreSQL Database directory appears to contain a database; Skipping initialization
+db-1      | 2026-11-11T09:09:11.678158084Z 
+db-1      | 2026-11-11T09:09:11.694287001Z 2026-11-11 09:09:11.694 UTC [1] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1      | 2026-11-11T09:09:11.694323793Z 2026-11-11 09:09:11.694 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1      | 2026-11-11T09:09:11.694327459Z 2026-11-11 09:09:11.694 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1      | 2026-11-11T09:09:11.695400459Z 2026-11-11 09:09:11.695 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1      | 2026-11-11T09:09:11.697351876Z 2026-11-11 09:09:11.697 UTC [29] LOG:  database system was shut down at 2026-11-11 09:09:11 UTC
+db-1      | 2026-11-11T09:09:11.700082209Z 2026-11-11 09:09:11.699 UTC [1] LOG:  database system is ready to accept connections

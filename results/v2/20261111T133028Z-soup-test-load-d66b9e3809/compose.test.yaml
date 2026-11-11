@@ -1,0 +1,6 @@
+services:
+  api:
+    ports: !override
+      - '127.0.0.1::8080'
+  grafana:
+    ports: !override ['127.0.0.1::3000']

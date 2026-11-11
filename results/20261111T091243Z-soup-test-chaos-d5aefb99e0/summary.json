@@ -1,0 +1,42 @@
+{
+  "kind": "chaos",
+  "seed": 42,
+  "project": "soup-test-chaos-d5aefb99e0",
+  "started_at": "2026-11-11T09:12:43.380457+00:00",
+  "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "host": "macOS-15.1-arm64-arm-64bit-Mach-O",
+  "passed": true,
+  "workers": 8,
+  "lease": "2s",
+  "heartbeat": "400ms",
+  "api_pool": 8,
+  "worker_pool": 8,
+  "api_url": "http://127.0.0.1:64123",
+  "docker_info": "\"29.9.2\" \"linux\" \"aarch64\" CPUs=8 Memory=8319705088",
+  "resources": "{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"0.00%\",\"Container\":\"6875266d48e22f527670273e0a6a996a326a9679cf9125784667d3794c955385\",\"ID\":\"6875266d48e2\",\"MemPerc\":\"0.12%\",\"MemUsage\":\"9.238MiB / 7.748GiB\",\"Name\":\"soup-test-chaos-d5aefb99e0-api-1\",\"NetIO\":\"3.95kB / 2.06kB\",\"PIDs\":\"10\"}\n{\"BlockIO\":\"0B / 52.9MB\",\"CPUPerc\":\"19.18%\",\"Container\":\"1456bc9677b5cb3bb508722f6c6029391b8915f87a6dd11bd72cbdab57eb92ce\",\"ID\":\"1456bc9677b5\",\"MemPerc\":\"0.54%\",\"MemUsage\":\"42.96MiB / 7.748GiB\",\"Name\":\"soup-test-chaos-d5aefb99e0-db-1\",\"NetIO\":\"620kB / 299kB\",\"PIDs\":\"15\"}\n{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"2.90%\",\"Container\":\"05ff1f3d1002049b04b19bd802cb301e8d1de7af201b4b801b4d1379e15206f8\",\"ID\":\"05ff1f3d1002\",\"MemPerc\":\"0.07%\",\"MemUsage\":\"5.727MiB / 7.748GiB\",\"Name\":\"soup-test-chaos-d5aefb99e0-worker-1\",\"NetIO\":\"24.3kB / 46.8kB\",\"PIDs\":\"10\"}\n{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"2.52%\",\"Container\":\"e59a63a0dee6bde1cdbbf08c550a5d465f87a0b4425cabea527fd916f6b5e6fc\",\"ID\":\"e59a63a0dee6\",\"MemPerc\":\"0.07%\",\"MemUsage\":\"5.703MiB / 7.748GiB\",\"Name\":\"soup-test-chaos-d5aefb99e0-worker-2\",\"NetIO\":\"27.8kB / 53.7kB\",\"PIDs\":\"9\"}\n{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"2.68%\",\"Container\":\"e65b6299ee18ff05fc84ecc6ba3a7ef93645ba7f52ceed53550a3347f4e07fe0\",\"ID\":\"e65b6299ee18\",\"MemPerc\":\"0.10%\",\"MemUsage\":\"7.727MiB / 7.748GiB\",\"Name\":\"soup-test-chaos-d5aefb99e0-worker-3\",\"NetIO\":\"39.2kB / 77.2kB\",\"PIDs\":\"9\"}\n{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"2.48%\",\"Container\":\"93922995357ecf46032f786feba0e09495a496d06e79eb170132862412a3cc0e\",\"ID\":\"93922995357e\",\"MemPerc\":\"0.09%\",\"MemUsage\":\"7.461MiB / 7.748GiB\",\"Name\":\"soup-test-chaos-d5aefb99e0-worker-4\",\"NetIO\":\"37.2kB / 73.4kB\",\"PIDs\":\"9\"}\n{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"2.63%\",\"Container\":\"c5a9b3c03cf7694b82a09af871a990fdfde89c2dab5efafd1c2196cd5e096d1a\",\"ID\":\"c5a9b3c03cf7\",\"MemPerc\":\"0.07%\",\"MemUsage\":\"5.719MiB / 7.748GiB\",\"Name\":\"soup-test-chaos-d5aefb99e0-worker-5\",\"NetIO\":\"23.1kB / 44.4kB\",\"PIDs\":\"10\"}\n{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"2.62%\",\"Container\":\"926534c77d1d256ece9d1ae49b9a21b3864c56159b2e81562bc79004259eeb7c\",\"ID\":\"926534c77d1d\",\"MemPerc\":\"0.09%\",\"MemUsage\":\"7.258MiB / 7.748GiB\",\"Name\":\"soup-test-chaos-d5aefb99e0-worker-6\",\"NetIO\":\"42.9kB / 84.2kB\",\"PIDs\":\"10\"}\n{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"2.41%\",\"Container\":\"78a36fbc1e718df4a38cfd1534f7fabb5e9d59685b9b7550df037337c8836654\",\"ID\":\"78a36fbc1e71\",\"MemPerc\":\"0.07%\",\"MemUsage\":\"5.707MiB / 7.748GiB\",\"Name\":\"soup-test-chaos-d5aefb99e0-worker-7\",\"NetIO\":\"38.4kB / 75.6kB\",\"PIDs\":\"9\"}\n{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"2.19%\",\"Container\":\"b6169a4f7ab7212d9d91b2907ef99218c15ebc4538ea042616faed6cbb805749\",\"ID\":\"b6169a4f7ab7\",\"MemPerc\":\"0.10%\",\"MemUsage\":\"7.723MiB / 7.748GiB\",\"Name\":\"soup-test-chaos-d5aefb99e0-worker-8\",\"NetIO\":\"42.4kB / 83.5kB\",\"PIDs\":\"9\"}",
+  "image_ids": "[{\"ID\":\"sha256:ad09bc2c91d0c3a40de5886549f842dff2382f5ed7cc2fbdc5492a65a1473b7f\",\"ContainerName\":\"soup-test-chaos-d5aefb99e0-worker-4\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":74367777,\"Created\":\"2026-11-11T09:05:12.504544751Z\",\"LastTagTime\":\"2026-11-11T09:05:13.459639669Z\"},{\"ID\":\"sha256:ad09bc2c91d0c3a40de5886549f842dff2382f5ed7cc2fbdc5492a65a1473b7f\",\"ContainerName\":\"soup-test-chaos-d5aefb99e0-worker-6\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":74367777,\"Created\":\"2026-11-11T09:05:12.504544751Z\",\"LastTagTime\":\"2026-11-11T09:05:13.459639669Z\"},{\"ID\":\"sha256:ad09bc2c91d0c3a40de5886549f842dff2382f5ed7cc2fbdc5492a65a1473b7f\",\"ContainerName\":\"soup-test-chaos-d5aefb99e0-worker-2\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":74367777,\"Created\":\"2026-11-11T09:05:12.504544751Z\",\"LastTagTime\":\"2026-11-11T09:05:13.459639669Z\"},{\"ID\":\"sha256:ad09bc2c91d0c3a40de5886549f842dff2382f5ed7cc2fbdc5492a65a1473b7f\",\"ContainerName\":\"soup-test-chaos-d5aefb99e0-worker-1\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":74367777,\"Created\":\"2026-11-11T09:05:12.504544751Z\",\"LastTagTime\":\"2026-11-11T09:05:13.459639669Z\"},{\"ID\":\"sha256:ad09bc2c91d0c3a40de5886549f842dff2382f5ed7cc2fbdc5492a65a1473b7f\",\"ContainerName\":\"soup-test-chaos-d5aefb99e0-worker-7\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":74367777,\"Created\":\"2026-11-11T09:05:12.504544751Z\",\"LastTagTime\":\"2026-11-11T09:05:13.459639669Z\"},{\"ID\":\"sha256:3540c0362c809df084ffac0ae69fe794515f9de92692f02178bcdce0ef0302ac\",\"ContainerName\":\"soup-test-chaos-d5aefb99e0-db-1\",\"Repository\":\"postgres\",\"Tag\":\"17-alpine\",\"Platform\":\"linux/arm64/v8\",\"Size\":414812043,\"Created\":\"2026-11-05T19:03:57.181599785Z\",\"LastTagTime\":\"2026-11-11T09:08:44.144698002Z\"},{\"ID\":\"sha256:ad09bc2c91d0c3a40de5886549f842dff2382f5ed7cc2fbdc5492a65a1473b7f\",\"ContainerName\":\"soup-test-chaos-d5aefb99e0-worker-3\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":74367777,\"Created\":\"2026-11-11T09:05:12.504544751Z\",\"LastTagTime\":\"2026-11-11T09:05:13.459639669Z\"},{\"ID\":\"sha256:ad09bc2c91d0c3a40de5886549f842dff2382f5ed7cc2fbdc5492a65a1473b7f\",\"ContainerName\":\"soup-test-chaos-d5aefb99e0-worker-5\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":74367777,\"Created\":\"2026-11-11T09:05:12.504544751Z\",\"LastTagTime\":\"2026-11-11T09:05:13.459639669Z\"},{\"ID\":\"sha256:ad09bc2c91d0c3a40de5886549f842dff2382f5ed7cc2fbdc5492a65a1473b7f\",\"ContainerName\":\"soup-test-chaos-d5aefb99e0-migrate-1\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":74367777,\"Created\":\"2026-11-11T09:05:12.504544751Z\",\"LastTagTime\":\"2026-11-11T09:05:13.459639669Z\"},{\"ID\":\"sha256:ad09bc2c91d0c3a40de5886549f842dff2382f5ed7cc2fbdc5492a65a1473b7f\",\"ContainerName\":\"soup-test-chaos-d5aefb99e0-api-1\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":74367777,\"Created\":\"2026-11-11T09:05:12.504544751Z\",\"LastTagTime\":\"2026-11-11T09:05:13.459639669Z\"},{\"ID\":\"sha256:ad09bc2c91d0c3a40de5886549f842dff2382f5ed7cc2fbdc5492a65a1473b7f\",\"ContainerName\":\"soup-test-chaos-d5aefb99e0-worker-8\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":74367777,\"Created\":\"2026-11-11T09:05:12.504544751Z\",\"LastTagTime\":\"2026-11-11T09:05:13.459639669Z\"}]",
+  "parameters": {
+    "jobs": 10000,
+    "workers": 8,
+    "clients": 32,
+    "seed": 42,
+    "kill_interval": 2,
+    "timeout": 300
+  },
+  "invariant_errors": [],
+  "states": {
+    "queued": 0,
+    "running": 0,
+    "succeeded": 8204,
+    "failed": 0,
+    "cancelled": 1796
+  },
+  "reclaimed_jobs": 18,
+  "effects": 8204,
+  "kills": 20,
+  "accepted": 10000,
+  "elapsed_seconds": 48.40441716600617,
+  "duplicate_requests": 5000,
+  "cancellation_requests": 2000,
+  "ended_at": "2026-11-11T09:13:39.387324+00:00"
+}

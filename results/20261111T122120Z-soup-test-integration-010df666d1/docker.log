@@ -1,0 +1,1067 @@
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml up -d --no-build --scale worker=0
+ Volume soup-test-integration-010df666d1_pgdata Creating 
+ Volume soup-test-integration-010df666d1_pgdata Creating 
+ Network soup-test-integration-010df666d1_queue Creating 
+ Network soup-test-integration-010df666d1_queue Creating 
+ Volume soup-test-integration-010df666d1_pgdata Created 
+ Volume soup-test-integration-010df666d1_pgdata Created 
+ Network soup-test-integration-010df666d1_queue Created 
+ Network soup-test-integration-010df666d1_queue Created 
+ Container soup-test-integration-010df666d1-db-1 Creating 
+ Container soup-test-integration-010df666d1-db-1 Created 
+ Container soup-test-integration-010df666d1-migrate-1 Creating 
+ Container soup-test-integration-010df666d1-migrate-1 Created 
+ Container soup-test-integration-010df666d1-api-1 Creating 
+ Container soup-test-integration-010df666d1-api-1 Created 
+ Container soup-test-integration-010df666d1-db-1 Starting 
+ Container soup-test-integration-010df666d1-db-1 Started 
+ Container soup-test-integration-010df666d1-db-1 Waiting 
+ Container soup-test-integration-010df666d1-db-1 Healthy 
+ Container soup-test-integration-010df666d1-migrate-1 Starting 
+ Container soup-test-integration-010df666d1-migrate-1 Started 
+ Container soup-test-integration-010df666d1-migrate-1 Waiting 
+ Container soup-test-integration-010df666d1-migrate-1 Exited 
+ Container soup-test-integration-010df666d1-api-1 Starting 
+ Container soup-test-integration-010df666d1-api-1 Started 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml port api 8080
+127.0.0.1:65450
+
+exit=0
+
+$ docker info --format {{json .ServerVersion}} {{json .OSType}} {{json .Architecture}} CPUs={{.NCPU}} Memory={{.MemTotal}}
+"29.9.2" "linux" "aarch64" CPUs=8 Memory=8319705088
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml ps -q
+a9cb913c2b06b7d80bf2469946cd6a04e1d6723bbdca1e199882d1aa8a340288
+fa7c15b7c654b19401b5afa44fc02ef8b9f733c8fe3463f39e55541c40a81a03
+
+exit=0
+
+$ docker stats --no-stream --format {{json .}} a9cb913c2b06b7d80bf2469946cd6a04e1d6723bbdca1e199882d1aa8a340288 fa7c15b7c654b19401b5afa44fc02ef8b9f733c8fe3463f39e55541c40a81a03
+{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"a9cb913c2b06b7d80bf2469946cd6a04e1d6723bbdca1e199882d1aa8a340288","ID":"a9cb913c2b06","MemPerc":"0.13%","MemUsage":"10.2MiB / 7.748GiB","Name":"soup-test-integration-010df666d1-api-1","NetIO":"2.35kB / 1.73kB","PIDs":"10"}
+{"BlockIO":"0B / 52.9MB","CPUPerc":"0.16%","Container":"fa7c15b7c654b19401b5afa44fc02ef8b9f733c8fe3463f39e55541c40a81a03","ID":"fa7c15b7c654","MemPerc":"0.35%","MemUsage":"27.71MiB / 7.748GiB","Name":"soup-test-integration-010df666d1-db-1","NetIO":"5.49kB / 2.79kB","PIDs":"7"}
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml images --format json
+[{"ID":"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010","ContainerName":"soup-test-integration-010df666d1-api-1","Repository":"soup-queue","Tag":"local","Platform":"linux/arm64","Size":79857964,"Created":"2026-11-11T09:23:05.915045512Z","LastTagTime":"2026-11-11T09:23:06.927568346Z"},{"ID":"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010","ContainerName":"soup-test-integration-010df666d1-migrate-1","Repository":"soup-queue","Tag":"local","Platform":"linux/arm64","Size":79857964,"Created":"2026-11-11T09:23:05.915045512Z","LastTagTime":"2026-11-11T09:23:06.927568346Z"},{"ID":"sha256:3540c0362c809df084ffac0ae69fe794515f9de92692f02178bcdce0ef0302ac","ContainerName":"soup-test-integration-010df666d1-db-1","Repository":"postgres","Tag":"17-alpine","Platform":"linux/arm64/v8","Size":414812043,"Created":"2026-11-05T19:03:57.181599785Z","LastTagTime":"2026-11-11T09:08:44.144698002Z"}]
+
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml run --rm --no-deps -e TEST_DATABASE_URL -e ALLOW_TEST_TRUNCATE=yes --entrypoint /app/storage.test worker -test.v -test.count=1
+=== RUN   TestDoubleClaim
+--- PASS: TestDoubleClaim (0.04s)
+=== RUN   TestConcurrentDuplicate
+--- PASS: TestConcurrentDuplicate (0.04s)
+=== RUN   TestZombieAndExhaustion
+--- PASS: TestZombieAndExhaustion (0.03s)
+=== RUN   TestCancelCompleteRace
+    store_test.go:188: race outcomes: map[cancelled:66 succeeded:34]
+--- PASS: TestCancelCompleteRace (0.24s)
+=== RUN   TestAtomicRollback
+--- PASS: TestAtomicRollback (0.02s)
+=== RUN   TestReadCommittedAndLockWaitExpiry
+--- PASS: TestReadCommittedAndLockWaitExpiry (0.62s)
+=== RUN   TestRetryBudgetAndCancelOrders
+--- PASS: TestRetryBudgetAndCancelOrders (0.03s)
+PASS
+ Container soup-test-integration-010df666d1-worker-run-65d2b98d1224 Creating 
+ Container soup-test-integration-010df666d1-worker-run-65d2b98d1224 Created 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c TRUNCATE job_effects,jobs RESTART IDENTITY
+TRUNCATE TABLE
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml up -d --no-build --scale worker=2 worker
+ Container soup-test-integration-010df666d1-db-1 Running 
+ Container soup-test-integration-010df666d1-worker-2 Creating 
+ Container soup-test-integration-010df666d1-worker-1 Creating 
+ Container soup-test-integration-010df666d1-worker-1 Created 
+ Container soup-test-integration-010df666d1-worker-2 Created 
+ Container soup-test-integration-010df666d1-db-1 Waiting 
+ Container soup-test-integration-010df666d1-db-1 Healthy 
+ Container soup-test-integration-010df666d1-migrate-1 Starting 
+ Container soup-test-integration-010df666d1-migrate-1 Started 
+ Container soup-test-integration-010df666d1-migrate-1 Waiting 
+ Container soup-test-integration-010df666d1-migrate-1 Exited 
+ Container soup-test-integration-010df666d1-worker-2 Starting 
+ Container soup-test-integration-010df666d1-worker-2 Started 
+ Container soup-test-integration-010df666d1-worker-1 Starting 
+ Container soup-test-integration-010df666d1-worker-1 Started 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml up -d --no-build --scale worker=1 worker
+ Container soup-test-integration-010df666d1-worker-1 Running 
+ Container soup-test-integration-010df666d1-db-1 Running 
+ Container soup-test-integration-010df666d1-worker-2 Stopping 
+ Container soup-test-integration-010df666d1-worker-2 Stopped 
+ Container soup-test-integration-010df666d1-worker-2 Removing 
+ Container soup-test-integration-010df666d1-worker-2 Removed 
+ Container soup-test-integration-010df666d1-db-1 Waiting 
+ Container soup-test-integration-010df666d1-db-1 Healthy 
+ Container soup-test-integration-010df666d1-migrate-1 Starting 
+ Container soup-test-integration-010df666d1-migrate-1 Started 
+ Container soup-test-integration-010df666d1-migrate-1 Waiting 
+ Container soup-test-integration-010df666d1-migrate-1 Exited 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml ps -q worker
+3fda6b2e74e7983b34a41b085ecb85ddd053e6a9fd690c245ac72fba04e8f125
+
+exit=0
+
+$ docker inspect --format {{json .Config.Labels}} 3fda6b2e74e7983b34a41b085ecb85ddd053e6a9fd690c245ac72fba04e8f125
+{"com.docker.compose.config-hash":"8ec8c6134cb14ab805a9ed40122d57eb5ec553b7754457152651c99ed3b58b41","com.docker.compose.container-number":"1","com.docker.compose.depends_on":"migrate:service_completed_successfully:false","com.docker.compose.image":"sha256:e3d4c94d0022a76324a568cd99e193c2411ac9321203cf2316d542941f899375","com.docker.compose.oneoff":"False","com.docker.compose.project":"soup-test-integration-010df666d1","com.docker.compose.project.config_files":"/Users/denis/vs_code/SOUP_BACK/compose.yaml,/Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml","com.docker.compose.project.environment_file":"/dev/null","com.docker.compose.project.working_dir":"/Users/denis/vs_code/SOUP_BACK","com.docker.compose.service":"worker","com.docker.compose.version":"5.6.1"}
+
+exit=0
+
+$ docker pause 3fda6b2e74e7983b34a41b085ecb85ddd053e6a9fd690c245ac72fba04e8f125
+3fda6b2e74e7983b34a41b085ecb85ddd053e6a9fd690c245ac72fba04e8f125
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml run -d --no-deps worker
+569771d0f0b97d65e7ee92234e4edeee52b99f7d233ee4511d246f6fc7aad3ae
+ Container soup-test-integration-010df666d1-worker-run-deb0129a1545 Creating 
+ Container soup-test-integration-010df666d1-worker-run-deb0129a1545 Created 
+
+exit=0
+
+$ docker inspect --format {{json .Config.Labels}} 569771d0f0b97d65e7ee92234e4edeee52b99f7d233ee4511d246f6fc7aad3ae
+{"com.docker.compose.config-hash":"a37dd4c9bc13e205a6b67a65dc56ac331b7db62597455957fff9629b9a9ce12a","com.docker.compose.depends_on":"","com.docker.compose.image":"sha256:e3d4c94d0022a76324a568cd99e193c2411ac9321203cf2316d542941f899375","com.docker.compose.oneoff":"True","com.docker.compose.project":"soup-test-integration-010df666d1","com.docker.compose.project.config_files":"/Users/denis/vs_code/SOUP_BACK/compose.yaml,/Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml","com.docker.compose.project.environment_file":"/dev/null","com.docker.compose.project.working_dir":"/Users/denis/vs_code/SOUP_BACK","com.docker.compose.service":"worker","com.docker.compose.slug":"deb0129a1545c554fdd87cacceb6258fec873b9bc1101a2b613a67de36b10669","com.docker.compose.version":"5.6.1"}
+
+exit=0
+
+$ docker unpause 3fda6b2e74e7983b34a41b085ecb85ddd053e6a9fd690c245ac72fba04e8f125
+3fda6b2e74e7983b34a41b085ecb85ddd053e6a9fd690c245ac72fba04e8f125
+
+exit=0
+
+$ docker logs 3fda6b2e74e7983b34a41b085ecb85ddd053e6a9fd690c245ac72fba04e8f125
+2026/11/11 12:21:29 INFO claimed job_id=56 token=1 attempt=1 process_wall_time=2026-11-11T12:21:29.950Z
+2026/11/11 12:21:29 INFO attempt committed job_id=56 token=1
+2026/11/11 12:21:29 INFO claimed job_id=56 token=2 attempt=2 process_wall_time=2026-11-11T12:21:29.963Z
+2026/11/11 12:21:29 INFO attempt committed job_id=56 token=2
+2026/11/11 12:21:30 INFO claimed job_id=57 token=1 attempt=1 process_wall_time=2026-11-11T12:21:30.038Z
+2026/11/11 12:21:31 WARN ownership lost or heartbeat unavailable job_id=57 token=1
+2026/11/11 12:21:32 INFO claimed job_id=58 token=1 attempt=1 process_wall_time=2026-11-11T12:21:32.432Z
+2026/11/11 12:21:39 WARN ownership lost or heartbeat unavailable job_id=58 token=1
+
+exit=0
+
+$ docker inspect --format {{json .Config.Labels}} 569771d0f0b97d65e7ee92234e4edeee52b99f7d233ee4511d246f6fc7aad3ae
+{"com.docker.compose.config-hash":"a37dd4c9bc13e205a6b67a65dc56ac331b7db62597455957fff9629b9a9ce12a","com.docker.compose.depends_on":"","com.docker.compose.image":"sha256:e3d4c94d0022a76324a568cd99e193c2411ac9321203cf2316d542941f899375","com.docker.compose.oneoff":"True","com.docker.compose.project":"soup-test-integration-010df666d1","com.docker.compose.project.config_files":"/Users/denis/vs_code/SOUP_BACK/compose.yaml,/Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml","com.docker.compose.project.environment_file":"/dev/null","com.docker.compose.project.working_dir":"/Users/denis/vs_code/SOUP_BACK","com.docker.compose.service":"worker","com.docker.compose.slug":"deb0129a1545c554fdd87cacceb6258fec873b9bc1101a2b613a67de36b10669","com.docker.compose.version":"5.6.1"}
+
+exit=0
+
+$ docker logs --timestamps 569771d0f0b97d65e7ee92234e4edeee52b99f7d233ee4511d246f6fc7aad3ae
+2026-11-11T12:21:35.242220509Z 2026/11/11 12:21:35 INFO claimed job_id=58 token=2 attempt=2 process_wall_time=2026-11-11T12:21:35.241Z
+2026-11-11T12:21:39.311744052Z 2026/11/11 12:21:39 INFO attempt committed job_id=58 token=2
+
+exit=0
+
+$ docker rm -f 569771d0f0b97d65e7ee92234e4edeee52b99f7d233ee4511d246f6fc7aad3ae
+569771d0f0b97d65e7ee92234e4edeee52b99f7d233ee4511d246f6fc7aad3ae
+
+exit=0
+
+$ docker unpause 3fda6b2e74e7983b34a41b085ecb85ddd053e6a9fd690c245ac72fba04e8f125
+Error response from daemon: Container 3fda6b2e74e7983b34a41b085ecb85ddd053e6a9fd690c245ac72fba04e8f125 is not paused
+
+exit=1
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT coalesce(json_agg(t),'[]'::json) FROM (SELECT j.id,j.idempotency_key,j.status,j.attempts,j.max_attempts,j.token, j.lease_until, e.token AS effect_token, (SELECT count(*) FROM job_effects x WHERE x.job_id=j.id) AS effects FROM jobs j LEFT JOIN job_effects e ON e.job_id=j.id ORDER BY j.id) t
+[{"id":1,"idempotency_key":"duplicate","status":"cancelled","attempts":0,"max_attempts":5,"token":1,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":50,"idempotency_key":"page-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":51,"idempotency_key":"page-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":52,"idempotency_key":"page-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":53,"idempotency_key":"page-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":54,"idempotency_key":"page-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":55,"idempotency_key":"retry-success","status":"succeeded","attempts":3,"max_attempts":3,"token":3,"lease_until":null,"effect_token":3,"effects":1}, 
+ {"id":56,"idempotency_key":"retry-failure","status":"failed","attempts":2,"max_attempts":2,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":57,"idempotency_key":"double-process","status":"cancelled","attempts":1,"max_attempts":5,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":58,"idempotency_key":"zombie-process","status":"succeeded","attempts":2,"max_attempts":5,"token":2,"lease_until":null,"effect_token":2,"effects":1}]
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml stop worker
+ Container soup-test-integration-010df666d1-worker-1 Stopping 
+ Container soup-test-integration-010df666d1-worker-1 Stopped 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml run -d --no-deps -e TEST_CLOCK_OFFSET=24h worker
+9dbc6c7a6a50a6ff8be288e59ad245ad3266d8e09969ca74c182e3a1416744d5
+ Container soup-test-integration-010df666d1-worker-run-eb5ced4cdfbc Creating 
+ Container soup-test-integration-010df666d1-worker-run-eb5ced4cdfbc Created 
+
+exit=0
+
+$ docker inspect --format {{json .Config.Labels}} 9dbc6c7a6a50a6ff8be288e59ad245ad3266d8e09969ca74c182e3a1416744d5
+{"com.docker.compose.config-hash":"bbfe37aa6cbc4ff0bf607f2bfe3958c2fbe9533e5f4b18d7d8e5e4d8d020e1cc","com.docker.compose.depends_on":"","com.docker.compose.image":"sha256:e3d4c94d0022a76324a568cd99e193c2411ac9321203cf2316d542941f899375","com.docker.compose.oneoff":"True","com.docker.compose.project":"soup-test-integration-010df666d1","com.docker.compose.project.config_files":"/Users/denis/vs_code/SOUP_BACK/compose.yaml,/Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml","com.docker.compose.project.environment_file":"/dev/null","com.docker.compose.project.working_dir":"/Users/denis/vs_code/SOUP_BACK","com.docker.compose.service":"worker","com.docker.compose.slug":"eb5ced4cdfbc988238a26251d791ee8da3714678f78effa77bc457917463e2a7","com.docker.compose.version":"5.6.1"}
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml run -d --no-deps -e TEST_CLOCK_OFFSET=-24h worker
+8e2ad4eb03e9f898e8c98b63a41ad3f9a48c8169129889059afcee3798051609
+ Container soup-test-integration-010df666d1-worker-run-82b7c707dc26 Creating 
+ Container soup-test-integration-010df666d1-worker-run-82b7c707dc26 Created 
+
+exit=0
+
+$ docker inspect --format {{json .Config.Labels}} 8e2ad4eb03e9f898e8c98b63a41ad3f9a48c8169129889059afcee3798051609
+{"com.docker.compose.config-hash":"716b08eff9e2817504f76265fe33917f0dcfa45fe22c2ffb2f310b0cbf32d711","com.docker.compose.depends_on":"","com.docker.compose.image":"sha256:e3d4c94d0022a76324a568cd99e193c2411ac9321203cf2316d542941f899375","com.docker.compose.oneoff":"True","com.docker.compose.project":"soup-test-integration-010df666d1","com.docker.compose.project.config_files":"/Users/denis/vs_code/SOUP_BACK/compose.yaml,/Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml","com.docker.compose.project.environment_file":"/dev/null","com.docker.compose.project.working_dir":"/Users/denis/vs_code/SOUP_BACK","com.docker.compose.service":"worker","com.docker.compose.slug":"82b7c707dc26300188bad74e29a6029beb9b469962aacef4a5e353b12c30794f","com.docker.compose.version":"5.6.1"}
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+8
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+8
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+6
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+6
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+4
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+4
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+2
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+2
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT coalesce(json_agg(t),'[]'::json) FROM (SELECT attempts FROM jobs WHERE idempotency_key LIKE 'skew-%') t
+[{"attempts":1}, 
+ {"attempts":1}, 
+ {"attempts":1}, 
+ {"attempts":1}, 
+ {"attempts":1}, 
+ {"attempts":1}, 
+ {"attempts":1}, 
+ {"attempts":1}]
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT coalesce(json_agg(t),'[]'::json) FROM (SELECT j.id,j.idempotency_key,j.status,j.attempts,j.max_attempts,j.token, j.lease_until, e.token AS effect_token, (SELECT count(*) FROM job_effects x WHERE x.job_id=j.id) AS effects FROM jobs j LEFT JOIN job_effects e ON e.job_id=j.id ORDER BY j.id) t
+[{"id":1,"idempotency_key":"duplicate","status":"cancelled","attempts":0,"max_attempts":5,"token":1,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":50,"idempotency_key":"page-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":51,"idempotency_key":"page-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":52,"idempotency_key":"page-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":53,"idempotency_key":"page-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":54,"idempotency_key":"page-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":55,"idempotency_key":"retry-success","status":"succeeded","attempts":3,"max_attempts":3,"token":3,"lease_until":null,"effect_token":3,"effects":1}, 
+ {"id":56,"idempotency_key":"retry-failure","status":"failed","attempts":2,"max_attempts":2,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":57,"idempotency_key":"double-process","status":"cancelled","attempts":1,"max_attempts":5,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":58,"idempotency_key":"zombie-process","status":"succeeded","attempts":2,"max_attempts":5,"token":2,"lease_until":null,"effect_token":2,"effects":1}, 
+ {"id":59,"idempotency_key":"skew-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":60,"idempotency_key":"skew-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":61,"idempotency_key":"skew-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":62,"idempotency_key":"skew-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":63,"idempotency_key":"skew-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":64,"idempotency_key":"skew-5","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":65,"idempotency_key":"skew-6","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":66,"idempotency_key":"skew-7","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}]
+
+exit=0
+
+$ docker inspect --format {{json .Config.Labels}} 9dbc6c7a6a50a6ff8be288e59ad245ad3266d8e09969ca74c182e3a1416744d5
+{"com.docker.compose.config-hash":"bbfe37aa6cbc4ff0bf607f2bfe3958c2fbe9533e5f4b18d7d8e5e4d8d020e1cc","com.docker.compose.depends_on":"","com.docker.compose.image":"sha256:e3d4c94d0022a76324a568cd99e193c2411ac9321203cf2316d542941f899375","com.docker.compose.oneoff":"True","com.docker.compose.project":"soup-test-integration-010df666d1","com.docker.compose.project.config_files":"/Users/denis/vs_code/SOUP_BACK/compose.yaml,/Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml","com.docker.compose.project.environment_file":"/dev/null","com.docker.compose.project.working_dir":"/Users/denis/vs_code/SOUP_BACK","com.docker.compose.service":"worker","com.docker.compose.slug":"eb5ced4cdfbc988238a26251d791ee8da3714678f78effa77bc457917463e2a7","com.docker.compose.version":"5.6.1"}
+
+exit=0
+
+$ docker rm -f 9dbc6c7a6a50a6ff8be288e59ad245ad3266d8e09969ca74c182e3a1416744d5
+9dbc6c7a6a50a6ff8be288e59ad245ad3266d8e09969ca74c182e3a1416744d5
+
+exit=0
+
+$ docker inspect --format {{json .Config.Labels}} 8e2ad4eb03e9f898e8c98b63a41ad3f9a48c8169129889059afcee3798051609
+{"com.docker.compose.config-hash":"716b08eff9e2817504f76265fe33917f0dcfa45fe22c2ffb2f310b0cbf32d711","com.docker.compose.depends_on":"","com.docker.compose.image":"sha256:e3d4c94d0022a76324a568cd99e193c2411ac9321203cf2316d542941f899375","com.docker.compose.oneoff":"True","com.docker.compose.project":"soup-test-integration-010df666d1","com.docker.compose.project.config_files":"/Users/denis/vs_code/SOUP_BACK/compose.yaml,/Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml","com.docker.compose.project.environment_file":"/dev/null","com.docker.compose.project.working_dir":"/Users/denis/vs_code/SOUP_BACK","com.docker.compose.service":"worker","com.docker.compose.slug":"82b7c707dc26300188bad74e29a6029beb9b469962aacef4a5e353b12c30794f","com.docker.compose.version":"5.6.1"}
+
+exit=0
+
+$ docker rm -f 8e2ad4eb03e9f898e8c98b63a41ad3f9a48c8169129889059afcee3798051609
+8e2ad4eb03e9f898e8c98b63a41ad3f9a48c8169129889059afcee3798051609
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml start worker
+ Container soup-test-integration-010df666d1-db-1 Waiting 
+ Container soup-test-integration-010df666d1-db-1 Healthy 
+ Container soup-test-integration-010df666d1-migrate-1 Starting 
+ Container soup-test-integration-010df666d1-migrate-1 Started 
+ Container soup-test-integration-010df666d1-migrate-1 Waiting 
+ Container soup-test-integration-010df666d1-migrate-1 Exited 
+ Container soup-test-integration-010df666d1-worker-1 Starting 
+ Container soup-test-integration-010df666d1-worker-1 Started 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname='soup' AND pid<>pg_backend_pid()
+t
+t
+t
+t
+t
+t
+t
+t
+t
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml stop db
+ Container soup-test-integration-010df666d1-db-1 Stopping 
+ Container soup-test-integration-010df666d1-db-1 Stopped 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml start db
+ Container soup-test-integration-010df666d1-db-1 Starting 
+ Container soup-test-integration-010df666d1-db-1 Started 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT coalesce(json_agg(t),'[]'::json) FROM (SELECT j.id,j.idempotency_key,j.status,j.attempts,j.max_attempts,j.token, j.lease_until, e.token AS effect_token, (SELECT count(*) FROM job_effects x WHERE x.job_id=j.id) AS effects FROM jobs j LEFT JOIN job_effects e ON e.job_id=j.id ORDER BY j.id) t
+[{"id":1,"idempotency_key":"duplicate","status":"cancelled","attempts":0,"max_attempts":5,"token":1,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":50,"idempotency_key":"page-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":51,"idempotency_key":"page-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":52,"idempotency_key":"page-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":53,"idempotency_key":"page-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":54,"idempotency_key":"page-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":55,"idempotency_key":"retry-success","status":"succeeded","attempts":3,"max_attempts":3,"token":3,"lease_until":null,"effect_token":3,"effects":1}, 
+ {"id":56,"idempotency_key":"retry-failure","status":"failed","attempts":2,"max_attempts":2,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":57,"idempotency_key":"double-process","status":"cancelled","attempts":1,"max_attempts":5,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":58,"idempotency_key":"zombie-process","status":"succeeded","attempts":2,"max_attempts":5,"token":2,"lease_until":null,"effect_token":2,"effects":1}, 
+ {"id":59,"idempotency_key":"skew-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":60,"idempotency_key":"skew-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":61,"idempotency_key":"skew-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":62,"idempotency_key":"skew-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":63,"idempotency_key":"skew-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":64,"idempotency_key":"skew-5","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":65,"idempotency_key":"skew-6","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":66,"idempotency_key":"skew-7","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":67,"idempotency_key":"db-outage","status":"succeeded","attempts":2,"max_attempts":5,"token":2,"lease_until":null,"effect_token":2,"effects":1}]
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c INSERT INTO job_effects(job_id,token,result) SELECT id,token,'{}'::jsonb FROM jobs WHERE id=1
+INSERT 0 1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT coalesce(json_agg(t),'[]'::json) FROM (SELECT j.id,j.idempotency_key,j.status,j.attempts,j.max_attempts,j.token, j.lease_until, e.token AS effect_token, (SELECT count(*) FROM job_effects x WHERE x.job_id=j.id) AS effects FROM jobs j LEFT JOIN job_effects e ON e.job_id=j.id ORDER BY j.id) t
+[{"id":1,"idempotency_key":"duplicate","status":"cancelled","attempts":0,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":50,"idempotency_key":"page-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":51,"idempotency_key":"page-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":52,"idempotency_key":"page-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":53,"idempotency_key":"page-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":54,"idempotency_key":"page-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":55,"idempotency_key":"retry-success","status":"succeeded","attempts":3,"max_attempts":3,"token":3,"lease_until":null,"effect_token":3,"effects":1}, 
+ {"id":56,"idempotency_key":"retry-failure","status":"failed","attempts":2,"max_attempts":2,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":57,"idempotency_key":"double-process","status":"cancelled","attempts":1,"max_attempts":5,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":58,"idempotency_key":"zombie-process","status":"succeeded","attempts":2,"max_attempts":5,"token":2,"lease_until":null,"effect_token":2,"effects":1}, 
+ {"id":59,"idempotency_key":"skew-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":60,"idempotency_key":"skew-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":61,"idempotency_key":"skew-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":62,"idempotency_key":"skew-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":63,"idempotency_key":"skew-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":64,"idempotency_key":"skew-5","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":65,"idempotency_key":"skew-6","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":66,"idempotency_key":"skew-7","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":67,"idempotency_key":"db-outage","status":"succeeded","attempts":2,"max_attempts":5,"token":2,"lease_until":null,"effect_token":2,"effects":1}]
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c DELETE FROM job_effects WHERE job_id=1
+DELETE 1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT coalesce(json_agg(t),'[]'::json) FROM (SELECT j.id,j.idempotency_key,j.status,j.attempts,j.max_attempts,j.token, j.lease_until, e.token AS effect_token, (SELECT count(*) FROM job_effects x WHERE x.job_id=j.id) AS effects FROM jobs j LEFT JOIN job_effects e ON e.job_id=j.id ORDER BY j.id) t
+[{"id":1,"idempotency_key":"duplicate","status":"cancelled","attempts":0,"max_attempts":5,"token":1,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":50,"idempotency_key":"page-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":51,"idempotency_key":"page-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":52,"idempotency_key":"page-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":53,"idempotency_key":"page-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":54,"idempotency_key":"page-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":55,"idempotency_key":"retry-success","status":"succeeded","attempts":3,"max_attempts":3,"token":3,"lease_until":null,"effect_token":3,"effects":1}, 
+ {"id":56,"idempotency_key":"retry-failure","status":"failed","attempts":2,"max_attempts":2,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":57,"idempotency_key":"double-process","status":"cancelled","attempts":1,"max_attempts":5,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":58,"idempotency_key":"zombie-process","status":"succeeded","attempts":2,"max_attempts":5,"token":2,"lease_until":null,"effect_token":2,"effects":1}, 
+ {"id":59,"idempotency_key":"skew-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":60,"idempotency_key":"skew-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":61,"idempotency_key":"skew-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":62,"idempotency_key":"skew-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":63,"idempotency_key":"skew-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":64,"idempotency_key":"skew-5","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":65,"idempotency_key":"skew-6","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":66,"idempotency_key":"skew-7","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":67,"idempotency_key":"db-outage","status":"succeeded","attempts":2,"max_attempts":5,"token":2,"lease_until":null,"effect_token":2,"effects":1}]
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM pg_locks WHERE relation='jobs'::regclass AND mode='AccessExclusiveLock' AND granted
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c BEGIN; LOCK TABLE jobs IN ACCESS EXCLUSIVE MODE; SELECT pg_sleep(3); COMMIT
+BEGIN
+LOCK TABLE
+
+COMMIT
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT coalesce(json_agg(t),'[]'::json) FROM (SELECT j.id,j.idempotency_key,j.status,j.attempts,j.max_attempts,j.token, j.lease_until, e.token AS effect_token, (SELECT count(*) FROM job_effects x WHERE x.job_id=j.id) AS effects FROM jobs j LEFT JOIN job_effects e ON e.job_id=j.id ORDER BY j.id) t
+[{"id":1,"idempotency_key":"duplicate","status":"cancelled","attempts":0,"max_attempts":5,"token":1,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":50,"idempotency_key":"page-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":51,"idempotency_key":"page-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":52,"idempotency_key":"page-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":53,"idempotency_key":"page-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":54,"idempotency_key":"page-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":55,"idempotency_key":"retry-success","status":"succeeded","attempts":3,"max_attempts":3,"token":3,"lease_until":null,"effect_token":3,"effects":1}, 
+ {"id":56,"idempotency_key":"retry-failure","status":"failed","attempts":2,"max_attempts":2,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":57,"idempotency_key":"double-process","status":"cancelled","attempts":1,"max_attempts":5,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":58,"idempotency_key":"zombie-process","status":"succeeded","attempts":2,"max_attempts":5,"token":2,"lease_until":null,"effect_token":2,"effects":1}, 
+ {"id":59,"idempotency_key":"skew-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":60,"idempotency_key":"skew-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":61,"idempotency_key":"skew-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":62,"idempotency_key":"skew-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":63,"idempotency_key":"skew-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":64,"idempotency_key":"skew-5","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":65,"idempotency_key":"skew-6","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":66,"idempotency_key":"skew-7","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":67,"idempotency_key":"db-outage","status":"succeeded","attempts":2,"max_attempts":5,"token":2,"lease_until":null,"effect_token":2,"effects":1}, 
+ {"id":69,"idempotency_key":"pressure-8","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":70,"idempotency_key":"pressure-5","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":71,"idempotency_key":"pressure-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":72,"idempotency_key":"pressure-22","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":73,"idempotency_key":"pressure-30","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":74,"idempotency_key":"pressure-88","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":75,"idempotency_key":"pressure-27","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":76,"idempotency_key":"pressure-38","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":77,"idempotency_key":"pressure-15","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":78,"idempotency_key":"pressure-67","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":79,"idempotency_key":"pressure-55","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":80,"idempotency_key":"pressure-42","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":81,"idempotency_key":"pressure-68","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":82,"idempotency_key":"pressure-58","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":83,"idempotency_key":"pressure-63","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":84,"idempotency_key":"pressure-64","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":85,"idempotency_key":"pressure-49","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":86,"idempotency_key":"pressure-43","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":87,"idempotency_key":"pressure-36","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":88,"idempotency_key":"pressure-35","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":89,"idempotency_key":"pressure-20","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":90,"idempotency_key":"pressure-31","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":91,"idempotency_key":"pressure-46","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":92,"idempotency_key":"pressure-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":93,"idempotency_key":"pressure-76","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":94,"idempotency_key":"pressure-56","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":95,"idempotency_key":"pressure-13","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":96,"idempotency_key":"pressure-17","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":97,"idempotency_key":"pressure-33","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":98,"idempotency_key":"pressure-24","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":99,"idempotency_key":"pressure-23","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":100,"idempotency_key":"pressure-95","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":101,"idempotency_key":"pressure-86","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":102,"idempotency_key":"pressure-26","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":103,"idempotency_key":"pressure-14","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":104,"idempotency_key":"pressure-21","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":105,"idempotency_key":"pressure-70","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":106,"idempotency_key":"pressure-45","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":107,"idempotency_key":"pressure-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":108,"idempotency_key":"pressure-9","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":109,"idempotency_key":"pressure-74","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":110,"idempotency_key":"pressure-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":111,"idempotency_key":"pressure-54","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":112,"idempotency_key":"pressure-81","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":113,"idempotency_key":"pressure-25","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":114,"idempotency_key":"pressure-80","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":115,"idempotency_key":"pressure-83","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":116,"idempotency_key":"pressure-85","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":117,"idempotency_key":"pressure-6","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":118,"idempotency_key":"pressure-52","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":119,"idempotency_key":"pressure-89","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":120,"idempotency_key":"pressure-87","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":121,"idempotency_key":"pressure-7","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":122,"idempotency_key":"pressure-29","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":123,"idempotency_key":"pressure-47","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":124,"idempotency_key":"pressure-84","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":128,"idempotency_key":"pressure-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":135,"idempotency_key":"pressure-10","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":136,"idempotency_key":"pressure-11","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":137,"idempotency_key":"pressure-12","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":141,"idempotency_key":"pressure-16","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":143,"idempotency_key":"pressure-18","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":144,"idempotency_key":"pressure-19","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":153,"idempotency_key":"pressure-28","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":157,"idempotency_key":"pressure-32","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":159,"idempotency_key":"pressure-34","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":162,"idempotency_key":"pressure-37","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":164,"idempotency_key":"pressure-39","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":165,"idempotency_key":"pressure-40","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":166,"idempotency_key":"pressure-41","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":169,"idempotency_key":"pressure-44","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":173,"idempotency_key":"pressure-48","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":175,"idempotency_key":"pressure-50","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":176,"idempotency_key":"pressure-51","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":178,"idempotency_key":"pressure-53","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":182,"idempotency_key":"pressure-57","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":184,"idempotency_key":"pressure-59","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":185,"idempotency_key":"pressure-60","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":186,"idempotency_key":"pressure-61","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":187,"idempotency_key":"pressure-62","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":190,"idempotency_key":"pressure-65","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":191,"idempotency_key":"pressure-66","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":194,"idempotency_key":"pressure-69","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":196,"idempotency_key":"pressure-71","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":197,"idempotency_key":"pressure-72","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":198,"idempotency_key":"pressure-73","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":200,"idempotency_key":"pressure-75","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":202,"idempotency_key":"pressure-77","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":203,"idempotency_key":"pressure-78","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":204,"idempotency_key":"pressure-79","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":207,"idempotency_key":"pressure-82","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":215,"idempotency_key":"pressure-90","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":216,"idempotency_key":"pressure-91","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":217,"idempotency_key":"pressure-92","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":218,"idempotency_key":"pressure-93","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":219,"idempotency_key":"pressure-94","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}]
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml logs --no-color --timestamps
+api-1     | 2026-11-11T12:21:24.497027212Z 2026/11/11 12:21:24 INFO API started address=:8080
+db-1      | 2026-11-11T12:21:21.366769169Z The files belonging to this database system will be owned by user "postgres".
+db-1      | 2026-11-11T12:21:21.366813960Z This user must also own the server process.
+db-1      | 2026-11-11T12:21:21.366816252Z 
+db-1      | 2026-11-11T12:21:21.367087502Z The database cluster will be initialized with locale "en_US.utf8".
+db-1      | 2026-11-11T12:21:21.367095127Z The default database encoding has accordingly been set to "UTF8".
+db-1      | 2026-11-11T12:21:21.367095960Z The default text search configuration will be set to "english".
+db-1      | 2026-11-11T12:21:21.367097044Z 
+db-1      | 2026-11-11T12:21:21.367098919Z Data page checksums are disabled.
+db-1      | 2026-11-11T12:21:21.367099752Z 
+worker-1  | 2026-11-11T12:21:29.950381590Z 2026/11/11 12:21:29 INFO claimed job_id=56 token=1 attempt=1 process_wall_time=2026-11-11T12:21:29.950Z
+worker-1  | 2026-11-11T12:21:29.962634298Z 2026/11/11 12:21:29 INFO attempt committed job_id=56 token=1
+worker-1  | 2026-11-11T12:21:29.963651381Z 2026/11/11 12:21:29 INFO claimed job_id=56 token=2 attempt=2 process_wall_time=2026-11-11T12:21:29.963Z
+worker-1  | 2026-11-11T12:21:29.974794131Z 2026/11/11 12:21:29 INFO attempt committed job_id=56 token=2
+worker-1  | 2026-11-11T12:21:30.038595923Z 2026/11/11 12:21:30 INFO claimed job_id=57 token=1 attempt=1 process_wall_time=2026-11-11T12:21:30.038Z
+worker-1  | 2026-11-11T12:21:31.240235840Z 2026/11/11 12:21:31 WARN ownership lost or heartbeat unavailable job_id=57 token=1
+worker-1  | 2026-11-11T12:21:32.432637549Z 2026/11/11 12:21:32 INFO claimed job_id=58 token=1 attempt=1 process_wall_time=2026-11-11T12:21:32.432Z
+worker-1  | 2026-11-11T12:21:39.449882386Z 2026/11/11 12:21:39 WARN ownership lost or heartbeat unavailable job_id=58 token=1
+worker-1  | 2026-11-11T12:21:47.353512625Z 2026/11/11 12:21:47 INFO claimed job_id=67 token=1 attempt=1 process_wall_time=2026-11-11T12:21:47.353Z
+worker-1  | 2026-11-11T12:21:47.754094125Z 2026/11/11 12:21:47 WARN ownership lost or heartbeat unavailable job_id=67 token=1
+worker-1  | 2026-11-11T12:21:51.143911877Z 2026/11/11 12:21:51 WARN claim unavailable
+worker-1  | 2026-11-11T12:21:51.190207627Z 2026/11/11 12:21:51 INFO claimed job_id=67 token=2 attempt=2 process_wall_time=2026-11-11T12:21:51.190Z
+worker-1  | 2026-11-11T12:21:55.193676962Z 2026/11/11 12:21:55 INFO attempt committed job_id=67 token=2
+worker-1  | 2026-11-11T12:21:58.210233047Z 2026/11/11 12:21:58 WARN claim unavailable
+worker-1  | 2026-11-11T12:21:59.234447089Z 2026/11/11 12:21:59 INFO claimed job_id=69 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.233Z
+worker-1  | 2026-11-11T12:21:59.236668714Z 2026/11/11 12:21:59 INFO attempt committed job_id=69 token=1
+worker-1  | 2026-11-11T12:21:59.238716881Z 2026/11/11 12:21:59 INFO claimed job_id=70 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.238Z
+worker-1  | 2026-11-11T12:21:59.240145714Z 2026/11/11 12:21:59 INFO attempt committed job_id=70 token=1
+worker-1  | 2026-11-11T12:21:59.241420589Z 2026/11/11 12:21:59 INFO claimed job_id=71 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.241Z
+db-1      | 2026-11-11T12:21:21.367174002Z fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db-1      | 2026-11-11T12:21:21.373944460Z creating subdirectories ... ok
+db-1      | 2026-11-11T12:21:21.374015169Z selecting dynamic shared memory implementation ... posix
+db-1      | 2026-11-11T12:21:21.395254419Z selecting default "max_connections" ... 100
+db-1      | 2026-11-11T12:21:21.480784669Z selecting default "shared_buffers" ... 128MB
+db-1      | 2026-11-11T12:21:21.526755585Z selecting default time zone ... UTC
+worker-1  | 2026-11-11T12:21:59.242512297Z 2026/11/11 12:21:59 INFO attempt committed job_id=71 token=1
+worker-1  | 2026-11-11T12:21:59.243842006Z 2026/11/11 12:21:59 INFO claimed job_id=72 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.243Z
+worker-1  | 2026-11-11T12:21:59.244967048Z 2026/11/11 12:21:59 INFO attempt committed job_id=72 token=1
+worker-1  | 2026-11-11T12:21:59.246633006Z 2026/11/11 12:21:59 INFO claimed job_id=73 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.246Z
+worker-1  | 2026-11-11T12:21:59.248257423Z 2026/11/11 12:21:59 INFO attempt committed job_id=73 token=1
+worker-1  | 2026-11-11T12:21:59.249719589Z 2026/11/11 12:21:59 INFO claimed job_id=74 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.249Z
+worker-1  | 2026-11-11T12:21:59.250711423Z 2026/11/11 12:21:59 INFO attempt committed job_id=74 token=1
+worker-1  | 2026-11-11T12:21:59.251855048Z 2026/11/11 12:21:59 INFO claimed job_id=75 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.251Z
+worker-1  | 2026-11-11T12:21:59.252903464Z 2026/11/11 12:21:59 INFO attempt committed job_id=75 token=1
+db-1      | 2026-11-11T12:21:21.527629960Z creating configuration files ... ok
+db-1      | 2026-11-11T12:21:21.631465794Z running bootstrap script ... ok
+worker-1  | 2026-11-11T12:21:59.254388964Z 2026/11/11 12:21:59 INFO claimed job_id=76 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.254Z
+worker-1  | 2026-11-11T12:21:59.255365714Z 2026/11/11 12:21:59 INFO attempt committed job_id=76 token=1
+worker-1  | 2026-11-11T12:21:59.256834298Z 2026/11/11 12:21:59 INFO claimed job_id=77 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.256Z
+worker-1  | 2026-11-11T12:21:59.258276423Z 2026/11/11 12:21:59 INFO attempt committed job_id=77 token=1
+worker-1  | 2026-11-11T12:21:59.259515256Z 2026/11/11 12:21:59 INFO claimed job_id=78 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.259Z
+worker-1  | 2026-11-11T12:21:59.260687714Z 2026/11/11 12:21:59 INFO attempt committed job_id=78 token=1
+worker-1  | 2026-11-11T12:21:59.262114381Z 2026/11/11 12:21:59 INFO claimed job_id=79 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.262Z
+worker-1  | 2026-11-11T12:21:59.263223589Z 2026/11/11 12:21:59 INFO attempt committed job_id=79 token=1
+worker-1  | 2026-11-11T12:21:59.264525089Z 2026/11/11 12:21:59 INFO claimed job_id=80 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.264Z
+worker-1  | 2026-11-11T12:21:59.265518006Z 2026/11/11 12:21:59 INFO attempt committed job_id=80 token=1
+db-1      | 2026-11-11T12:21:21.768393211Z sh: locale: not found
+db-1      | 2026-11-11T12:21:21.768491294Z 2026-11-11 12:21:21.768 UTC [35] WARNING:  no usable system locales were found
+db-1      | 2026-11-11T12:21:22.034081794Z performing post-bootstrap initialization ... ok
+db-1      | 2026-11-11T12:21:22.119905836Z syncing data to disk ... ok
+db-1      | 2026-11-11T12:21:22.119935919Z 
+db-1      | 2026-11-11T12:21:22.119937044Z 
+db-1      | 2026-11-11T12:21:22.119937752Z Success. You can now start the database server using:
+db-1      | 2026-11-11T12:21:22.119939044Z 
+db-1      | 2026-11-11T12:21:22.119939711Z     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db-1      | 2026-11-11T12:21:22.119940502Z 
+worker-1  | 2026-11-11T12:21:59.266869214Z 2026/11/11 12:21:59 INFO claimed job_id=81 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.266Z
+worker-1  | 2026-11-11T12:21:59.267893506Z 2026/11/11 12:21:59 INFO attempt committed job_id=81 token=1
+worker-1  | 2026-11-11T12:21:59.269155298Z 2026/11/11 12:21:59 INFO claimed job_id=82 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.269Z
+worker-1  | 2026-11-11T12:21:59.270507506Z 2026/11/11 12:21:59 INFO attempt committed job_id=82 token=1
+worker-1  | 2026-11-11T12:21:59.271761506Z 2026/11/11 12:21:59 INFO claimed job_id=83 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.271Z
+worker-1  | 2026-11-11T12:21:59.272681339Z 2026/11/11 12:21:59 INFO attempt committed job_id=83 token=1
+worker-1  | 2026-11-11T12:21:59.274109881Z 2026/11/11 12:21:59 INFO claimed job_id=84 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.273Z
+worker-1  | 2026-11-11T12:21:59.275135714Z 2026/11/11 12:21:59 INFO attempt committed job_id=84 token=1
+worker-1  | 2026-11-11T12:21:59.276398423Z 2026/11/11 12:21:59 INFO claimed job_id=85 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.276Z
+worker-1  | 2026-11-11T12:21:59.277455048Z 2026/11/11 12:21:59 INFO attempt committed job_id=85 token=1
+worker-1  | 2026-11-11T12:21:59.279260714Z 2026/11/11 12:21:59 INFO claimed job_id=86 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.279Z
+worker-1  | 2026-11-11T12:21:59.280176173Z 2026/11/11 12:21:59 INFO attempt committed job_id=86 token=1
+worker-1  | 2026-11-11T12:21:59.281845173Z 2026/11/11 12:21:59 INFO claimed job_id=87 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.281Z
+worker-1  | 2026-11-11T12:21:59.282979714Z 2026/11/11 12:21:59 INFO attempt committed job_id=87 token=1
+worker-1  | 2026-11-11T12:21:59.284274673Z 2026/11/11 12:21:59 INFO claimed job_id=88 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.284Z
+worker-1  | 2026-11-11T12:21:59.285337006Z 2026/11/11 12:21:59 INFO attempt committed job_id=88 token=1
+worker-1  | 2026-11-11T12:21:59.286859464Z 2026/11/11 12:21:59 INFO claimed job_id=89 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.286Z
+worker-1  | 2026-11-11T12:21:59.288182798Z 2026/11/11 12:21:59 INFO attempt committed job_id=89 token=1
+worker-1  | 2026-11-11T12:21:59.289485839Z 2026/11/11 12:21:59 INFO claimed job_id=90 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.289Z
+worker-1  | 2026-11-11T12:21:59.290531381Z 2026/11/11 12:21:59 INFO attempt committed job_id=90 token=1
+worker-1  | 2026-11-11T12:21:59.292026214Z 2026/11/11 12:21:59 INFO claimed job_id=91 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.291Z
+worker-1  | 2026-11-11T12:21:59.293304798Z 2026/11/11 12:21:59 INFO attempt committed job_id=91 token=1
+worker-1  | 2026-11-11T12:21:59.294594006Z 2026/11/11 12:21:59 INFO claimed job_id=92 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.294Z
+worker-1  | 2026-11-11T12:21:59.295996256Z 2026/11/11 12:21:59 INFO attempt committed job_id=92 token=1
+worker-1  | 2026-11-11T12:21:59.297285089Z 2026/11/11 12:21:59 INFO claimed job_id=93 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.297Z
+worker-1  | 2026-11-11T12:21:59.298511714Z 2026/11/11 12:21:59 INFO attempt committed job_id=93 token=1
+worker-1  | 2026-11-11T12:21:59.299858714Z 2026/11/11 12:21:59 INFO claimed job_id=94 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.299Z
+worker-1  | 2026-11-11T12:21:59.301257673Z 2026/11/11 12:21:59 INFO attempt committed job_id=94 token=1
+worker-1  | 2026-11-11T12:21:59.302522423Z 2026/11/11 12:21:59 INFO claimed job_id=95 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.302Z
+worker-1  | 2026-11-11T12:21:59.303489339Z 2026/11/11 12:21:59 INFO attempt committed job_id=95 token=1
+worker-1  | 2026-11-11T12:21:59.304978548Z 2026/11/11 12:21:59 INFO claimed job_id=96 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.304Z
+worker-1  | 2026-11-11T12:21:59.305849381Z 2026/11/11 12:21:59 INFO attempt committed job_id=96 token=1
+worker-1  | 2026-11-11T12:21:59.307900881Z 2026/11/11 12:21:59 INFO claimed job_id=97 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.307Z
+worker-1  | 2026-11-11T12:21:59.308826923Z 2026/11/11 12:21:59 INFO attempt committed job_id=97 token=1
+worker-1  | 2026-11-11T12:21:59.310141298Z 2026/11/11 12:21:59 INFO claimed job_id=98 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.310Z
+worker-1  | 2026-11-11T12:21:59.311039798Z 2026/11/11 12:21:59 INFO attempt committed job_id=98 token=1
+worker-1  | 2026-11-11T12:21:59.312314881Z 2026/11/11 12:21:59 INFO claimed job_id=99 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.312Z
+db-1      | 2026-11-11T12:21:22.119907627Z initdb: warning: enabling "trust" authentication for local connections
+db-1      | 2026-11-11T12:21:22.119947919Z initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+db-1      | 2026-11-11T12:21:22.154008544Z waiting for server to start....2026-11-11 12:21:22.153 UTC [41] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1      | 2026-11-11T12:21:22.154798169Z 2026-11-11 12:21:22.154 UTC [41] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1      | 2026-11-11T12:21:22.157627836Z 2026-11-11 12:21:22.157 UTC [44] LOG:  database system was shut down at 2026-11-11 12:21:22 UTC
+db-1      | 2026-11-11T12:21:22.162746502Z 2026-11-11 12:21:22.162 UTC [41] LOG:  database system is ready to accept connections
+worker-1  | 2026-11-11T12:21:59.313652756Z 2026/11/11 12:21:59 INFO attempt committed job_id=99 token=1
+worker-1  | 2026-11-11T12:21:59.315029714Z 2026/11/11 12:21:59 INFO claimed job_id=100 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.314Z
+worker-1  | 2026-11-11T12:21:59.315905673Z 2026/11/11 12:21:59 INFO attempt committed job_id=100 token=1
+worker-1  | 2026-11-11T12:21:59.317245048Z 2026/11/11 12:21:59 INFO claimed job_id=101 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.317Z
+worker-1  | 2026-11-11T12:21:59.318718048Z 2026/11/11 12:21:59 INFO attempt committed job_id=101 token=1
+worker-1  | 2026-11-11T12:21:59.320086006Z 2026/11/11 12:21:59 INFO claimed job_id=102 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.319Z
+worker-1  | 2026-11-11T12:21:59.321260506Z 2026/11/11 12:21:59 INFO attempt committed job_id=102 token=1
+db-1      | 2026-11-11T12:21:22.241056044Z  done
+db-1      | 2026-11-11T12:21:22.241069502Z server started
+db-1      | 2026-11-11T12:21:22.292935378Z CREATE DATABASE
+db-1      | 2026-11-11T12:21:22.293359961Z 
+db-1      | 2026-11-11T12:21:22.293367169Z 
+db-1      | 2026-11-11T12:21:22.293420544Z /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db-1      | 2026-11-11T12:21:22.293425128Z 
+db-1      | 2026-11-11T12:21:22.294882336Z waiting for server to shut down....2026-11-11 12:21:22.294 UTC [41] LOG:  received fast shutdown request
+db-1      | 2026-11-11T12:21:22.296967711Z 2026-11-11 12:21:22.296 UTC [41] LOG:  aborting any active transactions
+db-1      | 2026-11-11T12:21:22.298603878Z 2026-11-11 12:21:22.298 UTC [41] LOG:  background worker "logical replication launcher" (PID 47) exited with exit code 1
+db-1      | 2026-11-11T12:21:22.299234128Z 2026-11-11 12:21:22.299 UTC [42] LOG:  shutting down
+db-1      | 2026-11-11T12:21:22.300017003Z 2026-11-11 12:21:22.299 UTC [42] LOG:  checkpoint starting: shutdown immediate
+worker-1  | 2026-11-11T12:21:59.322608006Z 2026/11/11 12:21:59 INFO claimed job_id=103 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.322Z
+db-1      | 2026-11-11T12:21:22.342406461Z 2026-11-11 12:21:22.342 UTC [42] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.021 s, sync=0.019 s, total=0.044 s; sync files=301, longest=0.007 s, average=0.001 s; distance=4266 kB, estimate=4266 kB; lsn=0/191E830, redo lsn=0/191E830
+worker-1  | 2026-11-11T12:21:59.323631964Z 2026/11/11 12:21:59 INFO attempt committed job_id=103 token=1
+worker-1  | 2026-11-11T12:21:59.325146298Z 2026/11/11 12:21:59 INFO claimed job_id=104 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.325Z
+worker-1  | 2026-11-11T12:21:59.326812964Z 2026/11/11 12:21:59 INFO attempt committed job_id=104 token=1
+worker-1  | 2026-11-11T12:21:59.328415339Z 2026/11/11 12:21:59 INFO claimed job_id=105 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.328Z
+worker-1  | 2026-11-11T12:21:59.329684006Z 2026/11/11 12:21:59 INFO attempt committed job_id=105 token=1
+worker-1  | 2026-11-11T12:21:59.331186298Z 2026/11/11 12:21:59 INFO claimed job_id=106 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.331Z
+worker-1  | 2026-11-11T12:21:59.332144714Z 2026/11/11 12:21:59 INFO attempt committed job_id=106 token=1
+worker-1  | 2026-11-11T12:21:59.333558089Z 2026/11/11 12:21:59 INFO claimed job_id=107 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.333Z
+worker-1  | 2026-11-11T12:21:59.334612964Z 2026/11/11 12:21:59 INFO attempt committed job_id=107 token=1
+db-1      | 2026-11-11T12:21:22.347666336Z 2026-11-11 12:21:22.347 UTC [41] LOG:  database system is shut down
+db-1      | 2026-11-11T12:21:22.394650711Z  done
+db-1      | 2026-11-11T12:21:22.394661919Z server stopped
+db-1      | 2026-11-11T12:21:22.395436128Z 
+db-1      | 2026-11-11T12:21:22.395439711Z PostgreSQL init process complete; ready for start up.
+db-1      | 2026-11-11T12:21:22.395441003Z 
+worker-1  | 2026-11-11T12:21:59.336006964Z 2026/11/11 12:21:59 INFO claimed job_id=108 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.335Z
+db-1      | 2026-11-11T12:21:22.412419919Z 2026-11-11 12:21:22.412 UTC [1] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1      | 2026-11-11T12:21:22.412490128Z 2026-11-11 12:21:22.412 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1      | 2026-11-11T12:21:22.412492919Z 2026-11-11 12:21:22.412 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1      | 2026-11-11T12:21:22.413726586Z 2026-11-11 12:21:22.413 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1      | 2026-11-11T12:21:22.415891794Z 2026-11-11 12:21:22.415 UTC [57] LOG:  database system was shut down at 2026-11-11 12:21:22 UTC
+db-1      | 2026-11-11T12:21:22.419078878Z 2026-11-11 12:21:22.418 UTC [1] LOG:  database system is ready to accept connections
+db-1      | 2026-11-11T12:21:27.242973380Z 2026-11-11 12:21:27.242 UTC [120] ERROR:  injected effect failure
+db-1      | 2026-11-11T12:21:27.242987338Z 2026-11-11 12:21:27.242 UTC [120] CONTEXT:  PL/pgSQL function reject_effect() line 1 at RAISE
+db-1      | 2026-11-11T12:21:27.242988797Z 2026-11-11 12:21:27.242 UTC [120] STATEMENT:  INSERT INTO job_effects(job_id,token,result) VALUES($1,$2,jsonb_build_object('model',$3::text))
+db-1      | 2026-11-11T12:21:45.969779791Z 2026-11-11 12:21:45.969 UTC [295] LOG:  could not receive data from client: Connection reset by peer
+db-1      | 2026-11-11T12:21:45.969846458Z 2026-11-11 12:21:45.969 UTC [295] LOG:  unexpected EOF on client connection with an open transaction
+db-1      | 2026-11-11T12:21:47.536457917Z 2026-11-11 12:21:47.535 UTC [138] FATAL:  terminating connection due to administrator command
+worker-1  | 2026-11-11T12:21:59.337074048Z 2026/11/11 12:21:59 INFO attempt committed job_id=108 token=1
+worker-1  | 2026-11-11T12:21:59.338469006Z 2026/11/11 12:21:59 INFO claimed job_id=109 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.338Z
+worker-1  | 2026-11-11T12:21:59.339377506Z 2026/11/11 12:21:59 INFO attempt committed job_id=109 token=1
+worker-1  | 2026-11-11T12:21:59.340397256Z 2026/11/11 12:21:59 INFO claimed job_id=110 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.340Z
+worker-1  | 2026-11-11T12:21:59.341393256Z 2026/11/11 12:21:59 INFO attempt committed job_id=110 token=1
+worker-1  | 2026-11-11T12:21:59.342525839Z 2026/11/11 12:21:59 INFO claimed job_id=111 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.342Z
+worker-1  | 2026-11-11T12:21:59.343677089Z 2026/11/11 12:21:59 INFO attempt committed job_id=111 token=1
+worker-1  | 2026-11-11T12:21:59.344989089Z 2026/11/11 12:21:59 INFO claimed job_id=112 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.344Z
+worker-1  | 2026-11-11T12:21:59.346260798Z 2026/11/11 12:21:59 INFO attempt committed job_id=112 token=1
+db-1      | 2026-11-11T12:21:47.536494125Z 2026-11-11 12:21:47.535 UTC [69] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T12:21:47.536496292Z 2026-11-11 12:21:47.535 UTC [139] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T12:21:47.536499792Z 2026-11-11 12:21:47.535 UTC [141] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T12:21:47.536501209Z 2026-11-11 12:21:47.535 UTC [140] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T12:21:47.536502417Z 2026-11-11 12:21:47.536 UTC [395] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T12:21:47.536503459Z 2026-11-11 12:21:47.536 UTC [142] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T12:21:47.536504625Z 2026-11-11 12:21:47.536 UTC [143] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T12:21:47.536532334Z 2026-11-11 12:21:47.536 UTC [144] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T12:21:47.633672125Z 2026-11-11 12:21:47.633 UTC [1] LOG:  received fast shutdown request
+worker-1  | 2026-11-11T12:21:59.347813089Z 2026/11/11 12:21:59 INFO claimed job_id=113 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.347Z
+worker-1  | 2026-11-11T12:21:59.348701298Z 2026/11/11 12:21:59 INFO attempt committed job_id=113 token=1
+worker-1  | 2026-11-11T12:21:59.350081423Z 2026/11/11 12:21:59 INFO claimed job_id=114 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.349Z
+worker-1  | 2026-11-11T12:21:59.351199714Z 2026/11/11 12:21:59 INFO attempt committed job_id=114 token=1
+worker-1  | 2026-11-11T12:21:59.352728631Z 2026/11/11 12:21:59 INFO claimed job_id=115 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.352Z
+worker-1  | 2026-11-11T12:21:59.353781589Z 2026/11/11 12:21:59 INFO attempt committed job_id=115 token=1
+worker-1  | 2026-11-11T12:21:59.355188339Z 2026/11/11 12:21:59 INFO claimed job_id=116 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.354Z
+worker-1  | 2026-11-11T12:21:59.356116839Z 2026/11/11 12:21:59 INFO attempt committed job_id=116 token=1
+worker-1  | 2026-11-11T12:21:59.357804839Z 2026/11/11 12:21:59 INFO claimed job_id=117 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.357Z
+worker-1  | 2026-11-11T12:21:59.358947423Z 2026/11/11 12:21:59 INFO attempt committed job_id=117 token=1
+worker-1  | 2026-11-11T12:21:59.360140256Z 2026/11/11 12:21:59 INFO claimed job_id=118 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.360Z
+worker-1  | 2026-11-11T12:21:59.361057089Z 2026/11/11 12:21:59 INFO attempt committed job_id=118 token=1
+worker-1  | 2026-11-11T12:21:59.362228173Z 2026/11/11 12:21:59 INFO claimed job_id=119 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.362Z
+worker-1  | 2026-11-11T12:21:59.363109631Z 2026/11/11 12:21:59 INFO attempt committed job_id=119 token=1
+worker-1  | 2026-11-11T12:21:59.364408923Z 2026/11/11 12:21:59 INFO claimed job_id=120 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.364Z
+worker-1  | 2026-11-11T12:21:59.365454631Z 2026/11/11 12:21:59 INFO attempt committed job_id=120 token=1
+worker-1  | 2026-11-11T12:21:59.366625131Z 2026/11/11 12:21:59 INFO claimed job_id=121 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.366Z
+worker-1  | 2026-11-11T12:21:59.367506506Z 2026/11/11 12:21:59 INFO attempt committed job_id=121 token=1
+worker-1  | 2026-11-11T12:21:59.368663506Z 2026/11/11 12:21:59 INFO claimed job_id=122 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.368Z
+worker-1  | 2026-11-11T12:21:59.369592506Z 2026/11/11 12:21:59 INFO attempt committed job_id=122 token=1
+worker-1  | 2026-11-11T12:21:59.370786631Z 2026/11/11 12:21:59 INFO claimed job_id=123 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.370Z
+worker-1  | 2026-11-11T12:21:59.371658423Z 2026/11/11 12:21:59 INFO attempt committed job_id=123 token=1
+worker-1  | 2026-11-11T12:21:59.372900131Z 2026/11/11 12:21:59 INFO claimed job_id=124 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.372Z
+worker-1  | 2026-11-11T12:21:59.373952464Z 2026/11/11 12:21:59 INFO attempt committed job_id=124 token=1
+worker-1  | 2026-11-11T12:21:59.375342298Z 2026/11/11 12:21:59 INFO claimed job_id=128 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.375Z
+worker-1  | 2026-11-11T12:21:59.376194298Z 2026/11/11 12:21:59 INFO attempt committed job_id=128 token=1
+worker-1  | 2026-11-11T12:21:59.377508714Z 2026/11/11 12:21:59 INFO claimed job_id=135 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.377Z
+worker-1  | 2026-11-11T12:21:59.378698923Z 2026/11/11 12:21:59 INFO attempt committed job_id=135 token=1
+worker-1  | 2026-11-11T12:21:59.380055339Z 2026/11/11 12:21:59 INFO claimed job_id=136 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.379Z
+worker-1  | 2026-11-11T12:21:59.381161173Z 2026/11/11 12:21:59 INFO attempt committed job_id=136 token=1
+worker-1  | 2026-11-11T12:21:59.382294756Z 2026/11/11 12:21:59 INFO claimed job_id=137 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.382Z
+worker-1  | 2026-11-11T12:21:59.383169756Z 2026/11/11 12:21:59 INFO attempt committed job_id=137 token=1
+worker-1  | 2026-11-11T12:21:59.384337756Z 2026/11/11 12:21:59 INFO claimed job_id=141 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.384Z
+db-1      | 2026-11-11T12:21:47.635001834Z 2026-11-11 12:21:47.634 UTC [1] LOG:  aborting any active transactions
+db-1      | 2026-11-11T12:21:47.637395750Z 2026-11-11 12:21:47.637 UTC [1] LOG:  background worker "logical replication launcher" (PID 60) exited with exit code 1
+db-1      | 2026-11-11T12:21:47.637705084Z 2026-11-11 12:21:47.637 UTC [55] LOG:  shutting down
+db-1      | 2026-11-11T12:21:47.638269542Z 2026-11-11 12:21:47.638 UTC [55] LOG:  checkpoint starting: shutdown immediate
+worker-1  | 2026-11-11T12:21:59.385207464Z 2026/11/11 12:21:59 INFO attempt committed job_id=141 token=1
+db-1      | 2026-11-11T12:21:47.657048750Z 2026-11-11 12:21:47.656 UTC [55] LOG:  checkpoint complete: wrote 91 buffers (0.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.012 s, total=0.020 s; sync files=156, longest=0.004 s, average=0.001 s; distance=554 kB, estimate=554 kB; lsn=0/19A9170, redo lsn=0/19A9170
+worker-1  | 2026-11-11T12:21:59.386382798Z 2026/11/11 12:21:59 INFO claimed job_id=143 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.386Z
+db-1      | 2026-11-11T12:21:47.660646542Z 2026-11-11 12:21:47.660 UTC [1] LOG:  database system is shut down
+db-1      | 2026-11-11T12:21:47.892724292Z 
+db-1      | 2026-11-11T12:21:47.892740792Z PostgreSQL Database directory appears to contain a database; Skipping initialization
+db-1      | 2026-11-11T12:21:47.892742375Z 
+db-1      | 2026-11-11T12:21:47.912378042Z 2026-11-11 12:21:47.912 UTC [1] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1      | 2026-11-11T12:21:47.912397042Z 2026-11-11 12:21:47.912 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1      | 2026-11-11T12:21:47.912398834Z 2026-11-11 12:21:47.912 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1      | 2026-11-11T12:21:47.914111334Z 2026-11-11 12:21:47.914 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1      | 2026-11-11T12:21:47.916472917Z 2026-11-11 12:21:47.916 UTC [29] LOG:  database system was shut down at 2026-11-11 12:21:47 UTC
+db-1      | 2026-11-11T12:21:47.919916792Z 2026-11-11 12:21:47.919 UTC [1] LOG:  database system is ready to accept connections
+db-1      | 2026-11-11T12:21:58.209526797Z 2026-11-11 12:21:58.209 UTC [76] ERROR:  canceling statement due to lock timeout at character 35
+db-1      | 2026-11-11T12:21:58.209607755Z 2026-11-11 12:21:58.209 UTC [76] STATEMENT:  WITH expired AS (
+db-1      | 2026-11-11T12:21:58.209610672Z 	 SELECT id FROM jobs WHERE status='running' AND lease_until<=clock_timestamp() AND attempts>=max_attempts
+db-1      | 2026-11-11T12:21:58.209614589Z 	 ORDER BY lease_until LIMIT 100 FOR UPDATE SKIP LOCKED)
+worker-1  | 2026-11-11T12:21:59.387129548Z 2026/11/11 12:21:59 INFO attempt committed job_id=143 token=1
+worker-1  | 2026-11-11T12:21:59.388332256Z 2026/11/11 12:21:59 INFO claimed job_id=144 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.388Z
+worker-1  | 2026-11-11T12:21:59.389166214Z 2026/11/11 12:21:59 INFO attempt committed job_id=144 token=1
+worker-1  | 2026-11-11T12:21:59.390223464Z 2026/11/11 12:21:59 INFO claimed job_id=153 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.390Z
+worker-1  | 2026-11-11T12:21:59.390952506Z 2026/11/11 12:21:59 INFO attempt committed job_id=153 token=1
+worker-1  | 2026-11-11T12:21:59.391882048Z 2026/11/11 12:21:59 INFO claimed job_id=157 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.391Z
+worker-1  | 2026-11-11T12:21:59.392546839Z 2026/11/11 12:21:59 INFO attempt committed job_id=157 token=1
+worker-1  | 2026-11-11T12:21:59.393406964Z 2026/11/11 12:21:59 INFO claimed job_id=159 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.393Z
+worker-1  | 2026-11-11T12:21:59.394091089Z 2026/11/11 12:21:59 INFO attempt committed job_id=159 token=1
+worker-1  | 2026-11-11T12:21:59.394962881Z 2026/11/11 12:21:59 INFO claimed job_id=162 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.394Z
+worker-1  | 2026-11-11T12:21:59.395610881Z 2026/11/11 12:21:59 INFO attempt committed job_id=162 token=1
+worker-1  | 2026-11-11T12:21:59.396416506Z 2026/11/11 12:21:59 INFO claimed job_id=164 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.396Z
+db-1      | 2026-11-11T12:21:58.209617089Z 	 UPDATE jobs j SET status='failed',lease_until=NULL,token=token+1,last_error='attempt budget exhausted after lease expiry',updated_at=clock_timestamp()
+db-1      | 2026-11-11T12:21:58.209620589Z 	 FROM expired e WHERE j.id=e.id
+worker-1  | 2026-11-11T12:21:59.397055714Z 2026/11/11 12:21:59 INFO attempt committed job_id=164 token=1
+worker-1  | 2026-11-11T12:21:59.397863798Z 2026/11/11 12:21:59 INFO claimed job_id=165 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.397Z
+db-1      | 2026-11-11T12:21:58.222146422Z 2026-11-11 12:21:58.221 UTC [33] ERROR:  canceling statement due to lock timeout
+db-1      | 2026-11-11T12:21:58.222158880Z 2026-11-11 12:21:58.221 UTC [33] STATEMENT:  INSERT INTO jobs(idempotency_key,payload,max_attempts) VALUES($1,$2,$3)
+db-1      | 2026-11-11T12:21:58.222160214Z 	 ON CONFLICT(idempotency_key) DO NOTHING RETURNING id,payload,status,attempts,max_attempts,token,lease_until,created_at,updated_at,last_error
+db-1      | 2026-11-11T12:21:58.228286380Z 2026-11-11 12:21:58.228 UTC [204] ERROR:  canceling statement due to lock timeout at character 13
+db-1      | 2026-11-11T12:21:58.228300422Z 2026-11-11 12:21:58.228 UTC [204] STATEMENT:  INSERT INTO jobs(idempotency_key,payload,max_attempts) VALUES($1,$2,$3)
+worker-1  | 2026-11-11T12:21:59.398553048Z 2026/11/11 12:21:59 INFO attempt committed job_id=165 token=1
+worker-1  | 2026-11-11T12:21:59.399464881Z 2026/11/11 12:21:59 INFO claimed job_id=166 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.399Z
+worker-1  | 2026-11-11T12:21:59.400111923Z 2026/11/11 12:21:59 INFO attempt committed job_id=166 token=1
+worker-1  | 2026-11-11T12:21:59.401169589Z 2026/11/11 12:21:59 INFO claimed job_id=169 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.401Z
+worker-1  | 2026-11-11T12:21:59.402098923Z 2026/11/11 12:21:59 INFO attempt committed job_id=169 token=1
+worker-1  | 2026-11-11T12:21:59.403072548Z 2026/11/11 12:21:59 INFO claimed job_id=173 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.402Z
+worker-1  | 2026-11-11T12:21:59.403777089Z 2026/11/11 12:21:59 INFO attempt committed job_id=173 token=1
+worker-1  | 2026-11-11T12:21:59.404713464Z 2026/11/11 12:21:59 INFO claimed job_id=175 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.404Z
+worker-1  | 2026-11-11T12:21:59.405313214Z 2026/11/11 12:21:59 INFO attempt committed job_id=175 token=1
+worker-1  | 2026-11-11T12:21:59.406178381Z 2026/11/11 12:21:59 INFO claimed job_id=176 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.406Z
+db-1      | 2026-11-11T12:21:58.228304047Z 	 ON CONFLICT(idempotency_key) DO NOTHING RETURNING id,payload,status,attempts,max_attempts,token,lease_until,created_at,updated_at,last_error
+worker-1  | 2026-11-11T12:21:59.406752506Z 2026/11/11 12:21:59 INFO attempt committed job_id=176 token=1
+worker-1  | 2026-11-11T12:21:59.407557173Z 2026/11/11 12:21:59 INFO claimed job_id=178 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.407Z
+db-1      | 2026-11-11T12:21:58.234966464Z 2026-11-11 12:21:58.234 UTC [205] ERROR:  canceling statement due to lock timeout at character 13
+worker-1  | 2026-11-11T12:21:59.408128298Z 2026/11/11 12:21:59 INFO attempt committed job_id=178 token=1
+worker-1  | 2026-11-11T12:21:59.408881173Z 2026/11/11 12:21:59 INFO claimed job_id=182 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.408Z
+worker-1  | 2026-11-11T12:21:59.409537923Z 2026/11/11 12:21:59 INFO attempt committed job_id=182 token=1
+worker-1  | 2026-11-11T12:21:59.410288673Z 2026/11/11 12:21:59 INFO claimed job_id=184 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.410Z
+worker-1  | 2026-11-11T12:21:59.410871756Z 2026/11/11 12:21:59 INFO attempt committed job_id=184 token=1
+worker-1  | 2026-11-11T12:21:59.411690631Z 2026/11/11 12:21:59 INFO claimed job_id=185 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.411Z
+worker-1  | 2026-11-11T12:21:59.412247131Z 2026/11/11 12:21:59 INFO attempt committed job_id=185 token=1
+worker-1  | 2026-11-11T12:21:59.413081548Z 2026/11/11 12:21:59 INFO claimed job_id=186 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.413Z
+worker-1  | 2026-11-11T12:21:59.413729881Z 2026/11/11 12:21:59 INFO attempt committed job_id=186 token=1
+worker-1  | 2026-11-11T12:21:59.414442881Z 2026/11/11 12:21:59 INFO claimed job_id=187 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.414Z
+worker-1  | 2026-11-11T12:21:59.415263464Z 2026/11/11 12:21:59 INFO attempt committed job_id=187 token=1
+worker-1  | 2026-11-11T12:21:59.416125881Z 2026/11/11 12:21:59 INFO claimed job_id=190 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.416Z
+worker-1  | 2026-11-11T12:21:59.416828673Z 2026/11/11 12:21:59 INFO attempt committed job_id=190 token=1
+worker-1  | 2026-11-11T12:21:59.417795798Z 2026/11/11 12:21:59 INFO claimed job_id=191 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.417Z
+db-1      | 2026-11-11T12:21:58.234986047Z 2026-11-11 12:21:58.234 UTC [205] STATEMENT:  INSERT INTO jobs(idempotency_key,payload,max_attempts) VALUES($1,$2,$3)
+db-1      | 2026-11-11T12:21:58.234988922Z 	 ON CONFLICT(idempotency_key) DO NOTHING RETURNING id,payload,status,attempts,max_attempts,token,lease_until,created_at,updated_at,last_error
+db-1      | 2026-11-11T12:21:58.235353589Z 2026-11-11 12:21:58.235 UTC [207] ERROR:  canceling statement due to lock timeout at character 13
+db-1      | 2026-11-11T12:21:58.235374839Z 2026-11-11 12:21:58.235 UTC [207] STATEMENT:  INSERT INTO jobs(idempotency_key,payload,max_attempts) VALUES($1,$2,$3)
+db-1      | 2026-11-11T12:21:58.235377589Z 	 ON CONFLICT(idempotency_key) DO NOTHING RETURNING id,payload,status,attempts,max_attempts,token,lease_until,created_at,updated_at,last_error
+db-1      | 2026-11-11T12:21:58.235941255Z 2026-11-11 12:21:58.235 UTC [206] ERROR:  canceling statement due to lock timeout at character 13
+db-1      | 2026-11-11T12:21:58.235949464Z 2026-11-11 12:21:58.235 UTC [206] STATEMENT:  INSERT INTO jobs(idempotency_key,payload,max_attempts) VALUES($1,$2,$3)
+db-1      | 2026-11-11T12:21:58.235950964Z 	 ON CONFLICT(idempotency_key) DO NOTHING RETURNING id,payload,status,attempts,max_attempts,token,lease_until,created_at,updated_at,last_error
+db-1      | 2026-11-11T12:21:58.236914755Z 2026-11-11 12:21:58.236 UTC [208] ERROR:  canceling statement due to lock timeout at character 13
+db-1      | 2026-11-11T12:21:58.236924630Z 2026-11-11 12:21:58.236 UTC [208] STATEMENT:  INSERT INTO jobs(idempotency_key,payload,max_attempts) VALUES($1,$2,$3)
+worker-1  | 2026-11-11T12:21:59.418655131Z 2026/11/11 12:21:59 INFO attempt committed job_id=191 token=1
+db-1      | 2026-11-11T12:21:58.236926714Z 	 ON CONFLICT(idempotency_key) DO NOTHING RETURNING id,payload,status,attempts,max_attempts,token,lease_until,created_at,updated_at,last_error
+db-1      | 2026-11-11T12:21:58.236928464Z 2026-11-11 12:21:58.236 UTC [209] ERROR:  canceling statement due to lock timeout at character 13
+worker-1  | 2026-11-11T12:21:59.419546839Z 2026/11/11 12:21:59 INFO claimed job_id=194 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.419Z
+worker-1  | 2026-11-11T12:21:59.420146173Z 2026/11/11 12:21:59 INFO attempt committed job_id=194 token=1
+worker-1  | 2026-11-11T12:21:59.421038631Z 2026/11/11 12:21:59 INFO claimed job_id=196 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.420Z
+worker-1  | 2026-11-11T12:21:59.421825798Z 2026/11/11 12:21:59 INFO attempt committed job_id=196 token=1
+worker-1  | 2026-11-11T12:21:59.422778839Z 2026/11/11 12:21:59 INFO claimed job_id=197 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.422Z
+worker-1  | 2026-11-11T12:21:59.423525798Z 2026/11/11 12:21:59 INFO attempt committed job_id=197 token=1
+db-1      | 2026-11-11T12:21:58.236929839Z 2026-11-11 12:21:58.236 UTC [209] STATEMENT:  INSERT INTO jobs(idempotency_key,payload,max_attempts) VALUES($1,$2,$3)
+db-1      | 2026-11-11T12:21:58.236931214Z 	 ON CONFLICT(idempotency_key) DO NOTHING RETURNING id,payload,status,attempts,max_attempts,token,lease_until,created_at,updated_at,last_error
+db-1      | 2026-11-11T12:21:58.237658797Z 2026-11-11 12:21:58.237 UTC [210] ERROR:  canceling statement due to lock timeout at character 13
+worker-1  | 2026-11-11T12:21:59.424407423Z 2026/11/11 12:21:59 INFO claimed job_id=198 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.424Z
+worker-1  | 2026-11-11T12:21:59.425341214Z 2026/11/11 12:21:59 INFO attempt committed job_id=198 token=1
+db-1      | 2026-11-11T12:21:58.237686339Z 2026-11-11 12:21:58.237 UTC [210] STATEMENT:  INSERT INTO jobs(idempotency_key,payload,max_attempts) VALUES($1,$2,$3)
+worker-1  | 2026-11-11T12:21:59.426221256Z 2026/11/11 12:21:59 INFO claimed job_id=200 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.426Z
+worker-1  | 2026-11-11T12:21:59.426929839Z 2026/11/11 12:21:59 INFO attempt committed job_id=200 token=1
+worker-1  | 2026-11-11T12:21:59.427809089Z 2026/11/11 12:21:59 INFO claimed job_id=202 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.427Z
+worker-1  | 2026-11-11T12:21:59.428735131Z 2026/11/11 12:21:59 INFO attempt committed job_id=202 token=1
+worker-1  | 2026-11-11T12:21:59.429742631Z 2026/11/11 12:21:59 INFO claimed job_id=203 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.429Z
+worker-1  | 2026-11-11T12:21:59.430506381Z 2026/11/11 12:21:59 INFO attempt committed job_id=203 token=1
+worker-1  | 2026-11-11T12:21:59.431646339Z 2026/11/11 12:21:59 INFO claimed job_id=204 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.431Z
+worker-1  | 2026-11-11T12:21:59.432670464Z 2026/11/11 12:21:59 INFO attempt committed job_id=204 token=1
+worker-1  | 2026-11-11T12:21:59.433865839Z 2026/11/11 12:21:59 INFO claimed job_id=207 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.433Z
+db-1      | 2026-11-11T12:21:58.237714380Z 	 ON CONFLICT(idempotency_key) DO NOTHING RETURNING id,payload,status,attempts,max_attempts,token,lease_until,created_at,updated_at,last_error
+worker-1  | 2026-11-11T12:21:59.434864464Z 2026/11/11 12:21:59 INFO attempt committed job_id=207 token=1
+worker-1  | 2026-11-11T12:21:59.435916714Z 2026/11/11 12:21:59 INFO claimed job_id=215 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.435Z
+worker-1  | 2026-11-11T12:21:59.436865756Z 2026/11/11 12:21:59 INFO attempt committed job_id=215 token=1
+worker-1  | 2026-11-11T12:21:59.437914214Z 2026/11/11 12:21:59 INFO claimed job_id=216 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.437Z
+worker-1  | 2026-11-11T12:21:59.438771048Z 2026/11/11 12:21:59 INFO attempt committed job_id=216 token=1
+worker-1  | 2026-11-11T12:21:59.439920673Z 2026/11/11 12:21:59 INFO claimed job_id=217 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.439Z
+worker-1  | 2026-11-11T12:21:59.440689381Z 2026/11/11 12:21:59 INFO attempt committed job_id=217 token=1
+worker-1  | 2026-11-11T12:21:59.442240756Z 2026/11/11 12:21:59 INFO claimed job_id=218 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.441Z
+worker-1  | 2026-11-11T12:21:59.443180339Z 2026/11/11 12:21:59 INFO attempt committed job_id=218 token=1
+worker-1  | 2026-11-11T12:21:59.444379714Z 2026/11/11 12:21:59 INFO claimed job_id=219 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.444Z
+worker-1  | 2026-11-11T12:21:59.445245048Z 2026/11/11 12:21:59 INFO attempt committed job_id=219 token=1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-010df666d1 -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T122120Z-soup-test-integration-010df666d1/compose.test.yaml down --volumes --remove-orphans
+ Container soup-test-integration-010df666d1-api-1 Stopping 
+ Container soup-test-integration-010df666d1-worker-1 Stopping 
+ Container soup-test-integration-010df666d1-worker-1 Stopped 
+ Container soup-test-integration-010df666d1-worker-1 Removing 
+ Container soup-test-integration-010df666d1-worker-1 Removed 
+ Container soup-test-integration-010df666d1-api-1 Stopped 
+ Container soup-test-integration-010df666d1-api-1 Removing 
+ Container soup-test-integration-010df666d1-api-1 Removed 
+ Container soup-test-integration-010df666d1-migrate-1 Stopping 
+ Container soup-test-integration-010df666d1-migrate-1 Stopped 
+ Container soup-test-integration-010df666d1-migrate-1 Removing 
+ Container soup-test-integration-010df666d1-migrate-1 Removed 
+ Container soup-test-integration-010df666d1-db-1 Stopping 
+ Container soup-test-integration-010df666d1-db-1 Stopped 
+ Container soup-test-integration-010df666d1-db-1 Removing 
+ Container soup-test-integration-010df666d1-db-1 Removed 
+ Network soup-test-integration-010df666d1_queue Removing 
+ Volume soup-test-integration-010df666d1_pgdata Removing 
+ Volume soup-test-integration-010df666d1_pgdata Removed 
+ Network soup-test-integration-010df666d1_queue Removed 
+
+exit=0

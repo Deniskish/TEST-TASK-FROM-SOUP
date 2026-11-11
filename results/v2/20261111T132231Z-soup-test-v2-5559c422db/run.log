@@ -1,0 +1,8 @@
+{"time": "2026-11-11T13:22:31.344358+00:00", "event": "run_started", "directory": "/Users/denis/vs_code/SOUP_BACK/results/v2/20261111T132231Z-soup-test-v2-5559c422db", "seed": 42}
+{"time": "2026-11-11T13:22:39.549241+00:00", "event": "ready", "url": "http://127.0.0.1:59194", "workers": 4}
+{"time": "2026-11-11T13:22:46.622727+00:00", "event": "duplicate_and_invalid_message_verified"}
+{"time": "2026-11-11T13:23:14.671397+00:00", "event": "rabbit_down_outbox_and_real_alert_verified"}
+{"time": "2026-11-11T13:24:03.362538+00:00", "event": "broker_restart_and_database_outage_verified"}
+{"time": "2026-11-11T13:24:04.608206+00:00", "event": "signal", "container": "048d8a735a17c5f6d19c6422800cae8884b88a47c475282cf80e43bcfedc3bb5", "signal": "KILL"}
+{"time": "2026-11-11T13:24:06.365384+00:00", "event": "failure", "error": "<urlopen error [Errno 61] Connection refused>"}
+{"time": "2026-11-11T13:24:10.098947+00:00", "event": "run_finished", "passed": false, "summary": "/Users/denis/vs_code/SOUP_BACK/results/v2/20261111T132231Z-soup-test-v2-5559c422db/summary.json"}

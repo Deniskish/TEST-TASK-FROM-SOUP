@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "idempotency_key": "outbox",
+    "status": "queued",
+    "attempts": 0,
+    "max_attempts": 5,
+    "token": 0,
+    "lease_until": null,
+    "effect_token": null,
+    "effects": 0
+  }
+]

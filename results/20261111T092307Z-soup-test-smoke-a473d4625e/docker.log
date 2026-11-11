@@ -1,0 +1,231 @@
+
+$ docker compose --env-file /dev/null -p soup-test-smoke-a473d4625e -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T092307Z-soup-test-smoke-a473d4625e/compose.test.yaml up -d --no-build
+ Network soup-test-smoke-a473d4625e_queue Creating 
+ Volume soup-test-smoke-a473d4625e_pgdata Creating 
+ Volume soup-test-smoke-a473d4625e_pgdata Creating 
+ Network soup-test-smoke-a473d4625e_queue Creating 
+ Volume soup-test-smoke-a473d4625e_pgdata Created 
+ Volume soup-test-smoke-a473d4625e_pgdata Created 
+ Network soup-test-smoke-a473d4625e_queue Created 
+ Network soup-test-smoke-a473d4625e_queue Created 
+ Container soup-test-smoke-a473d4625e-db-1 Creating 
+ Container soup-test-smoke-a473d4625e-db-1 Created 
+ Container soup-test-smoke-a473d4625e-migrate-1 Creating 
+ Container soup-test-smoke-a473d4625e-migrate-1 Created 
+ Container soup-test-smoke-a473d4625e-worker-4 Creating 
+ Container soup-test-smoke-a473d4625e-worker-1 Creating 
+ Container soup-test-smoke-a473d4625e-worker-2 Creating 
+ Container soup-test-smoke-a473d4625e-worker-3 Creating 
+ Container soup-test-smoke-a473d4625e-api-1 Creating 
+ Container soup-test-smoke-a473d4625e-worker-4 Created 
+ Container soup-test-smoke-a473d4625e-worker-1 Created 
+ Container soup-test-smoke-a473d4625e-worker-2 Created 
+ Container soup-test-smoke-a473d4625e-api-1 Created 
+ Container soup-test-smoke-a473d4625e-worker-3 Created 
+ Container soup-test-smoke-a473d4625e-db-1 Starting 
+ Container soup-test-smoke-a473d4625e-db-1 Started 
+ Container soup-test-smoke-a473d4625e-db-1 Waiting 
+ Container soup-test-smoke-a473d4625e-db-1 Healthy 
+ Container soup-test-smoke-a473d4625e-migrate-1 Starting 
+ Container soup-test-smoke-a473d4625e-migrate-1 Started 
+ Container soup-test-smoke-a473d4625e-migrate-1 Waiting 
+ Container soup-test-smoke-a473d4625e-migrate-1 Waiting 
+ Container soup-test-smoke-a473d4625e-migrate-1 Exited 
+ Container soup-test-smoke-a473d4625e-api-1 Starting 
+ Container soup-test-smoke-a473d4625e-migrate-1 Exited 
+ Container soup-test-smoke-a473d4625e-worker-3 Starting 
+ Container soup-test-smoke-a473d4625e-api-1 Started 
+ Container soup-test-smoke-a473d4625e-worker-3 Started 
+ Container soup-test-smoke-a473d4625e-worker-2 Starting 
+ Container soup-test-smoke-a473d4625e-worker-2 Started 
+ Container soup-test-smoke-a473d4625e-worker-4 Starting 
+ Container soup-test-smoke-a473d4625e-worker-4 Started 
+ Container soup-test-smoke-a473d4625e-worker-1 Starting 
+ Container soup-test-smoke-a473d4625e-worker-1 Started 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-smoke-a473d4625e -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T092307Z-soup-test-smoke-a473d4625e/compose.test.yaml port api 8080
+127.0.0.1:60734
+
+exit=0
+
+$ docker info --format {{json .ServerVersion}} {{json .OSType}} {{json .Architecture}} CPUs={{.NCPU}} Memory={{.MemTotal}}
+"29.9.2" "linux" "aarch64" CPUs=8 Memory=8319705088
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-smoke-a473d4625e -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T092307Z-soup-test-smoke-a473d4625e/compose.test.yaml ps -q
+72660b8acd9876e88427c93c6df2e82a2df3bec836b52fcea99675308910507f
+2dc9fed92562eb8d8d4244341b1e205538d1ab66094a890780a0c5fe03d3c799
+8346acf0973432ac41773a1559d0932ebad724dbae457317ced1cbe638f6f871
+7cc6527532d0fa6e625824cba045189def843998f302b69dc655e7f784b9f9c8
+81166a5a6139139a0882243d90dda809d88c0392d45249996fced0199161de68
+9bd45cbef8ba6fae5f92c8962eb04be62ae087ed79bf534079f8ffc54bab37d2
+
+exit=0
+
+$ docker stats --no-stream --format {{json .}} 72660b8acd9876e88427c93c6df2e82a2df3bec836b52fcea99675308910507f 2dc9fed92562eb8d8d4244341b1e205538d1ab66094a890780a0c5fe03d3c799 8346acf0973432ac41773a1559d0932ebad724dbae457317ced1cbe638f6f871 7cc6527532d0fa6e625824cba045189def843998f302b69dc655e7f784b9f9c8 81166a5a6139139a0882243d90dda809d88c0392d45249996fced0199161de68 9bd45cbef8ba6fae5f92c8962eb04be62ae087ed79bf534079f8ffc54bab37d2
+{"BlockIO":"0B / 0B","CPUPerc":"1.88%","Container":"72660b8acd9876e88427c93c6df2e82a2df3bec836b52fcea99675308910507f","ID":"72660b8acd98","MemPerc":"0.10%","MemUsage":"8.082MiB / 7.748GiB","Name":"soup-test-smoke-a473d4625e-api-1","NetIO":"3.1kB / 2.06kB","PIDs":"10"}
+{"BlockIO":"0B / 52.9MB","CPUPerc":"15.38%","Container":"2dc9fed92562eb8d8d4244341b1e205538d1ab66094a890780a0c5fe03d3c799","ID":"2dc9fed92562","MemPerc":"0.45%","MemUsage":"35.82MiB / 7.748GiB","Name":"soup-test-smoke-a473d4625e-db-1","NetIO":"278kB / 126kB","PIDs":"11"}
+{"BlockIO":"0B / 0B","CPUPerc":"2.56%","Container":"8346acf0973432ac41773a1559d0932ebad724dbae457317ced1cbe638f6f871","ID":"8346acf09734","MemPerc":"0.10%","MemUsage":"8.148MiB / 7.748GiB","Name":"soup-test-smoke-a473d4625e-worker-1","NetIO":"31kB / 65.9kB","PIDs":"9"}
+{"BlockIO":"0B / 0B","CPUPerc":"2.40%","Container":"7cc6527532d0fa6e625824cba045189def843998f302b69dc655e7f784b9f9c8","ID":"7cc6527532d0","MemPerc":"0.10%","MemUsage":"8.055MiB / 7.748GiB","Name":"soup-test-smoke-a473d4625e-worker-2","NetIO":"22.1kB / 45.5kB","PIDs":"9"}
+{"BlockIO":"0B / 0B","CPUPerc":"2.60%","Container":"81166a5a6139139a0882243d90dda809d88c0392d45249996fced0199161de68","ID":"81166a5a6139","MemPerc":"0.08%","MemUsage":"5.988MiB / 7.748GiB","Name":"soup-test-smoke-a473d4625e-worker-3","NetIO":"22.6kB / 47.2kB","PIDs":"9"}
+{"BlockIO":"0B / 0B","CPUPerc":"2.96%","Container":"9bd45cbef8ba6fae5f92c8962eb04be62ae087ed79bf534079f8ffc54bab37d2","ID":"9bd45cbef8ba","MemPerc":"0.11%","MemUsage":"8.773MiB / 7.748GiB","Name":"soup-test-smoke-a473d4625e-worker-4","NetIO":"31.8kB / 67.4kB","PIDs":"10"}
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-smoke-a473d4625e -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T092307Z-soup-test-smoke-a473d4625e/compose.test.yaml images --format json
+[{"ID":"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010","ContainerName":"soup-test-smoke-a473d4625e-worker-2","Repository":"soup-queue","Tag":"local","Platform":"linux/arm64","Size":79857964,"Created":"2026-11-11T09:23:05.915045512Z","LastTagTime":"2026-11-11T09:23:06.927568346Z"},{"ID":"sha256:3540c0362c809df084ffac0ae69fe794515f9de92692f02178bcdce0ef0302ac","ContainerName":"soup-test-smoke-a473d4625e-db-1","Repository":"postgres","Tag":"17-alpine","Platform":"linux/arm64/v8","Size":414812043,"Created":"2026-11-05T19:03:57.181599785Z","LastTagTime":"2026-11-11T09:08:44.144698002Z"},{"ID":"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010","ContainerName":"soup-test-smoke-a473d4625e-worker-3","Repository":"soup-queue","Tag":"local","Platform":"linux/arm64","Size":79857964,"Created":"2026-11-11T09:23:05.915045512Z","LastTagTime":"2026-11-11T09:23:06.927568346Z"},{"ID":"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010","ContainerName":"soup-test-smoke-a473d4625e-worker-4","Repository":"soup-queue","Tag":"local","Platform":"linux/arm64","Size":79857964,"Created":"2026-11-11T09:23:05.915045512Z","LastTagTime":"2026-11-11T09:23:06.927568346Z"},{"ID":"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010","ContainerName":"soup-test-smoke-a473d4625e-api-1","Repository":"soup-queue","Tag":"local","Platform":"linux/arm64","Size":79857964,"Created":"2026-11-11T09:23:05.915045512Z","LastTagTime":"2026-11-11T09:23:06.927568346Z"},{"ID":"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010","ContainerName":"soup-test-smoke-a473d4625e-migrate-1","Repository":"soup-queue","Tag":"local","Platform":"linux/arm64","Size":79857964,"Created":"2026-11-11T09:23:05.915045512Z","LastTagTime":"2026-11-11T09:23:06.927568346Z"},{"ID":"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010","ContainerName":"soup-test-smoke-a473d4625e-worker-1","Repository":"soup-queue","Tag":"local","Platform":"linux/arm64","Size":79857964,"Created":"2026-11-11T09:23:05.915045512Z","LastTagTime":"2026-11-11T09:23:06.927568346Z"}]
+
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-smoke-a473d4625e -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T092307Z-soup-test-smoke-a473d4625e/compose.test.yaml ps -q worker
+8346acf0973432ac41773a1559d0932ebad724dbae457317ced1cbe638f6f871
+7cc6527532d0fa6e625824cba045189def843998f302b69dc655e7f784b9f9c8
+81166a5a6139139a0882243d90dda809d88c0392d45249996fced0199161de68
+9bd45cbef8ba6fae5f92c8962eb04be62ae087ed79bf534079f8ffc54bab37d2
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-smoke-a473d4625e -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T092307Z-soup-test-smoke-a473d4625e/compose.test.yaml ps -q db
+2dc9fed92562eb8d8d4244341b1e205538d1ab66094a890780a0c5fe03d3c799
+
+exit=0
+
+$ docker inspect --format {{json .Config.Labels}} 2dc9fed92562eb8d8d4244341b1e205538d1ab66094a890780a0c5fe03d3c799
+{"com.docker.compose.config-hash":"d33030e0959137d5f2f09db07d1b74273802f460c150052df7475de6b8d5e2ee","com.docker.compose.container-number":"1","com.docker.compose.depends_on":"","com.docker.compose.image":"sha256:1108a8fe22dff4eab48870e081be046d549ddc1b6f5972e0a766eaf1e0b1003c","com.docker.compose.oneoff":"False","com.docker.compose.project":"soup-test-smoke-a473d4625e","com.docker.compose.project.config_files":"/Users/denis/vs_code/SOUP_BACK/compose.yaml,/Users/denis/vs_code/SOUP_BACK/results/20261111T092307Z-soup-test-smoke-a473d4625e/compose.test.yaml","com.docker.compose.project.environment_file":"/dev/null","com.docker.compose.project.working_dir":"/Users/denis/vs_code/SOUP_BACK","com.docker.compose.service":"db","com.docker.compose.version":"5.6.1"}
+
+exit=0
+
+$ docker inspect --format {{json .NetworkSettings.Ports}} 2dc9fed92562eb8d8d4244341b1e205538d1ab66094a890780a0c5fe03d3c799
+{"5432/tcp":null}
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-smoke-a473d4625e -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T092307Z-soup-test-smoke-a473d4625e/compose.test.yaml ps -q api
+72660b8acd9876e88427c93c6df2e82a2df3bec836b52fcea99675308910507f
+
+exit=0
+
+$ docker inspect --format {{json .Config.Labels}} 72660b8acd9876e88427c93c6df2e82a2df3bec836b52fcea99675308910507f
+{"com.docker.compose.config-hash":"706d728b150ab28ddc29e95454e3a33b13d9855d633810c727e359115577cc4c","com.docker.compose.container-number":"1","com.docker.compose.depends_on":"migrate:service_completed_successfully:false","com.docker.compose.image":"sha256:e3d4c94d0022a76324a568cd99e193c2411ac9321203cf2316d542941f899375","com.docker.compose.oneoff":"False","com.docker.compose.project":"soup-test-smoke-a473d4625e","com.docker.compose.project.config_files":"/Users/denis/vs_code/SOUP_BACK/compose.yaml,/Users/denis/vs_code/SOUP_BACK/results/20261111T092307Z-soup-test-smoke-a473d4625e/compose.test.yaml","com.docker.compose.project.environment_file":"/dev/null","com.docker.compose.project.working_dir":"/Users/denis/vs_code/SOUP_BACK","com.docker.compose.service":"api","com.docker.compose.version":"5.6.1"}
+
+exit=0
+
+$ docker inspect --format {{json .NetworkSettings.Ports}} 72660b8acd9876e88427c93c6df2e82a2df3bec836b52fcea99675308910507f
+{"8080/tcp":[{"HostIp":"127.0.0.1","HostPort":"60734"}]}
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-smoke-a473d4625e -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T092307Z-soup-test-smoke-a473d4625e/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-smoke-a473d4625e -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T092307Z-soup-test-smoke-a473d4625e/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT coalesce(json_agg(t),'[]'::json) FROM (SELECT j.id,j.idempotency_key,j.status,j.attempts,j.max_attempts,j.token, j.lease_until, e.token AS effect_token, (SELECT count(*) FROM job_effects x WHERE x.job_id=j.id) AS effects FROM jobs j LEFT JOIN job_effects e ON e.job_id=j.id ORDER BY j.id) t
+[{"id":1,"idempotency_key":"smoke","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}]
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-smoke-a473d4625e -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T092307Z-soup-test-smoke-a473d4625e/compose.test.yaml logs --no-color --timestamps
+worker-2  | 2026-11-11T09:23:14.713050461Z 2026/11/11 09:23:14 INFO claimed job_id=1 token=1 attempt=1 process_wall_time=2026-11-11T09:23:14.712Z
+worker-2  | 2026-11-11T09:23:14.736468336Z 2026/11/11 09:23:14 INFO attempt committed job_id=1 token=1
+api-1     | 2026-11-11T09:23:11.069061292Z 2026/11/11 09:23:11 INFO API started address=:8080
+db-1      | 2026-11-11T09:23:07.916779388Z The files belonging to this database system will be owned by user "postgres".
+db-1      | 2026-11-11T09:23:07.916822638Z This user must also own the server process.
+db-1      | 2026-11-11T09:23:07.916825013Z 
+db-1      | 2026-11-11T09:23:07.916827597Z The database cluster will be initialized with locale "en_US.utf8".
+db-1      | 2026-11-11T09:23:07.916828347Z The default database encoding has accordingly been set to "UTF8".
+db-1      | 2026-11-11T09:23:07.916828972Z The default text search configuration will be set to "english".
+db-1      | 2026-11-11T09:23:07.916829847Z 
+db-1      | 2026-11-11T09:23:07.916830472Z Data page checksums are disabled.
+db-1      | 2026-11-11T09:23:07.916831222Z 
+db-1      | 2026-11-11T09:23:07.916891638Z fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db-1      | 2026-11-11T09:23:07.922109013Z creating subdirectories ... ok
+db-1      | 2026-11-11T09:23:07.922168930Z selecting dynamic shared memory implementation ... posix
+db-1      | 2026-11-11T09:23:07.934427722Z selecting default "max_connections" ... 100
+db-1      | 2026-11-11T09:23:07.951997847Z selecting default "shared_buffers" ... 128MB
+db-1      | 2026-11-11T09:23:07.977457722Z selecting default time zone ... UTC
+db-1      | 2026-11-11T09:23:07.977919513Z creating configuration files ... ok
+db-1      | 2026-11-11T09:23:08.063883347Z running bootstrap script ... ok
+db-1      | 2026-11-11T09:23:08.169757722Z sh: locale: not found
+db-1      | 2026-11-11T09:23:08.169774430Z 2026-11-11 09:23:08.169 UTC [34] WARNING:  no usable system locales were found
+db-1      | 2026-11-11T09:23:08.395907555Z performing post-bootstrap initialization ... ok
+db-1      | 2026-11-11T09:23:08.475776889Z syncing data to disk ... ok
+db-1      | 2026-11-11T09:23:08.475798930Z 
+db-1      | 2026-11-11T09:23:08.475799972Z 
+db-1      | 2026-11-11T09:23:08.475800722Z Success. You can now start the database server using:
+db-1      | 2026-11-11T09:23:08.475801805Z 
+db-1      | 2026-11-11T09:23:08.475802430Z     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db-1      | 2026-11-11T09:23:08.475803139Z 
+db-1      | 2026-11-11T09:23:08.475804014Z initdb: warning: enabling "trust" authentication for local connections
+db-1      | 2026-11-11T09:23:08.475810722Z initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+db-1      | 2026-11-11T09:23:08.506723514Z waiting for server to start....2026-11-11 09:23:08.506 UTC [40] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1      | 2026-11-11T09:23:08.507785139Z 2026-11-11 09:23:08.507 UTC [40] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1      | 2026-11-11T09:23:08.511050847Z 2026-11-11 09:23:08.510 UTC [43] LOG:  database system was shut down at 2026-11-11 09:23:08 UTC
+db-1      | 2026-11-11T09:23:08.515773972Z 2026-11-11 09:23:08.515 UTC [40] LOG:  database system is ready to accept connections
+db-1      | 2026-11-11T09:23:08.596959180Z  done
+db-1      | 2026-11-11T09:23:08.596976014Z server started
+db-1      | 2026-11-11T09:23:08.637744722Z CREATE DATABASE
+db-1      | 2026-11-11T09:23:08.638012139Z 
+db-1      | 2026-11-11T09:23:08.638014930Z 
+db-1      | 2026-11-11T09:23:08.638068139Z /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db-1      | 2026-11-11T09:23:08.638072014Z 
+db-1      | 2026-11-11T09:23:08.638628930Z waiting for server to shut down....2026-11-11 09:23:08.638 UTC [40] LOG:  received fast shutdown request
+db-1      | 2026-11-11T09:23:08.639553680Z 2026-11-11 09:23:08.639 UTC [40] LOG:  aborting any active transactions
+db-1      | 2026-11-11T09:23:08.641495597Z 2026-11-11 09:23:08.641 UTC [40] LOG:  background worker "logical replication launcher" (PID 46) exited with exit code 1
+db-1      | 2026-11-11T09:23:08.641781264Z 2026-11-11 09:23:08.641 UTC [41] LOG:  shutting down
+db-1      | 2026-11-11T09:23:08.642325180Z 2026-11-11 09:23:08.642 UTC [41] LOG:  checkpoint starting: shutdown immediate
+db-1      | 2026-11-11T09:23:08.673580472Z 2026-11-11 09:23:08.673 UTC [41] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.016 s, sync=0.015 s, total=0.032 s; sync files=301, longest=0.005 s, average=0.001 s; distance=4266 kB, estimate=4266 kB; lsn=0/191E830, redo lsn=0/191E830
+db-1      | 2026-11-11T09:23:08.678637347Z 2026-11-11 09:23:08.678 UTC [40] LOG:  database system is shut down
+db-1      | 2026-11-11T09:23:08.747110583Z  done
+db-1      | 2026-11-11T09:23:08.747115750Z server stopped
+db-1      | 2026-11-11T09:23:08.747823708Z 
+db-1      | 2026-11-11T09:23:08.747831125Z PostgreSQL init process complete; ready for start up.
+db-1      | 2026-11-11T09:23:08.747832791Z 
+db-1      | 2026-11-11T09:23:08.762713083Z 2026-11-11 09:23:08.762 UTC [1] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1      | 2026-11-11T09:23:08.762772916Z 2026-11-11 09:23:08.762 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1      | 2026-11-11T09:23:08.762798083Z 2026-11-11 09:23:08.762 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1      | 2026-11-11T09:23:08.763882208Z 2026-11-11 09:23:08.763 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1      | 2026-11-11T09:23:08.765776375Z 2026-11-11 09:23:08.765 UTC [56] LOG:  database system was shut down at 2026-11-11 09:23:08 UTC
+db-1      | 2026-11-11T09:23:08.768482500Z 2026-11-11 09:23:08.768 UTC [1] LOG:  database system is ready to accept connections
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-smoke-a473d4625e -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T092307Z-soup-test-smoke-a473d4625e/compose.test.yaml down --volumes --remove-orphans
+ Container soup-test-smoke-a473d4625e-worker-1 Stopping 
+ Container soup-test-smoke-a473d4625e-worker-3 Stopping 
+ Container soup-test-smoke-a473d4625e-worker-4 Stopping 
+ Container soup-test-smoke-a473d4625e-api-1 Stopping 
+ Container soup-test-smoke-a473d4625e-worker-2 Stopping 
+ Container soup-test-smoke-a473d4625e-worker-3 Stopped 
+ Container soup-test-smoke-a473d4625e-worker-3 Removing 
+ Container soup-test-smoke-a473d4625e-worker-3 Removed 
+ Container soup-test-smoke-a473d4625e-worker-4 Stopped 
+ Container soup-test-smoke-a473d4625e-worker-4 Removing 
+ Container soup-test-smoke-a473d4625e-worker-1 Stopped 
+ Container soup-test-smoke-a473d4625e-worker-1 Removing 
+ Container soup-test-smoke-a473d4625e-worker-4 Removed 
+ Container soup-test-smoke-a473d4625e-worker-2 Stopped 
+ Container soup-test-smoke-a473d4625e-worker-2 Removing 
+ Container soup-test-smoke-a473d4625e-worker-1 Removed 
+ Container soup-test-smoke-a473d4625e-api-1 Stopped 
+ Container soup-test-smoke-a473d4625e-api-1 Removing 
+ Container soup-test-smoke-a473d4625e-worker-2 Removed 
+ Container soup-test-smoke-a473d4625e-api-1 Removed 
+ Container soup-test-smoke-a473d4625e-migrate-1 Stopping 
+ Container soup-test-smoke-a473d4625e-migrate-1 Stopped 
+ Container soup-test-smoke-a473d4625e-migrate-1 Removing 
+ Container soup-test-smoke-a473d4625e-migrate-1 Removed 
+ Container soup-test-smoke-a473d4625e-db-1 Stopping 
+ Container soup-test-smoke-a473d4625e-db-1 Stopped 
+ Container soup-test-smoke-a473d4625e-db-1 Removing 
+ Container soup-test-smoke-a473d4625e-db-1 Removed 
+ Volume soup-test-smoke-a473d4625e_pgdata Removing 
+ Network soup-test-smoke-a473d4625e_queue Removing 
+ Volume soup-test-smoke-a473d4625e_pgdata Removed 
+ Network soup-test-smoke-a473d4625e_queue Removed 
+
+exit=0

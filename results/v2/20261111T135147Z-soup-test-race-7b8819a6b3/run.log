@@ -1,0 +1,4 @@
+{"time": "2026-11-11T13:51:47.462855+00:00", "event": "run_started", "directory": "/Users/denis/vs_code/SOUP_BACK/results/v2/20261111T135147Z-soup-test-race-7b8819a6b3", "seed": 42}
+{"time": "2026-11-11T13:51:53.752692+00:00", "event": "ready", "url": "http://127.0.0.1:55276", "workers": 0}
+{"time": "2026-11-11T13:52:05.128010+00:00", "event": "failure", "error": "[\"not terminal {'id': 1, 'idempotency_key': 'outbox', 'status': 'queued', 'attempts': 0, 'max_attempts': 5, 'token': 0, 'lease_until': None, 'effect_token': None, 'effects': 0}\"]"}
+{"time": "2026-11-11T13:52:06.696709+00:00", "event": "run_finished", "passed": false, "summary": "/Users/denis/vs_code/SOUP_BACK/results/v2/20261111T135147Z-soup-test-race-7b8819a6b3/summary.json"}

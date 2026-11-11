@@ -1,0 +1,4 @@
+{"time": "2026-11-11T13:51:37.023657+00:00", "event": "run_started", "directory": "/Users/denis/vs_code/SOUP_BACK/results/v2/20261111T135137Z-soup-test-smoke-4ffa356525", "seed": 42}
+{"time": "2026-11-11T13:51:44.515593+00:00", "event": "ready", "url": "http://127.0.0.1:55173", "workers": 4}
+{"time": "2026-11-11T13:51:45.685265+00:00", "event": "default_compose_four_workers_and_private_ports_verified"}
+{"time": "2026-11-11T13:51:47.303253+00:00", "event": "run_finished", "passed": true, "summary": "/Users/denis/vs_code/SOUP_BACK/results/v2/20261111T135137Z-soup-test-smoke-4ffa356525/summary.json"}

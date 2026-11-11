@@ -1,0 +1,10 @@
+{"time": "2026-11-11T13:27:27.949203+00:00", "event": "run_started", "directory": "/Users/denis/vs_code/SOUP_BACK/results/v2/20261111T132727Z-soup-test-v2-59299ab46f", "seed": 42}
+{"time": "2026-11-11T13:27:36.787534+00:00", "event": "ready", "url": "http://127.0.0.1:65069", "workers": 4}
+{"time": "2026-11-11T13:27:44.420542+00:00", "event": "duplicate_and_invalid_message_verified"}
+{"time": "2026-11-11T13:28:09.528210+00:00", "event": "rabbit_down_outbox_and_real_alert_verified"}
+{"time": "2026-11-11T13:28:59.648690+00:00", "event": "broker_restart_and_database_outage_verified"}
+{"time": "2026-11-11T13:29:01.002480+00:00", "event": "signal", "container": "2a6f2cb830c45f18718388a7c27bf37d6fc44bfa819a51c5a1ed9b2acd7b05f9", "signal": "KILL"}
+{"time": "2026-11-11T13:29:02.796893+00:00", "event": "management_port_changed", "previous": "http://127.0.0.1:64693", "current": "http://127.0.0.1:52127"}
+{"time": "2026-11-11T13:29:11.612678+00:00", "event": "commit_before_ack_crash_verified"}
+{"time": "2026-11-11T13:29:11.686600+00:00", "event": "prometheus_grafana_tempo_verified"}
+{"time": "2026-11-11T13:29:15.646512+00:00", "event": "run_finished", "passed": true, "summary": "/Users/denis/vs_code/SOUP_BACK/results/v2/20261111T132727Z-soup-test-v2-59299ab46f/summary.json"}

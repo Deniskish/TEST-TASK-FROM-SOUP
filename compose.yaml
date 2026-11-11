@@ -1,0 +1,146 @@
+x-app: &app
+  image: soup-queue:local
+  build: .
+  restart: unless-stopped
+  init: true
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  environment: &env
+    DATABASE_URL: postgres://soup:${POSTGRES_PASSWORD:-local-development-only}@db:5432/soup?sslmode=disable
+    RABBITMQ_URL: amqp://soup:${RABBITMQ_PASSWORD:-local-development-only}@rabbitmq:5672/
+    OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT:-}
+    API_TOKEN: ${API_TOKEN:-}
+    DB_MAX_CONNS: ${DB_MAX_CONNS:-8}
+    LEASE_DURATION: ${LEASE_DURATION:-3s}
+    HEARTBEAT_INTERVAL: ${HEARTBEAT_INTERVAL:-750ms}
+    POLL_INTERVAL: ${POLL_INTERVAL:-100ms}
+  depends_on:
+    migrate:
+      condition: service_completed_successfully
+  networks: [queue]
+  stop_grace_period: 10s
+
+services:
+  rabbitmq:
+    image: rabbitmq:4.1-management
+    hostname: rabbitmq
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_USER: soup
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-local-development-only}
+    volumes:
+      - rabbitdata:/var/lib/rabbitmq
+      - ./observability/rabbitmq-plugins:/etc/rabbitmq/enabled_plugins:ro
+    networks: [queue]
+    healthcheck:
+      test: [CMD, rabbitmq-diagnostics, -q, ping]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+  publisher:
+    <<: *app
+    entrypoint: [/app/publisher]
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: soup
+      POSTGRES_USER: soup
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local-development-only}
+    volumes: [pgdata:/var/lib/postgresql/data]
+    networks: [queue]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U soup -d soup']
+      interval: 2s
+      timeout: 2s
+      retries: 30
+    command: [postgres, -c, max_connections=150]
+  migrate:
+    <<: *app
+    restart: 'no'
+    command: [migrate]
+    depends_on:
+      db:
+        condition: service_healthy
+  api:
+    <<: *app
+    ports: ['127.0.0.1:${API_PORT:-8080}:8080']
+    healthcheck:
+      test: [CMD, /app/api, healthcheck]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  worker:
+    <<: *app
+    entrypoint: [/app/worker]
+    deploy:
+      replicas: 4
+  prometheus:
+    image: prom/prometheus:v3.5.0
+    profiles: [observability]
+    restart: unless-stopped
+    networks: [queue]
+    volumes:
+      - ./observability/prometheus.yaml:/etc/prometheus/prometheus.yml:ro
+      - ./observability/alerts.yaml:/etc/prometheus/alerts.yaml:ro
+      - promdata:/prometheus
+
+  alertmanager:
+    image: prom/alertmanager:v0.28.1
+    profiles: [observability]
+    restart: unless-stopped
+    networks: [queue]
+    volumes:
+      - ./observability/alertmanager.yaml:/etc/alertmanager/alertmanager.yml:ro
+
+  alert-receiver:
+    image: python:3.13-alpine
+    profiles: [observability]
+    restart: unless-stopped
+    networks: [queue]
+    volumes:
+      - ./observability/receiver.py:/receiver.py:ro
+    command: [python, /receiver.py]
+
+  collector:
+    image: otel/opentelemetry-collector:0.137.0
+    profiles: [observability]
+    restart: unless-stopped
+    networks: [queue]
+    volumes:
+      - ./observability/collector.yaml:/etc/otelcol/config.yaml:ro
+
+  tempo:
+    image: grafana/tempo:2.9.0
+    profiles: [observability]
+    restart: unless-stopped
+    networks: [queue]
+    volumes:
+      - ./observability/tempo.yaml:/etc/tempo.yaml:ro
+      - tempodata:/var/tempo
+    command: [-config.file=/etc/tempo.yaml]
+    user: "0:0"
+
+  grafana:
+    image: grafana/grafana:12.2.1
+    profiles: [observability]
+    restart: unless-stopped
+    networks: [queue]
+    volumes:
+      - ./observability/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./observability/grafana/dashboard.json:/etc/grafana/dashboards/soup.json:ro
+      - grafanadata:/var/lib/grafana
+    ports: ["127.0.0.1:${GRAFANA_PORT:-3000}:3000"]
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:-local-grafana-change-me}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+
+volumes:
+  promdata:
+  tempodata:
+  grafanadata:
+  rabbitdata:
+  pgdata:
+networks:
+  queue:

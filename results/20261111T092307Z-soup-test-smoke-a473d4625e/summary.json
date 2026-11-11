@@ -1,0 +1,29 @@
+{
+  "kind": "smoke",
+  "seed": 42,
+  "project": "soup-test-smoke-a473d4625e",
+  "started_at": "2026-11-11T09:23:07.442655+00:00",
+  "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "host": "macOS-15.1-arm64-arm-64bit-Mach-O",
+  "passed": true,
+  "workers": 4,
+  "lease": "2s",
+  "heartbeat": "400ms",
+  "api_pool": 8,
+  "worker_pool": 8,
+  "api_url": "http://127.0.0.1:60734",
+  "docker_info": "\"29.9.2\" \"linux\" \"aarch64\" CPUs=8 Memory=8319705088",
+  "resources": "{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"1.88%\",\"Container\":\"72660b8acd9876e88427c93c6df2e82a2df3bec836b52fcea99675308910507f\",\"ID\":\"72660b8acd98\",\"MemPerc\":\"0.10%\",\"MemUsage\":\"8.082MiB / 7.748GiB\",\"Name\":\"soup-test-smoke-a473d4625e-api-1\",\"NetIO\":\"3.1kB / 2.06kB\",\"PIDs\":\"10\"}\n{\"BlockIO\":\"0B / 52.9MB\",\"CPUPerc\":\"15.38%\",\"Container\":\"2dc9fed92562eb8d8d4244341b1e205538d1ab66094a890780a0c5fe03d3c799\",\"ID\":\"2dc9fed92562\",\"MemPerc\":\"0.45%\",\"MemUsage\":\"35.82MiB / 7.748GiB\",\"Name\":\"soup-test-smoke-a473d4625e-db-1\",\"NetIO\":\"278kB / 126kB\",\"PIDs\":\"11\"}\n{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"2.56%\",\"Container\":\"8346acf0973432ac41773a1559d0932ebad724dbae457317ced1cbe638f6f871\",\"ID\":\"8346acf09734\",\"MemPerc\":\"0.10%\",\"MemUsage\":\"8.148MiB / 7.748GiB\",\"Name\":\"soup-test-smoke-a473d4625e-worker-1\",\"NetIO\":\"31kB / 65.9kB\",\"PIDs\":\"9\"}\n{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"2.40%\",\"Container\":\"7cc6527532d0fa6e625824cba045189def843998f302b69dc655e7f784b9f9c8\",\"ID\":\"7cc6527532d0\",\"MemPerc\":\"0.10%\",\"MemUsage\":\"8.055MiB / 7.748GiB\",\"Name\":\"soup-test-smoke-a473d4625e-worker-2\",\"NetIO\":\"22.1kB / 45.5kB\",\"PIDs\":\"9\"}\n{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"2.60%\",\"Container\":\"81166a5a6139139a0882243d90dda809d88c0392d45249996fced0199161de68\",\"ID\":\"81166a5a6139\",\"MemPerc\":\"0.08%\",\"MemUsage\":\"5.988MiB / 7.748GiB\",\"Name\":\"soup-test-smoke-a473d4625e-worker-3\",\"NetIO\":\"22.6kB / 47.2kB\",\"PIDs\":\"9\"}\n{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"2.96%\",\"Container\":\"9bd45cbef8ba6fae5f92c8962eb04be62ae087ed79bf534079f8ffc54bab37d2\",\"ID\":\"9bd45cbef8ba\",\"MemPerc\":\"0.11%\",\"MemUsage\":\"8.773MiB / 7.748GiB\",\"Name\":\"soup-test-smoke-a473d4625e-worker-4\",\"NetIO\":\"31.8kB / 67.4kB\",\"PIDs\":\"10\"}",
+  "image_ids": "[{\"ID\":\"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010\",\"ContainerName\":\"soup-test-smoke-a473d4625e-worker-2\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":79857964,\"Created\":\"2026-11-11T09:23:05.915045512Z\",\"LastTagTime\":\"2026-11-11T09:23:06.927568346Z\"},{\"ID\":\"sha256:3540c0362c809df084ffac0ae69fe794515f9de92692f02178bcdce0ef0302ac\",\"ContainerName\":\"soup-test-smoke-a473d4625e-db-1\",\"Repository\":\"postgres\",\"Tag\":\"17-alpine\",\"Platform\":\"linux/arm64/v8\",\"Size\":414812043,\"Created\":\"2026-11-05T19:03:57.181599785Z\",\"LastTagTime\":\"2026-11-11T09:08:44.144698002Z\"},{\"ID\":\"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010\",\"ContainerName\":\"soup-test-smoke-a473d4625e-worker-3\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":79857964,\"Created\":\"2026-11-11T09:23:05.915045512Z\",\"LastTagTime\":\"2026-11-11T09:23:06.927568346Z\"},{\"ID\":\"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010\",\"ContainerName\":\"soup-test-smoke-a473d4625e-worker-4\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":79857964,\"Created\":\"2026-11-11T09:23:05.915045512Z\",\"LastTagTime\":\"2026-11-11T09:23:06.927568346Z\"},{\"ID\":\"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010\",\"ContainerName\":\"soup-test-smoke-a473d4625e-api-1\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":79857964,\"Created\":\"2026-11-11T09:23:05.915045512Z\",\"LastTagTime\":\"2026-11-11T09:23:06.927568346Z\"},{\"ID\":\"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010\",\"ContainerName\":\"soup-test-smoke-a473d4625e-migrate-1\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":79857964,\"Created\":\"2026-11-11T09:23:05.915045512Z\",\"LastTagTime\":\"2026-11-11T09:23:06.927568346Z\"},{\"ID\":\"sha256:4ccedc1e61e6828e1193fd50527b724f1643b279be9ec630c3bc985a6dbce010\",\"ContainerName\":\"soup-test-smoke-a473d4625e-worker-1\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":79857964,\"Created\":\"2026-11-11T09:23:05.915045512Z\",\"LastTagTime\":\"2026-11-11T09:23:06.927568346Z\"}]",
+  "invariant_errors": [],
+  "states": {
+    "queued": 0,
+    "running": 0,
+    "succeeded": 1,
+    "failed": 0,
+    "cancelled": 0
+  },
+  "reclaimed_jobs": 0,
+  "effects": 1,
+  "ended_at": "2026-11-11T09:23:14.887786+00:00"
+}

@@ -1,0 +1,4 @@
+{"time": "2026-11-11T13:56:56.375110+00:00", "event": "run_started", "directory": "/Users/denis/vs_code/SOUP_BACK/results/v2/20261111T135656Z-soup-test-race-434c33cda9", "seed": 42}
+{"time": "2026-11-11T13:57:03.199602+00:00", "event": "ready", "url": "http://127.0.0.1:58273", "workers": 0}
+{"time": "2026-11-11T13:57:09.455375+00:00", "event": "go_race_with_real_database_passed"}
+{"time": "2026-11-11T13:57:11.038342+00:00", "event": "run_finished", "passed": true, "summary": "/Users/denis/vs_code/SOUP_BACK/results/v2/20261111T135656Z-soup-test-race-434c33cda9/summary.json"}

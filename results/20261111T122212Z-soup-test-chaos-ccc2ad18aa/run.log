@@ -1,0 +1,24 @@
+{"time": "2026-11-11T12:22:12.388766+00:00", "event": "run_started", "directory": "/Users/denis/vs_code/SOUP_BACK/results/20261111T122212Z-soup-test-chaos-ccc2ad18aa", "seed": 42}
+{"time": "2026-11-11T12:22:20.258780+00:00", "event": "ready", "url": "http://127.0.0.1:49517", "workers": 8}
+{"time": "2026-11-11T12:22:22.607378+00:00", "event": "signal", "container": "1b0e7fc161f2e688f340d7868ffda18536f41b19c6692a6a1f49548a8afae186", "signal": "KILL"}
+{"time": "2026-11-11T12:22:25.114020+00:00", "event": "signal", "container": "7fc3c7bbcf5ed0feada401a21669f746867f0a89065a87554a13527c9fcf1df9", "signal": "KILL"}
+{"time": "2026-11-11T12:22:27.550792+00:00", "event": "signal", "container": "2a3399a4399bd610470d8df9a21cc05a384126d09e41dff5bce2b788d511f257", "signal": "KILL"}
+{"time": "2026-11-11T12:22:29.928612+00:00", "event": "signal", "container": "f3713769cfecf80eb4e9dc407acc4f0c6b49592060e3c74fa128a2688b06bc44", "signal": "KILL"}
+{"time": "2026-11-11T12:22:32.284939+00:00", "event": "signal", "container": "d74ef1b0e66b5ae0768475cbd394ae87316611fc1704caa4ac900b97d344f841", "signal": "KILL"}
+{"time": "2026-11-11T12:22:34.628098+00:00", "event": "signal", "container": "1f4d785ccaca911d8aa9ff320ce1763c5333980d468b6512950c462ef95bf8f9", "signal": "KILL"}
+{"time": "2026-11-11T12:22:36.987878+00:00", "event": "signal", "container": "f3713769cfecf80eb4e9dc407acc4f0c6b49592060e3c74fa128a2688b06bc44", "signal": "KILL"}
+{"time": "2026-11-11T12:22:39.336035+00:00", "event": "signal", "container": "f3713769cfecf80eb4e9dc407acc4f0c6b49592060e3c74fa128a2688b06bc44", "signal": "KILL"}
+{"time": "2026-11-11T12:22:41.680513+00:00", "event": "signal", "container": "1b0e7fc161f2e688f340d7868ffda18536f41b19c6692a6a1f49548a8afae186", "signal": "KILL"}
+{"time": "2026-11-11T12:22:44.071029+00:00", "event": "signal", "container": "e8ea7d0ad2eda81eb659b754be748969ac69b230b2aa62d626d770febb0e21ef", "signal": "KILL"}
+{"time": "2026-11-11T12:22:46.431016+00:00", "event": "signal", "container": "d74ef1b0e66b5ae0768475cbd394ae87316611fc1704caa4ac900b97d344f841", "signal": "KILL"}
+{"time": "2026-11-11T12:22:48.793079+00:00", "event": "signal", "container": "e8ea7d0ad2eda81eb659b754be748969ac69b230b2aa62d626d770febb0e21ef", "signal": "KILL"}
+{"time": "2026-11-11T12:22:51.156404+00:00", "event": "signal", "container": "e8ea7d0ad2eda81eb659b754be748969ac69b230b2aa62d626d770febb0e21ef", "signal": "KILL"}
+{"time": "2026-11-11T12:22:53.506121+00:00", "event": "signal", "container": "2a3399a4399bd610470d8df9a21cc05a384126d09e41dff5bce2b788d511f257", "signal": "KILL"}
+{"time": "2026-11-11T12:22:55.865967+00:00", "event": "signal", "container": "1b0e7fc161f2e688f340d7868ffda18536f41b19c6692a6a1f49548a8afae186", "signal": "KILL"}
+{"time": "2026-11-11T12:22:58.227435+00:00", "event": "signal", "container": "1f4d785ccaca911d8aa9ff320ce1763c5333980d468b6512950c462ef95bf8f9", "signal": "KILL"}
+{"time": "2026-11-11T12:23:00.575430+00:00", "event": "signal", "container": "1f4d785ccaca911d8aa9ff320ce1763c5333980d468b6512950c462ef95bf8f9", "signal": "KILL"}
+{"time": "2026-11-11T12:23:02.907323+00:00", "event": "signal", "container": "e8ea7d0ad2eda81eb659b754be748969ac69b230b2aa62d626d770febb0e21ef", "signal": "KILL"}
+{"time": "2026-11-11T12:23:05.244129+00:00", "event": "signal", "container": "2a3399a4399bd610470d8df9a21cc05a384126d09e41dff5bce2b788d511f257", "signal": "KILL"}
+{"time": "2026-11-11T12:23:07.597562+00:00", "event": "signal", "container": "1f4d785ccaca911d8aa9ff320ce1763c5333980d468b6512950c462ef95bf8f9", "signal": "KILL"}
+{"time": "2026-11-11T12:23:08.034914+00:00", "event": "chaos_verified", "states": {"queued": 0, "running": 0, "succeeded": 8209, "failed": 0, "cancelled": 1791}, "kills": 20, "effects": 8209, "reclaimed_jobs": 17, "elapsed_seconds": 47.77080733299954}
+{"time": "2026-11-11T12:23:08.866648+00:00", "event": "run_finished", "passed": true, "summary": "/Users/denis/vs_code/SOUP_BACK/results/20261111T122212Z-soup-test-chaos-ccc2ad18aa/summary.json"}

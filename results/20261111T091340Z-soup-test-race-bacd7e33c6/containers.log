@@ -1,0 +1,62 @@
+api-1  | 2026-11-11T09:13:44.041853002Z 2026/11/11 09:13:44 INFO API started address=:8080
+db-1   | 2026-11-11T09:13:40.835215751Z The files belonging to this database system will be owned by user "postgres".
+db-1   | 2026-11-11T09:13:40.835234959Z This user must also own the server process.
+db-1   | 2026-11-11T09:13:40.835236042Z 
+db-1   | 2026-11-11T09:13:40.835251417Z The database cluster will be initialized with locale "en_US.utf8".
+db-1   | 2026-11-11T09:13:40.835259792Z The default database encoding has accordingly been set to "UTF8".
+db-1   | 2026-11-11T09:13:40.835260584Z The default text search configuration will be set to "english".
+db-1   | 2026-11-11T09:13:40.835261292Z 
+db-1   | 2026-11-11T09:13:40.835261917Z Data page checksums are disabled.
+db-1   | 2026-11-11T09:13:40.835302001Z 
+db-1   | 2026-11-11T09:13:40.835356084Z fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db-1   | 2026-11-11T09:13:40.840327126Z creating subdirectories ... ok
+db-1   | 2026-11-11T09:13:40.840331084Z selecting dynamic shared memory implementation ... posix
+db-1   | 2026-11-11T09:13:40.850040667Z selecting default "max_connections" ... 100
+db-1   | 2026-11-11T09:13:40.863015626Z selecting default "shared_buffers" ... 128MB
+db-1   | 2026-11-11T09:13:40.889771959Z selecting default time zone ... UTC
+db-1   | 2026-11-11T09:13:40.890129126Z creating configuration files ... ok
+db-1   | 2026-11-11T09:13:40.978483584Z running bootstrap script ... ok
+db-1   | 2026-11-11T09:13:41.079821084Z sh: locale: not found
+db-1   | 2026-11-11T09:13:41.079834334Z 2026-11-11 09:13:41.079 UTC [35] WARNING:  no usable system locales were found
+db-1   | 2026-11-11T09:13:41.287402126Z performing post-bootstrap initialization ... ok
+db-1   | 2026-11-11T09:13:41.350418459Z syncing data to disk ... ok
+db-1   | 2026-11-11T09:13:41.350449209Z 
+db-1   | 2026-11-11T09:13:41.350450376Z 
+db-1   | 2026-11-11T09:13:41.350451042Z Success. You can now start the database server using:
+db-1   | 2026-11-11T09:13:41.350452251Z 
+db-1   | 2026-11-11T09:13:41.350452876Z     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db-1   | 2026-11-11T09:13:41.350453542Z 
+db-1   | 2026-11-11T09:13:41.350432917Z initdb: warning: enabling "trust" authentication for local connections
+db-1   | 2026-11-11T09:13:41.350457626Z initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+db-1   | 2026-11-11T09:13:41.376381084Z waiting for server to start....2026-11-11 09:13:41.376 UTC [41] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1   | 2026-11-11T09:13:41.377038751Z 2026-11-11 09:13:41.376 UTC [41] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1   | 2026-11-11T09:13:41.379111334Z 2026-11-11 09:13:41.379 UTC [44] LOG:  database system was shut down at 2026-11-11 09:13:41 UTC
+db-1   | 2026-11-11T09:13:41.382343667Z 2026-11-11 09:13:41.382 UTC [41] LOG:  database system is ready to accept connections
+db-1   | 2026-11-11T09:13:41.468785126Z  done
+db-1   | 2026-11-11T09:13:41.468794251Z server started
+db-1   | 2026-11-11T09:13:41.506169626Z CREATE DATABASE
+db-1   | 2026-11-11T09:13:41.506498709Z 
+db-1   | 2026-11-11T09:13:41.506549709Z 
+db-1   | 2026-11-11T09:13:41.506552626Z /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db-1   | 2026-11-11T09:13:41.506554168Z 
+db-1   | 2026-11-11T09:13:41.507028376Z waiting for server to shut down....2026-11-11 09:13:41.506 UTC [41] LOG:  received fast shutdown request
+db-1   | 2026-11-11T09:13:41.507804793Z 2026-11-11 09:13:41.507 UTC [41] LOG:  aborting any active transactions
+db-1   | 2026-11-11T09:13:41.509729459Z 2026-11-11 09:13:41.509 UTC [41] LOG:  background worker "logical replication launcher" (PID 47) exited with exit code 1
+db-1   | 2026-11-11T09:13:41.510056501Z 2026-11-11 09:13:41.509 UTC [42] LOG:  shutting down
+db-1   | 2026-11-11T09:13:41.510537376Z 2026-11-11 09:13:41.510 UTC [42] LOG:  checkpoint starting: shutdown immediate
+db-1   | 2026-11-11T09:13:41.541250209Z 2026-11-11 09:13:41.541 UTC [42] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.015 s, sync=0.015 s, total=0.032 s; sync files=301, longest=0.004 s, average=0.001 s; distance=4266 kB, estimate=4266 kB; lsn=0/191E830, redo lsn=0/191E830
+db-1   | 2026-11-11T09:13:41.546500126Z 2026-11-11 09:13:41.546 UTC [41] LOG:  database system is shut down
+db-1   | 2026-11-11T09:13:41.609536668Z  done
+db-1   | 2026-11-11T09:13:41.609545668Z server stopped
+db-1   | 2026-11-11T09:13:41.610190334Z 
+db-1   | 2026-11-11T09:13:41.610195918Z PostgreSQL init process complete; ready for start up.
+db-1   | 2026-11-11T09:13:41.610203959Z 
+db-1   | 2026-11-11T09:13:41.628889876Z 2026-11-11 09:13:41.628 UTC [1] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1   | 2026-11-11T09:13:41.628947168Z 2026-11-11 09:13:41.628 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1   | 2026-11-11T09:13:41.628969126Z 2026-11-11 09:13:41.628 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1   | 2026-11-11T09:13:41.630326084Z 2026-11-11 09:13:41.630 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1   | 2026-11-11T09:13:41.632241584Z 2026-11-11 09:13:41.632 UTC [57] LOG:  database system was shut down at 2026-11-11 09:13:41 UTC
+db-1   | 2026-11-11T09:13:41.634729168Z 2026-11-11 09:13:41.634 UTC [1] LOG:  database system is ready to accept connections
+db-1   | 2026-11-11T09:13:49.045104671Z 2026-11-11 09:13:49.044 UTC [134] ERROR:  injected effect failure
+db-1   | 2026-11-11T09:13:49.045125046Z 2026-11-11 09:13:49.044 UTC [134] CONTEXT:  PL/pgSQL function reject_effect() line 1 at RAISE
+db-1   | 2026-11-11T09:13:49.045126588Z 2026-11-11 09:13:49.044 UTC [134] STATEMENT:  INSERT INTO job_effects(job_id,token,result) VALUES($1,$2,jsonb_build_object('model',$3::text))

@@ -1,0 +1,40 @@
+# Demonstration thresholds: edit expressions and "for" for the target SLO.
+groups:
+  - name: soup
+    rules:
+      - alert: PostgreSQLUnavailable
+        expr: soup_postgres_available == 0
+        for: 15s
+        labels: {severity: critical}
+      - alert: RabbitMQUnavailable
+        expr: up{job="rabbitmq"} == 0
+        for: 15s
+        labels: {severity: critical}
+      - alert: NoWorkers
+        expr: sum(rabbitmq_queue_consumers{queue="soup.jobs"}) == 0
+        for: 30s
+        labels: {severity: critical}
+      - alert: QueueGrowing
+        expr: deriv(soup_jobs{state="queued"}[5m]) > 1
+        for: 5m
+        labels: {severity: warning}
+      - alert: ProcessingStalled
+        expr: soup_jobs{state="queued"} > 0 and ignoring(state) (delta(soup_jobs{state="succeeded"}[2m]) == 0)
+        for: 2m
+        labels: {severity: critical}
+      - alert: OutboxStalled
+        expr: soup_outbox_backlog > 0 and delta(soup_outbox_backlog[2m]) >= 0
+        for: 2m
+        labels: {severity: warning}
+      - alert: HTTPFailures
+        expr: sum(rate(soup_http_requests_total{status=~"5.."}[2m])) / clamp_min(sum(rate(soup_http_requests_total[2m])),0.01) > 0.05
+        for: 2m
+        labels: {severity: warning}
+      - alert: ManyRetries
+        expr: sum(rate(soup_retries_total[2m])) > 1
+        for: 2m
+        labels: {severity: warning}
+      - alert: RabbitDiskLow
+        expr: rabbitmq_disk_space_available_bytes < 1073741824
+        for: 1m
+        labels: {severity: critical}

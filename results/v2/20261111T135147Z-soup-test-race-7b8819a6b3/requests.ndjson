@@ -1,0 +1,1 @@
+{"time": "2026-11-11T13:51:51.232851+00:00", "method": "GET", "path": "/health", "key": null, "status": 200, "latency_ms": 9.535375007544644, "response": {"status": "ok"}}

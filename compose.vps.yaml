@@ -1,0 +1,27 @@
+# Used together with compose.yaml. Explicit -p prevents collisions with other stacks.
+services:
+  db:
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in private env file}
+  migrate:
+    environment:
+      DATABASE_URL: postgres://soup:${POSTGRES_PASSWORD:?required}@db:5432/soup?sslmode=disable
+      API_TOKEN: ${API_TOKEN:?set API_TOKEN}
+  api:
+    environment:
+      DATABASE_URL: postgres://soup:${POSTGRES_PASSWORD:?required}@db:5432/soup?sslmode=disable
+      API_TOKEN: ${API_TOKEN:?required}
+  worker:
+    environment:
+      DATABASE_URL: postgres://soup:${POSTGRES_PASSWORD:?required}@db:5432/soup?sslmode=disable
+      API_TOKEN: ${API_TOKEN:?required}
+  rabbitmq:
+    environment:
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:?set RABBITMQ_PASSWORD}
+  publisher:
+    environment:
+      DATABASE_URL: postgres://soup:${POSTGRES_PASSWORD:?required}@db:5432/soup?sslmode=disable
+      RABBITMQ_URL: amqp://soup:${RABBITMQ_PASSWORD:?required}@rabbitmq:5672/
+  grafana:
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:?set GRAFANA_PASSWORD}

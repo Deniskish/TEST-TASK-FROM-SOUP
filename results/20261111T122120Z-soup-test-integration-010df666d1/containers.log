@@ -1,0 +1,325 @@
+api-1     | 2026-11-11T12:21:24.497027212Z 2026/11/11 12:21:24 INFO API started address=:8080
+db-1      | 2026-11-11T12:21:21.366769169Z The files belonging to this database system will be owned by user "postgres".
+db-1      | 2026-11-11T12:21:21.366813960Z This user must also own the server process.
+db-1      | 2026-11-11T12:21:21.366816252Z 
+db-1      | 2026-11-11T12:21:21.367087502Z The database cluster will be initialized with locale "en_US.utf8".
+db-1      | 2026-11-11T12:21:21.367095127Z The default database encoding has accordingly been set to "UTF8".
+db-1      | 2026-11-11T12:21:21.367095960Z The default text search configuration will be set to "english".
+db-1      | 2026-11-11T12:21:21.367097044Z 
+db-1      | 2026-11-11T12:21:21.367098919Z Data page checksums are disabled.
+db-1      | 2026-11-11T12:21:21.367099752Z 
+worker-1  | 2026-11-11T12:21:29.950381590Z 2026/11/11 12:21:29 INFO claimed job_id=56 token=1 attempt=1 process_wall_time=2026-11-11T12:21:29.950Z
+worker-1  | 2026-11-11T12:21:29.962634298Z 2026/11/11 12:21:29 INFO attempt committed job_id=56 token=1
+worker-1  | 2026-11-11T12:21:29.963651381Z 2026/11/11 12:21:29 INFO claimed job_id=56 token=2 attempt=2 process_wall_time=2026-11-11T12:21:29.963Z
+worker-1  | 2026-11-11T12:21:29.974794131Z 2026/11/11 12:21:29 INFO attempt committed job_id=56 token=2
+worker-1  | 2026-11-11T12:21:30.038595923Z 2026/11/11 12:21:30 INFO claimed job_id=57 token=1 attempt=1 process_wall_time=2026-11-11T12:21:30.038Z
+worker-1  | 2026-11-11T12:21:31.240235840Z 2026/11/11 12:21:31 WARN ownership lost or heartbeat unavailable job_id=57 token=1
+worker-1  | 2026-11-11T12:21:32.432637549Z 2026/11/11 12:21:32 INFO claimed job_id=58 token=1 attempt=1 process_wall_time=2026-11-11T12:21:32.432Z
+worker-1  | 2026-11-11T12:21:39.449882386Z 2026/11/11 12:21:39 WARN ownership lost or heartbeat unavailable job_id=58 token=1
+worker-1  | 2026-11-11T12:21:47.353512625Z 2026/11/11 12:21:47 INFO claimed job_id=67 token=1 attempt=1 process_wall_time=2026-11-11T12:21:47.353Z
+worker-1  | 2026-11-11T12:21:47.754094125Z 2026/11/11 12:21:47 WARN ownership lost or heartbeat unavailable job_id=67 token=1
+worker-1  | 2026-11-11T12:21:51.143911877Z 2026/11/11 12:21:51 WARN claim unavailable
+worker-1  | 2026-11-11T12:21:51.190207627Z 2026/11/11 12:21:51 INFO claimed job_id=67 token=2 attempt=2 process_wall_time=2026-11-11T12:21:51.190Z
+worker-1  | 2026-11-11T12:21:55.193676962Z 2026/11/11 12:21:55 INFO attempt committed job_id=67 token=2
+worker-1  | 2026-11-11T12:21:58.210233047Z 2026/11/11 12:21:58 WARN claim unavailable
+worker-1  | 2026-11-11T12:21:59.234447089Z 2026/11/11 12:21:59 INFO claimed job_id=69 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.233Z
+worker-1  | 2026-11-11T12:21:59.236668714Z 2026/11/11 12:21:59 INFO attempt committed job_id=69 token=1
+worker-1  | 2026-11-11T12:21:59.238716881Z 2026/11/11 12:21:59 INFO claimed job_id=70 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.238Z
+worker-1  | 2026-11-11T12:21:59.240145714Z 2026/11/11 12:21:59 INFO attempt committed job_id=70 token=1
+worker-1  | 2026-11-11T12:21:59.241420589Z 2026/11/11 12:21:59 INFO claimed job_id=71 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.241Z
+db-1      | 2026-11-11T12:21:21.367174002Z fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db-1      | 2026-11-11T12:21:21.373944460Z creating subdirectories ... ok
+db-1      | 2026-11-11T12:21:21.374015169Z selecting dynamic shared memory implementation ... posix
+db-1      | 2026-11-11T12:21:21.395254419Z selecting default "max_connections" ... 100
+db-1      | 2026-11-11T12:21:21.480784669Z selecting default "shared_buffers" ... 128MB
+db-1      | 2026-11-11T12:21:21.526755585Z selecting default time zone ... UTC
+worker-1  | 2026-11-11T12:21:59.242512297Z 2026/11/11 12:21:59 INFO attempt committed job_id=71 token=1
+worker-1  | 2026-11-11T12:21:59.243842006Z 2026/11/11 12:21:59 INFO claimed job_id=72 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.243Z
+worker-1  | 2026-11-11T12:21:59.244967048Z 2026/11/11 12:21:59 INFO attempt committed job_id=72 token=1
+worker-1  | 2026-11-11T12:21:59.246633006Z 2026/11/11 12:21:59 INFO claimed job_id=73 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.246Z
+worker-1  | 2026-11-11T12:21:59.248257423Z 2026/11/11 12:21:59 INFO attempt committed job_id=73 token=1
+worker-1  | 2026-11-11T12:21:59.249719589Z 2026/11/11 12:21:59 INFO claimed job_id=74 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.249Z
+worker-1  | 2026-11-11T12:21:59.250711423Z 2026/11/11 12:21:59 INFO attempt committed job_id=74 token=1
+worker-1  | 2026-11-11T12:21:59.251855048Z 2026/11/11 12:21:59 INFO claimed job_id=75 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.251Z
+worker-1  | 2026-11-11T12:21:59.252903464Z 2026/11/11 12:21:59 INFO attempt committed job_id=75 token=1
+db-1      | 2026-11-11T12:21:21.527629960Z creating configuration files ... ok
+db-1      | 2026-11-11T12:21:21.631465794Z running bootstrap script ... ok
+worker-1  | 2026-11-11T12:21:59.254388964Z 2026/11/11 12:21:59 INFO claimed job_id=76 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.254Z
+worker-1  | 2026-11-11T12:21:59.255365714Z 2026/11/11 12:21:59 INFO attempt committed job_id=76 token=1
+worker-1  | 2026-11-11T12:21:59.256834298Z 2026/11/11 12:21:59 INFO claimed job_id=77 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.256Z
+worker-1  | 2026-11-11T12:21:59.258276423Z 2026/11/11 12:21:59 INFO attempt committed job_id=77 token=1
+worker-1  | 2026-11-11T12:21:59.259515256Z 2026/11/11 12:21:59 INFO claimed job_id=78 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.259Z
+worker-1  | 2026-11-11T12:21:59.260687714Z 2026/11/11 12:21:59 INFO attempt committed job_id=78 token=1
+worker-1  | 2026-11-11T12:21:59.262114381Z 2026/11/11 12:21:59 INFO claimed job_id=79 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.262Z
+worker-1  | 2026-11-11T12:21:59.263223589Z 2026/11/11 12:21:59 INFO attempt committed job_id=79 token=1
+worker-1  | 2026-11-11T12:21:59.264525089Z 2026/11/11 12:21:59 INFO claimed job_id=80 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.264Z
+worker-1  | 2026-11-11T12:21:59.265518006Z 2026/11/11 12:21:59 INFO attempt committed job_id=80 token=1
+db-1      | 2026-11-11T12:21:21.768393211Z sh: locale: not found
+db-1      | 2026-11-11T12:21:21.768491294Z 2026-11-11 12:21:21.768 UTC [35] WARNING:  no usable system locales were found
+db-1      | 2026-11-11T12:21:22.034081794Z performing post-bootstrap initialization ... ok
+db-1      | 2026-11-11T12:21:22.119905836Z syncing data to disk ... ok
+db-1      | 2026-11-11T12:21:22.119935919Z 
+db-1      | 2026-11-11T12:21:22.119937044Z 
+db-1      | 2026-11-11T12:21:22.119937752Z Success. You can now start the database server using:
+db-1      | 2026-11-11T12:21:22.119939044Z 
+db-1      | 2026-11-11T12:21:22.119939711Z     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db-1      | 2026-11-11T12:21:22.119940502Z 
+worker-1  | 2026-11-11T12:21:59.266869214Z 2026/11/11 12:21:59 INFO claimed job_id=81 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.266Z
+worker-1  | 2026-11-11T12:21:59.267893506Z 2026/11/11 12:21:59 INFO attempt committed job_id=81 token=1
+worker-1  | 2026-11-11T12:21:59.269155298Z 2026/11/11 12:21:59 INFO claimed job_id=82 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.269Z
+worker-1  | 2026-11-11T12:21:59.270507506Z 2026/11/11 12:21:59 INFO attempt committed job_id=82 token=1
+worker-1  | 2026-11-11T12:21:59.271761506Z 2026/11/11 12:21:59 INFO claimed job_id=83 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.271Z
+worker-1  | 2026-11-11T12:21:59.272681339Z 2026/11/11 12:21:59 INFO attempt committed job_id=83 token=1
+worker-1  | 2026-11-11T12:21:59.274109881Z 2026/11/11 12:21:59 INFO claimed job_id=84 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.273Z
+worker-1  | 2026-11-11T12:21:59.275135714Z 2026/11/11 12:21:59 INFO attempt committed job_id=84 token=1
+worker-1  | 2026-11-11T12:21:59.276398423Z 2026/11/11 12:21:59 INFO claimed job_id=85 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.276Z
+worker-1  | 2026-11-11T12:21:59.277455048Z 2026/11/11 12:21:59 INFO attempt committed job_id=85 token=1
+worker-1  | 2026-11-11T12:21:59.279260714Z 2026/11/11 12:21:59 INFO claimed job_id=86 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.279Z
+worker-1  | 2026-11-11T12:21:59.280176173Z 2026/11/11 12:21:59 INFO attempt committed job_id=86 token=1
+worker-1  | 2026-11-11T12:21:59.281845173Z 2026/11/11 12:21:59 INFO claimed job_id=87 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.281Z
+worker-1  | 2026-11-11T12:21:59.282979714Z 2026/11/11 12:21:59 INFO attempt committed job_id=87 token=1
+worker-1  | 2026-11-11T12:21:59.284274673Z 2026/11/11 12:21:59 INFO claimed job_id=88 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.284Z
+worker-1  | 2026-11-11T12:21:59.285337006Z 2026/11/11 12:21:59 INFO attempt committed job_id=88 token=1
+worker-1  | 2026-11-11T12:21:59.286859464Z 2026/11/11 12:21:59 INFO claimed job_id=89 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.286Z
+worker-1  | 2026-11-11T12:21:59.288182798Z 2026/11/11 12:21:59 INFO attempt committed job_id=89 token=1
+worker-1  | 2026-11-11T12:21:59.289485839Z 2026/11/11 12:21:59 INFO claimed job_id=90 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.289Z
+worker-1  | 2026-11-11T12:21:59.290531381Z 2026/11/11 12:21:59 INFO attempt committed job_id=90 token=1
+worker-1  | 2026-11-11T12:21:59.292026214Z 2026/11/11 12:21:59 INFO claimed job_id=91 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.291Z
+worker-1  | 2026-11-11T12:21:59.293304798Z 2026/11/11 12:21:59 INFO attempt committed job_id=91 token=1
+worker-1  | 2026-11-11T12:21:59.294594006Z 2026/11/11 12:21:59 INFO claimed job_id=92 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.294Z
+worker-1  | 2026-11-11T12:21:59.295996256Z 2026/11/11 12:21:59 INFO attempt committed job_id=92 token=1
+worker-1  | 2026-11-11T12:21:59.297285089Z 2026/11/11 12:21:59 INFO claimed job_id=93 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.297Z
+worker-1  | 2026-11-11T12:21:59.298511714Z 2026/11/11 12:21:59 INFO attempt committed job_id=93 token=1
+worker-1  | 2026-11-11T12:21:59.299858714Z 2026/11/11 12:21:59 INFO claimed job_id=94 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.299Z
+worker-1  | 2026-11-11T12:21:59.301257673Z 2026/11/11 12:21:59 INFO attempt committed job_id=94 token=1
+worker-1  | 2026-11-11T12:21:59.302522423Z 2026/11/11 12:21:59 INFO claimed job_id=95 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.302Z
+worker-1  | 2026-11-11T12:21:59.303489339Z 2026/11/11 12:21:59 INFO attempt committed job_id=95 token=1
+worker-1  | 2026-11-11T12:21:59.304978548Z 2026/11/11 12:21:59 INFO claimed job_id=96 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.304Z
+worker-1  | 2026-11-11T12:21:59.305849381Z 2026/11/11 12:21:59 INFO attempt committed job_id=96 token=1
+worker-1  | 2026-11-11T12:21:59.307900881Z 2026/11/11 12:21:59 INFO claimed job_id=97 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.307Z
+worker-1  | 2026-11-11T12:21:59.308826923Z 2026/11/11 12:21:59 INFO attempt committed job_id=97 token=1
+worker-1  | 2026-11-11T12:21:59.310141298Z 2026/11/11 12:21:59 INFO claimed job_id=98 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.310Z
+worker-1  | 2026-11-11T12:21:59.311039798Z 2026/11/11 12:21:59 INFO attempt committed job_id=98 token=1
+worker-1  | 2026-11-11T12:21:59.312314881Z 2026/11/11 12:21:59 INFO claimed job_id=99 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.312Z
+db-1      | 2026-11-11T12:21:22.119907627Z initdb: warning: enabling "trust" authentication for local connections
+db-1      | 2026-11-11T12:21:22.119947919Z initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+db-1      | 2026-11-11T12:21:22.154008544Z waiting for server to start....2026-11-11 12:21:22.153 UTC [41] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1      | 2026-11-11T12:21:22.154798169Z 2026-11-11 12:21:22.154 UTC [41] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1      | 2026-11-11T12:21:22.157627836Z 2026-11-11 12:21:22.157 UTC [44] LOG:  database system was shut down at 2026-11-11 12:21:22 UTC
+db-1      | 2026-11-11T12:21:22.162746502Z 2026-11-11 12:21:22.162 UTC [41] LOG:  database system is ready to accept connections
+worker-1  | 2026-11-11T12:21:59.313652756Z 2026/11/11 12:21:59 INFO attempt committed job_id=99 token=1
+worker-1  | 2026-11-11T12:21:59.315029714Z 2026/11/11 12:21:59 INFO claimed job_id=100 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.314Z
+worker-1  | 2026-11-11T12:21:59.315905673Z 2026/11/11 12:21:59 INFO attempt committed job_id=100 token=1
+worker-1  | 2026-11-11T12:21:59.317245048Z 2026/11/11 12:21:59 INFO claimed job_id=101 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.317Z
+worker-1  | 2026-11-11T12:21:59.318718048Z 2026/11/11 12:21:59 INFO attempt committed job_id=101 token=1
+worker-1  | 2026-11-11T12:21:59.320086006Z 2026/11/11 12:21:59 INFO claimed job_id=102 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.319Z
+worker-1  | 2026-11-11T12:21:59.321260506Z 2026/11/11 12:21:59 INFO attempt committed job_id=102 token=1
+db-1      | 2026-11-11T12:21:22.241056044Z  done
+db-1      | 2026-11-11T12:21:22.241069502Z server started
+db-1      | 2026-11-11T12:21:22.292935378Z CREATE DATABASE
+db-1      | 2026-11-11T12:21:22.293359961Z 
+db-1      | 2026-11-11T12:21:22.293367169Z 
+db-1      | 2026-11-11T12:21:22.293420544Z /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db-1      | 2026-11-11T12:21:22.293425128Z 
+db-1      | 2026-11-11T12:21:22.294882336Z waiting for server to shut down....2026-11-11 12:21:22.294 UTC [41] LOG:  received fast shutdown request
+db-1      | 2026-11-11T12:21:22.296967711Z 2026-11-11 12:21:22.296 UTC [41] LOG:  aborting any active transactions
+db-1      | 2026-11-11T12:21:22.298603878Z 2026-11-11 12:21:22.298 UTC [41] LOG:  background worker "logical replication launcher" (PID 47) exited with exit code 1
+db-1      | 2026-11-11T12:21:22.299234128Z 2026-11-11 12:21:22.299 UTC [42] LOG:  shutting down
+db-1      | 2026-11-11T12:21:22.300017003Z 2026-11-11 12:21:22.299 UTC [42] LOG:  checkpoint starting: shutdown immediate
+worker-1  | 2026-11-11T12:21:59.322608006Z 2026/11/11 12:21:59 INFO claimed job_id=103 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.322Z
+db-1      | 2026-11-11T12:21:22.342406461Z 2026-11-11 12:21:22.342 UTC [42] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.021 s, sync=0.019 s, total=0.044 s; sync files=301, longest=0.007 s, average=0.001 s; distance=4266 kB, estimate=4266 kB; lsn=0/191E830, redo lsn=0/191E830
+worker-1  | 2026-11-11T12:21:59.323631964Z 2026/11/11 12:21:59 INFO attempt committed job_id=103 token=1
+worker-1  | 2026-11-11T12:21:59.325146298Z 2026/11/11 12:21:59 INFO claimed job_id=104 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.325Z
+worker-1  | 2026-11-11T12:21:59.326812964Z 2026/11/11 12:21:59 INFO attempt committed job_id=104 token=1
+worker-1  | 2026-11-11T12:21:59.328415339Z 2026/11/11 12:21:59 INFO claimed job_id=105 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.328Z
+worker-1  | 2026-11-11T12:21:59.329684006Z 2026/11/11 12:21:59 INFO attempt committed job_id=105 token=1
+worker-1  | 2026-11-11T12:21:59.331186298Z 2026/11/11 12:21:59 INFO claimed job_id=106 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.331Z
+worker-1  | 2026-11-11T12:21:59.332144714Z 2026/11/11 12:21:59 INFO attempt committed job_id=106 token=1
+worker-1  | 2026-11-11T12:21:59.333558089Z 2026/11/11 12:21:59 INFO claimed job_id=107 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.333Z
+worker-1  | 2026-11-11T12:21:59.334612964Z 2026/11/11 12:21:59 INFO attempt committed job_id=107 token=1
+db-1      | 2026-11-11T12:21:22.347666336Z 2026-11-11 12:21:22.347 UTC [41] LOG:  database system is shut down
+db-1      | 2026-11-11T12:21:22.394650711Z  done
+db-1      | 2026-11-11T12:21:22.394661919Z server stopped
+db-1      | 2026-11-11T12:21:22.395436128Z 
+db-1      | 2026-11-11T12:21:22.395439711Z PostgreSQL init process complete; ready for start up.
+db-1      | 2026-11-11T12:21:22.395441003Z 
+worker-1  | 2026-11-11T12:21:59.336006964Z 2026/11/11 12:21:59 INFO claimed job_id=108 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.335Z
+db-1      | 2026-11-11T12:21:22.412419919Z 2026-11-11 12:21:22.412 UTC [1] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1      | 2026-11-11T12:21:22.412490128Z 2026-11-11 12:21:22.412 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1      | 2026-11-11T12:21:22.412492919Z 2026-11-11 12:21:22.412 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1      | 2026-11-11T12:21:22.413726586Z 2026-11-11 12:21:22.413 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1      | 2026-11-11T12:21:22.415891794Z 2026-11-11 12:21:22.415 UTC [57] LOG:  database system was shut down at 2026-11-11 12:21:22 UTC
+db-1      | 2026-11-11T12:21:22.419078878Z 2026-11-11 12:21:22.418 UTC [1] LOG:  database system is ready to accept connections
+db-1      | 2026-11-11T12:21:27.242973380Z 2026-11-11 12:21:27.242 UTC [120] ERROR:  injected effect failure
+db-1      | 2026-11-11T12:21:27.242987338Z 2026-11-11 12:21:27.242 UTC [120] CONTEXT:  PL/pgSQL function reject_effect() line 1 at RAISE
+db-1      | 2026-11-11T12:21:27.242988797Z 2026-11-11 12:21:27.242 UTC [120] STATEMENT:  INSERT INTO job_effects(job_id,token,result) VALUES($1,$2,jsonb_build_object('model',$3::text))
+db-1      | 2026-11-11T12:21:45.969779791Z 2026-11-11 12:21:45.969 UTC [295] LOG:  could not receive data from client: Connection reset by peer
+db-1      | 2026-11-11T12:21:45.969846458Z 2026-11-11 12:21:45.969 UTC [295] LOG:  unexpected EOF on client connection with an open transaction
+db-1      | 2026-11-11T12:21:47.536457917Z 2026-11-11 12:21:47.535 UTC [138] FATAL:  terminating connection due to administrator command
+worker-1  | 2026-11-11T12:21:59.337074048Z 2026/11/11 12:21:59 INFO attempt committed job_id=108 token=1
+worker-1  | 2026-11-11T12:21:59.338469006Z 2026/11/11 12:21:59 INFO claimed job_id=109 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.338Z
+worker-1  | 2026-11-11T12:21:59.339377506Z 2026/11/11 12:21:59 INFO attempt committed job_id=109 token=1
+worker-1  | 2026-11-11T12:21:59.340397256Z 2026/11/11 12:21:59 INFO claimed job_id=110 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.340Z
+worker-1  | 2026-11-11T12:21:59.341393256Z 2026/11/11 12:21:59 INFO attempt committed job_id=110 token=1
+worker-1  | 2026-11-11T12:21:59.342525839Z 2026/11/11 12:21:59 INFO claimed job_id=111 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.342Z
+worker-1  | 2026-11-11T12:21:59.343677089Z 2026/11/11 12:21:59 INFO attempt committed job_id=111 token=1
+worker-1  | 2026-11-11T12:21:59.344989089Z 2026/11/11 12:21:59 INFO claimed job_id=112 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.344Z
+worker-1  | 2026-11-11T12:21:59.346260798Z 2026/11/11 12:21:59 INFO attempt committed job_id=112 token=1
+db-1      | 2026-11-11T12:21:47.536494125Z 2026-11-11 12:21:47.535 UTC [69] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T12:21:47.536496292Z 2026-11-11 12:21:47.535 UTC [139] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T12:21:47.536499792Z 2026-11-11 12:21:47.535 UTC [141] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T12:21:47.536501209Z 2026-11-11 12:21:47.535 UTC [140] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T12:21:47.536502417Z 2026-11-11 12:21:47.536 UTC [395] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T12:21:47.536503459Z 2026-11-11 12:21:47.536 UTC [142] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T12:21:47.536504625Z 2026-11-11 12:21:47.536 UTC [143] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T12:21:47.536532334Z 2026-11-11 12:21:47.536 UTC [144] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T12:21:47.633672125Z 2026-11-11 12:21:47.633 UTC [1] LOG:  received fast shutdown request
+worker-1  | 2026-11-11T12:21:59.347813089Z 2026/11/11 12:21:59 INFO claimed job_id=113 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.347Z
+worker-1  | 2026-11-11T12:21:59.348701298Z 2026/11/11 12:21:59 INFO attempt committed job_id=113 token=1
+worker-1  | 2026-11-11T12:21:59.350081423Z 2026/11/11 12:21:59 INFO claimed job_id=114 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.349Z
+worker-1  | 2026-11-11T12:21:59.351199714Z 2026/11/11 12:21:59 INFO attempt committed job_id=114 token=1
+worker-1  | 2026-11-11T12:21:59.352728631Z 2026/11/11 12:21:59 INFO claimed job_id=115 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.352Z
+worker-1  | 2026-11-11T12:21:59.353781589Z 2026/11/11 12:21:59 INFO attempt committed job_id=115 token=1
+worker-1  | 2026-11-11T12:21:59.355188339Z 2026/11/11 12:21:59 INFO claimed job_id=116 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.354Z
+worker-1  | 2026-11-11T12:21:59.356116839Z 2026/11/11 12:21:59 INFO attempt committed job_id=116 token=1
+worker-1  | 2026-11-11T12:21:59.357804839Z 2026/11/11 12:21:59 INFO claimed job_id=117 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.357Z
+worker-1  | 2026-11-11T12:21:59.358947423Z 2026/11/11 12:21:59 INFO attempt committed job_id=117 token=1
+worker-1  | 2026-11-11T12:21:59.360140256Z 2026/11/11 12:21:59 INFO claimed job_id=118 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.360Z
+worker-1  | 2026-11-11T12:21:59.361057089Z 2026/11/11 12:21:59 INFO attempt committed job_id=118 token=1
+worker-1  | 2026-11-11T12:21:59.362228173Z 2026/11/11 12:21:59 INFO claimed job_id=119 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.362Z
+worker-1  | 2026-11-11T12:21:59.363109631Z 2026/11/11 12:21:59 INFO attempt committed job_id=119 token=1
+worker-1  | 2026-11-11T12:21:59.364408923Z 2026/11/11 12:21:59 INFO claimed job_id=120 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.364Z
+worker-1  | 2026-11-11T12:21:59.365454631Z 2026/11/11 12:21:59 INFO attempt committed job_id=120 token=1
+worker-1  | 2026-11-11T12:21:59.366625131Z 2026/11/11 12:21:59 INFO claimed job_id=121 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.366Z
+worker-1  | 2026-11-11T12:21:59.367506506Z 2026/11/11 12:21:59 INFO attempt committed job_id=121 token=1
+worker-1  | 2026-11-11T12:21:59.368663506Z 2026/11/11 12:21:59 INFO claimed job_id=122 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.368Z
+worker-1  | 2026-11-11T12:21:59.369592506Z 2026/11/11 12:21:59 INFO attempt committed job_id=122 token=1
+worker-1  | 2026-11-11T12:21:59.370786631Z 2026/11/11 12:21:59 INFO claimed job_id=123 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.370Z
+worker-1  | 2026-11-11T12:21:59.371658423Z 2026/11/11 12:21:59 INFO attempt committed job_id=123 token=1
+worker-1  | 2026-11-11T12:21:59.372900131Z 2026/11/11 12:21:59 INFO claimed job_id=124 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.372Z
+worker-1  | 2026-11-11T12:21:59.373952464Z 2026/11/11 12:21:59 INFO attempt committed job_id=124 token=1
+worker-1  | 2026-11-11T12:21:59.375342298Z 2026/11/11 12:21:59 INFO claimed job_id=128 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.375Z
+worker-1  | 2026-11-11T12:21:59.376194298Z 2026/11/11 12:21:59 INFO attempt committed job_id=128 token=1
+worker-1  | 2026-11-11T12:21:59.377508714Z 2026/11/11 12:21:59 INFO claimed job_id=135 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.377Z
+worker-1  | 2026-11-11T12:21:59.378698923Z 2026/11/11 12:21:59 INFO attempt committed job_id=135 token=1
+worker-1  | 2026-11-11T12:21:59.380055339Z 2026/11/11 12:21:59 INFO claimed job_id=136 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.379Z
+worker-1  | 2026-11-11T12:21:59.381161173Z 2026/11/11 12:21:59 INFO attempt committed job_id=136 token=1
+worker-1  | 2026-11-11T12:21:59.382294756Z 2026/11/11 12:21:59 INFO claimed job_id=137 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.382Z
+worker-1  | 2026-11-11T12:21:59.383169756Z 2026/11/11 12:21:59 INFO attempt committed job_id=137 token=1
+worker-1  | 2026-11-11T12:21:59.384337756Z 2026/11/11 12:21:59 INFO claimed job_id=141 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.384Z
+db-1      | 2026-11-11T12:21:47.635001834Z 2026-11-11 12:21:47.634 UTC [1] LOG:  aborting any active transactions
+db-1      | 2026-11-11T12:21:47.637395750Z 2026-11-11 12:21:47.637 UTC [1] LOG:  background worker "logical replication launcher" (PID 60) exited with exit code 1
+db-1      | 2026-11-11T12:21:47.637705084Z 2026-11-11 12:21:47.637 UTC [55] LOG:  shutting down
+db-1      | 2026-11-11T12:21:47.638269542Z 2026-11-11 12:21:47.638 UTC [55] LOG:  checkpoint starting: shutdown immediate
+worker-1  | 2026-11-11T12:21:59.385207464Z 2026/11/11 12:21:59 INFO attempt committed job_id=141 token=1
+db-1      | 2026-11-11T12:21:47.657048750Z 2026-11-11 12:21:47.656 UTC [55] LOG:  checkpoint complete: wrote 91 buffers (0.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.012 s, total=0.020 s; sync files=156, longest=0.004 s, average=0.001 s; distance=554 kB, estimate=554 kB; lsn=0/19A9170, redo lsn=0/19A9170
+worker-1  | 2026-11-11T12:21:59.386382798Z 2026/11/11 12:21:59 INFO claimed job_id=143 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.386Z
+db-1      | 2026-11-11T12:21:47.660646542Z 2026-11-11 12:21:47.660 UTC [1] LOG:  database system is shut down
+db-1      | 2026-11-11T12:21:47.892724292Z 
+db-1      | 2026-11-11T12:21:47.892740792Z PostgreSQL Database directory appears to contain a database; Skipping initialization
+db-1      | 2026-11-11T12:21:47.892742375Z 
+db-1      | 2026-11-11T12:21:47.912378042Z 2026-11-11 12:21:47.912 UTC [1] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1      | 2026-11-11T12:21:47.912397042Z 2026-11-11 12:21:47.912 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1      | 2026-11-11T12:21:47.912398834Z 2026-11-11 12:21:47.912 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1      | 2026-11-11T12:21:47.914111334Z 2026-11-11 12:21:47.914 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1      | 2026-11-11T12:21:47.916472917Z 2026-11-11 12:21:47.916 UTC [29] LOG:  database system was shut down at 2026-11-11 12:21:47 UTC
+db-1      | 2026-11-11T12:21:47.919916792Z 2026-11-11 12:21:47.919 UTC [1] LOG:  database system is ready to accept connections
+db-1      | 2026-11-11T12:21:58.209526797Z 2026-11-11 12:21:58.209 UTC [76] ERROR:  canceling statement due to lock timeout at character 35
+db-1      | 2026-11-11T12:21:58.209607755Z 2026-11-11 12:21:58.209 UTC [76] STATEMENT:  WITH expired AS (
+db-1      | 2026-11-11T12:21:58.209610672Z 	 SELECT id FROM jobs WHERE status='running' AND lease_until<=clock_timestamp() AND attempts>=max_attempts
+db-1      | 2026-11-11T12:21:58.209614589Z 	 ORDER BY lease_until LIMIT 100 FOR UPDATE SKIP LOCKED)
+worker-1  | 2026-11-11T12:21:59.387129548Z 2026/11/11 12:21:59 INFO attempt committed job_id=143 token=1
+worker-1  | 2026-11-11T12:21:59.388332256Z 2026/11/11 12:21:59 INFO claimed job_id=144 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.388Z
+worker-1  | 2026-11-11T12:21:59.389166214Z 2026/11/11 12:21:59 INFO attempt committed job_id=144 token=1
+worker-1  | 2026-11-11T12:21:59.390223464Z 2026/11/11 12:21:59 INFO claimed job_id=153 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.390Z
+worker-1  | 2026-11-11T12:21:59.390952506Z 2026/11/11 12:21:59 INFO attempt committed job_id=153 token=1
+worker-1  | 2026-11-11T12:21:59.391882048Z 2026/11/11 12:21:59 INFO claimed job_id=157 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.391Z
+worker-1  | 2026-11-11T12:21:59.392546839Z 2026/11/11 12:21:59 INFO attempt committed job_id=157 token=1
+worker-1  | 2026-11-11T12:21:59.393406964Z 2026/11/11 12:21:59 INFO claimed job_id=159 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.393Z
+worker-1  | 2026-11-11T12:21:59.394091089Z 2026/11/11 12:21:59 INFO attempt committed job_id=159 token=1
+worker-1  | 2026-11-11T12:21:59.394962881Z 2026/11/11 12:21:59 INFO claimed job_id=162 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.394Z
+worker-1  | 2026-11-11T12:21:59.395610881Z 2026/11/11 12:21:59 INFO attempt committed job_id=162 token=1
+worker-1  | 2026-11-11T12:21:59.396416506Z 2026/11/11 12:21:59 INFO claimed job_id=164 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.396Z
+db-1      | 2026-11-11T12:21:58.209617089Z 	 UPDATE jobs j SET status='failed',lease_until=NULL,token=token+1,last_error='attempt budget exhausted after lease expiry',updated_at=clock_timestamp()
+db-1      | 2026-11-11T12:21:58.209620589Z 	 FROM expired e WHERE j.id=e.id
+worker-1  | 2026-11-11T12:21:59.397055714Z 2026/11/11 12:21:59 INFO attempt committed job_id=164 token=1
+worker-1  | 2026-11-11T12:21:59.397863798Z 2026/11/11 12:21:59 INFO claimed job_id=165 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.397Z
+db-1      | 2026-11-11T12:21:58.222146422Z 2026-11-11 12:21:58.221 UTC [33] ERROR:  canceling statement due to lock timeout
+db-1      | 2026-11-11T12:21:58.222158880Z 2026-11-11 12:21:58.221 UTC [33] STATEMENT:  INSERT INTO jobs(idempotency_key,payload,max_attempts) VALUES($1,$2,$3)
+db-1      | 2026-11-11T12:21:58.222160214Z 	 ON CONFLICT(idempotency_key) DO NOTHING RETURNING id,payload,status,attempts,max_attempts,token,lease_until,created_at,updated_at,last_error
+db-1      | 2026-11-11T12:21:58.228286380Z 2026-11-11 12:21:58.228 UTC [204] ERROR:  canceling statement due to lock timeout at character 13
+db-1      | 2026-11-11T12:21:58.228300422Z 2026-11-11 12:21:58.228 UTC [204] STATEMENT:  INSERT INTO jobs(idempotency_key,payload,max_attempts) VALUES($1,$2,$3)
+worker-1  | 2026-11-11T12:21:59.398553048Z 2026/11/11 12:21:59 INFO attempt committed job_id=165 token=1
+worker-1  | 2026-11-11T12:21:59.399464881Z 2026/11/11 12:21:59 INFO claimed job_id=166 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.399Z
+worker-1  | 2026-11-11T12:21:59.400111923Z 2026/11/11 12:21:59 INFO attempt committed job_id=166 token=1
+worker-1  | 2026-11-11T12:21:59.401169589Z 2026/11/11 12:21:59 INFO claimed job_id=169 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.401Z
+worker-1  | 2026-11-11T12:21:59.402098923Z 2026/11/11 12:21:59 INFO attempt committed job_id=169 token=1
+worker-1  | 2026-11-11T12:21:59.403072548Z 2026/11/11 12:21:59 INFO claimed job_id=173 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.402Z
+worker-1  | 2026-11-11T12:21:59.403777089Z 2026/11/11 12:21:59 INFO attempt committed job_id=173 token=1
+worker-1  | 2026-11-11T12:21:59.404713464Z 2026/11/11 12:21:59 INFO claimed job_id=175 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.404Z
+worker-1  | 2026-11-11T12:21:59.405313214Z 2026/11/11 12:21:59 INFO attempt committed job_id=175 token=1
+worker-1  | 2026-11-11T12:21:59.406178381Z 2026/11/11 12:21:59 INFO claimed job_id=176 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.406Z
+db-1      | 2026-11-11T12:21:58.228304047Z 	 ON CONFLICT(idempotency_key) DO NOTHING RETURNING id,payload,status,attempts,max_attempts,token,lease_until,created_at,updated_at,last_error
+worker-1  | 2026-11-11T12:21:59.406752506Z 2026/11/11 12:21:59 INFO attempt committed job_id=176 token=1
+worker-1  | 2026-11-11T12:21:59.407557173Z 2026/11/11 12:21:59 INFO claimed job_id=178 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.407Z
+db-1      | 2026-11-11T12:21:58.234966464Z 2026-11-11 12:21:58.234 UTC [205] ERROR:  canceling statement due to lock timeout at character 13
+worker-1  | 2026-11-11T12:21:59.408128298Z 2026/11/11 12:21:59 INFO attempt committed job_id=178 token=1
+worker-1  | 2026-11-11T12:21:59.408881173Z 2026/11/11 12:21:59 INFO claimed job_id=182 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.408Z
+worker-1  | 2026-11-11T12:21:59.409537923Z 2026/11/11 12:21:59 INFO attempt committed job_id=182 token=1
+worker-1  | 2026-11-11T12:21:59.410288673Z 2026/11/11 12:21:59 INFO claimed job_id=184 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.410Z
+worker-1  | 2026-11-11T12:21:59.410871756Z 2026/11/11 12:21:59 INFO attempt committed job_id=184 token=1
+worker-1  | 2026-11-11T12:21:59.411690631Z 2026/11/11 12:21:59 INFO claimed job_id=185 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.411Z
+worker-1  | 2026-11-11T12:21:59.412247131Z 2026/11/11 12:21:59 INFO attempt committed job_id=185 token=1
+worker-1  | 2026-11-11T12:21:59.413081548Z 2026/11/11 12:21:59 INFO claimed job_id=186 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.413Z
+worker-1  | 2026-11-11T12:21:59.413729881Z 2026/11/11 12:21:59 INFO attempt committed job_id=186 token=1
+worker-1  | 2026-11-11T12:21:59.414442881Z 2026/11/11 12:21:59 INFO claimed job_id=187 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.414Z
+worker-1  | 2026-11-11T12:21:59.415263464Z 2026/11/11 12:21:59 INFO attempt committed job_id=187 token=1
+worker-1  | 2026-11-11T12:21:59.416125881Z 2026/11/11 12:21:59 INFO claimed job_id=190 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.416Z
+worker-1  | 2026-11-11T12:21:59.416828673Z 2026/11/11 12:21:59 INFO attempt committed job_id=190 token=1
+worker-1  | 2026-11-11T12:21:59.417795798Z 2026/11/11 12:21:59 INFO claimed job_id=191 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.417Z
+db-1      | 2026-11-11T12:21:58.234986047Z 2026-11-11 12:21:58.234 UTC [205] STATEMENT:  INSERT INTO jobs(idempotency_key,payload,max_attempts) VALUES($1,$2,$3)
+db-1      | 2026-11-11T12:21:58.234988922Z 	 ON CONFLICT(idempotency_key) DO NOTHING RETURNING id,payload,status,attempts,max_attempts,token,lease_until,created_at,updated_at,last_error
+db-1      | 2026-11-11T12:21:58.235353589Z 2026-11-11 12:21:58.235 UTC [207] ERROR:  canceling statement due to lock timeout at character 13
+db-1      | 2026-11-11T12:21:58.235374839Z 2026-11-11 12:21:58.235 UTC [207] STATEMENT:  INSERT INTO jobs(idempotency_key,payload,max_attempts) VALUES($1,$2,$3)
+db-1      | 2026-11-11T12:21:58.235377589Z 	 ON CONFLICT(idempotency_key) DO NOTHING RETURNING id,payload,status,attempts,max_attempts,token,lease_until,created_at,updated_at,last_error
+db-1      | 2026-11-11T12:21:58.235941255Z 2026-11-11 12:21:58.235 UTC [206] ERROR:  canceling statement due to lock timeout at character 13
+db-1      | 2026-11-11T12:21:58.235949464Z 2026-11-11 12:21:58.235 UTC [206] STATEMENT:  INSERT INTO jobs(idempotency_key,payload,max_attempts) VALUES($1,$2,$3)
+db-1      | 2026-11-11T12:21:58.235950964Z 	 ON CONFLICT(idempotency_key) DO NOTHING RETURNING id,payload,status,attempts,max_attempts,token,lease_until,created_at,updated_at,last_error
+db-1      | 2026-11-11T12:21:58.236914755Z 2026-11-11 12:21:58.236 UTC [208] ERROR:  canceling statement due to lock timeout at character 13
+db-1      | 2026-11-11T12:21:58.236924630Z 2026-11-11 12:21:58.236 UTC [208] STATEMENT:  INSERT INTO jobs(idempotency_key,payload,max_attempts) VALUES($1,$2,$3)
+worker-1  | 2026-11-11T12:21:59.418655131Z 2026/11/11 12:21:59 INFO attempt committed job_id=191 token=1
+db-1      | 2026-11-11T12:21:58.236926714Z 	 ON CONFLICT(idempotency_key) DO NOTHING RETURNING id,payload,status,attempts,max_attempts,token,lease_until,created_at,updated_at,last_error
+db-1      | 2026-11-11T12:21:58.236928464Z 2026-11-11 12:21:58.236 UTC [209] ERROR:  canceling statement due to lock timeout at character 13
+worker-1  | 2026-11-11T12:21:59.419546839Z 2026/11/11 12:21:59 INFO claimed job_id=194 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.419Z
+worker-1  | 2026-11-11T12:21:59.420146173Z 2026/11/11 12:21:59 INFO attempt committed job_id=194 token=1
+worker-1  | 2026-11-11T12:21:59.421038631Z 2026/11/11 12:21:59 INFO claimed job_id=196 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.420Z
+worker-1  | 2026-11-11T12:21:59.421825798Z 2026/11/11 12:21:59 INFO attempt committed job_id=196 token=1
+worker-1  | 2026-11-11T12:21:59.422778839Z 2026/11/11 12:21:59 INFO claimed job_id=197 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.422Z
+worker-1  | 2026-11-11T12:21:59.423525798Z 2026/11/11 12:21:59 INFO attempt committed job_id=197 token=1
+db-1      | 2026-11-11T12:21:58.236929839Z 2026-11-11 12:21:58.236 UTC [209] STATEMENT:  INSERT INTO jobs(idempotency_key,payload,max_attempts) VALUES($1,$2,$3)
+db-1      | 2026-11-11T12:21:58.236931214Z 	 ON CONFLICT(idempotency_key) DO NOTHING RETURNING id,payload,status,attempts,max_attempts,token,lease_until,created_at,updated_at,last_error
+db-1      | 2026-11-11T12:21:58.237658797Z 2026-11-11 12:21:58.237 UTC [210] ERROR:  canceling statement due to lock timeout at character 13
+worker-1  | 2026-11-11T12:21:59.424407423Z 2026/11/11 12:21:59 INFO claimed job_id=198 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.424Z
+worker-1  | 2026-11-11T12:21:59.425341214Z 2026/11/11 12:21:59 INFO attempt committed job_id=198 token=1
+db-1      | 2026-11-11T12:21:58.237686339Z 2026-11-11 12:21:58.237 UTC [210] STATEMENT:  INSERT INTO jobs(idempotency_key,payload,max_attempts) VALUES($1,$2,$3)
+worker-1  | 2026-11-11T12:21:59.426221256Z 2026/11/11 12:21:59 INFO claimed job_id=200 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.426Z
+worker-1  | 2026-11-11T12:21:59.426929839Z 2026/11/11 12:21:59 INFO attempt committed job_id=200 token=1
+worker-1  | 2026-11-11T12:21:59.427809089Z 2026/11/11 12:21:59 INFO claimed job_id=202 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.427Z
+worker-1  | 2026-11-11T12:21:59.428735131Z 2026/11/11 12:21:59 INFO attempt committed job_id=202 token=1
+worker-1  | 2026-11-11T12:21:59.429742631Z 2026/11/11 12:21:59 INFO claimed job_id=203 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.429Z
+worker-1  | 2026-11-11T12:21:59.430506381Z 2026/11/11 12:21:59 INFO attempt committed job_id=203 token=1
+worker-1  | 2026-11-11T12:21:59.431646339Z 2026/11/11 12:21:59 INFO claimed job_id=204 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.431Z
+worker-1  | 2026-11-11T12:21:59.432670464Z 2026/11/11 12:21:59 INFO attempt committed job_id=204 token=1
+worker-1  | 2026-11-11T12:21:59.433865839Z 2026/11/11 12:21:59 INFO claimed job_id=207 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.433Z
+db-1      | 2026-11-11T12:21:58.237714380Z 	 ON CONFLICT(idempotency_key) DO NOTHING RETURNING id,payload,status,attempts,max_attempts,token,lease_until,created_at,updated_at,last_error
+worker-1  | 2026-11-11T12:21:59.434864464Z 2026/11/11 12:21:59 INFO attempt committed job_id=207 token=1
+worker-1  | 2026-11-11T12:21:59.435916714Z 2026/11/11 12:21:59 INFO claimed job_id=215 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.435Z
+worker-1  | 2026-11-11T12:21:59.436865756Z 2026/11/11 12:21:59 INFO attempt committed job_id=215 token=1
+worker-1  | 2026-11-11T12:21:59.437914214Z 2026/11/11 12:21:59 INFO claimed job_id=216 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.437Z
+worker-1  | 2026-11-11T12:21:59.438771048Z 2026/11/11 12:21:59 INFO attempt committed job_id=216 token=1
+worker-1  | 2026-11-11T12:21:59.439920673Z 2026/11/11 12:21:59 INFO claimed job_id=217 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.439Z
+worker-1  | 2026-11-11T12:21:59.440689381Z 2026/11/11 12:21:59 INFO attempt committed job_id=217 token=1
+worker-1  | 2026-11-11T12:21:59.442240756Z 2026/11/11 12:21:59 INFO claimed job_id=218 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.441Z
+worker-1  | 2026-11-11T12:21:59.443180339Z 2026/11/11 12:21:59 INFO attempt committed job_id=218 token=1
+worker-1  | 2026-11-11T12:21:59.444379714Z 2026/11/11 12:21:59 INFO claimed job_id=219 token=1 attempt=1 process_wall_time=2026-11-11T12:21:59.444Z
+worker-1  | 2026-11-11T12:21:59.445245048Z 2026/11/11 12:21:59 INFO attempt committed job_id=219 token=1

@@ -1,0 +1,832 @@
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml up -d --no-build --scale worker=0
+ Image postgres:17-alpine Pulling 
+ 40bfcb349d1b Pulling fs layer 0B
+ d2d83d7aade4 Pulling fs layer 0B
+ 5a7c8ea8d68c Pulling fs layer 0B
+ b90627b8f429 Pulling fs layer 0B
+ 838d2ff395c6 Pulling fs layer 0B
+ b065f0b0b28a Pulling fs layer 0B
+ 7f9d1a6d4d56 Pulling fs layer 0B
+ 5c6aa4285f57 Pulling fs layer 0B
+ c98c17fcbe32 Pulling fs layer 0B
+ f8e67922bbd3 Pulling fs layer 0B
+ b90627b8f429 Already exists 0B
+ b90627b8f429 Extracting 1B
+ b90627b8f429 Pull complete 0B
+ d2d83d7aade4 Downloading 1.049MB
+ d2d83d7aade4 Downloading 2.097MB
+ 5a7c8ea8d68c Download complete 0B
+ d2d83d7aade4 Downloading 3.146MB
+ d2d83d7aade4 Downloading 3.146MB
+ b065f0b0b28a Download complete 0B
+ b065f0b0b28a Extracting 1B
+ 40bfcb349d1b Download complete 0B
+ d2d83d7aade4 Downloading 4.194MB
+ b065f0b0b28a Extracting 1B
+ d2d83d7aade4 Downloading 5.243MB
+ 838d2ff395c6 Downloading 185B
+ b065f0b0b28a Extracting 1B
+ 838d2ff395c6 Download complete 0B
+ f8e67922bbd3 Download complete 0B
+ d2d83d7aade4 Downloading 6.291MB
+ b065f0b0b28a Extracting 1B
+ d2d83d7aade4 Downloading 6.291MB
+ b065f0b0b28a Extracting 1B
+ 5c6aa4285f57 Download complete 0B
+ d2d83d7aade4 Downloading 7.34MB
+ b065f0b0b28a Extracting 1B
+ d2d83d7aade4 Downloading 8.389MB
+ 7f9d1a6d4d56 Download complete 0B
+ b065f0b0b28a Extracting 1B
+ c98c17fcbe32 Download complete 0B
+ d2d83d7aade4 Downloading 8.389MB
+ b065f0b0b28a Extracting 1B
+ d2d83d7aade4 Downloading 9.437MB
+ 5a7c8ea8d68c Pull complete 0B
+ b065f0b0b28a Pull complete 0B
+ 40bfcb349d1b Pull complete 0B
+ d2d83d7aade4 Downloading 10.49MB
+ d2d83d7aade4 Downloading 10.49MB
+ b6cf16473f99 Download complete 0B
+ d2d83d7aade4 Downloading 11.53MB
+ d2d83d7aade4 Downloading 11.53MB
+ d2d83d7aade4 Downloading 12.58MB
+ d2d83d7aade4 Downloading 13.63MB
+ fe2a59dad82a Download complete 0B
+ d2d83d7aade4 Downloading 13.63MB
+ d2d83d7aade4 Downloading 14.68MB
+ d2d83d7aade4 Downloading 14.68MB
+ d2d83d7aade4 Downloading 15.73MB
+ d2d83d7aade4 Downloading 16.78MB
+ d2d83d7aade4 Downloading 16.78MB
+ d2d83d7aade4 Downloading 17.83MB
+ d2d83d7aade4 Downloading 17.83MB
+ d2d83d7aade4 Downloading 18.87MB
+ d2d83d7aade4 Downloading 19.92MB
+ d2d83d7aade4 Downloading 20.97MB
+ d2d83d7aade4 Downloading 20.97MB
+ d2d83d7aade4 Downloading 22.02MB
+ d2d83d7aade4 Downloading 22.02MB
+ d2d83d7aade4 Downloading 23.07MB
+ d2d83d7aade4 Downloading 24.12MB
+ d2d83d7aade4 Downloading 24.12MB
+ d2d83d7aade4 Downloading 25.17MB
+ d2d83d7aade4 Downloading 25.17MB
+ d2d83d7aade4 Downloading 26.21MB
+ d2d83d7aade4 Downloading 26.21MB
+ d2d83d7aade4 Downloading 27.26MB
+ d2d83d7aade4 Downloading 27.26MB
+ d2d83d7aade4 Downloading 28.31MB
+ d2d83d7aade4 Downloading 28.31MB
+ d2d83d7aade4 Downloading 29.36MB
+ d2d83d7aade4 Downloading 29.36MB
+ d2d83d7aade4 Downloading 30.41MB
+ d2d83d7aade4 Downloading 31.46MB
+ d2d83d7aade4 Downloading 32.51MB
+ d2d83d7aade4 Downloading 32.51MB
+ d2d83d7aade4 Downloading 33.55MB
+ d2d83d7aade4 Downloading 34.6MB
+ d2d83d7aade4 Downloading 35.65MB
+ d2d83d7aade4 Downloading 36.7MB
+ d2d83d7aade4 Downloading 37.75MB
+ d2d83d7aade4 Downloading 37.75MB
+ d2d83d7aade4 Downloading 38.8MB
+ d2d83d7aade4 Downloading 39.85MB
+ d2d83d7aade4 Downloading 40.89MB
+ d2d83d7aade4 Downloading 41.94MB
+ d2d83d7aade4 Downloading 41.94MB
+ d2d83d7aade4 Downloading 42.99MB
+ d2d83d7aade4 Downloading 44.04MB
+ d2d83d7aade4 Downloading 45.09MB
+ d2d83d7aade4 Downloading 46.14MB
+ d2d83d7aade4 Downloading 47.19MB
+ d2d83d7aade4 Downloading 47.19MB
+ d2d83d7aade4 Downloading 48.23MB
+ d2d83d7aade4 Downloading 49.28MB
+ d2d83d7aade4 Downloading 49.28MB
+ d2d83d7aade4 Downloading 51.38MB
+ d2d83d7aade4 Downloading 51.38MB
+ d2d83d7aade4 Downloading 52.43MB
+ d2d83d7aade4 Downloading 53.48MB
+ d2d83d7aade4 Downloading 53.48MB
+ d2d83d7aade4 Downloading 54.53MB
+ d2d83d7aade4 Downloading 55.57MB
+ d2d83d7aade4 Downloading 56.62MB
+ d2d83d7aade4 Downloading 56.62MB
+ d2d83d7aade4 Downloading 57.67MB
+ d2d83d7aade4 Downloading 58.72MB
+ d2d83d7aade4 Downloading 59.77MB
+ d2d83d7aade4 Downloading 60.82MB
+ d2d83d7aade4 Downloading 61.87MB
+ d2d83d7aade4 Downloading 62.91MB
+ d2d83d7aade4 Downloading 62.91MB
+ d2d83d7aade4 Downloading 63.96MB
+ d2d83d7aade4 Downloading 65.01MB
+ d2d83d7aade4 Downloading 66.06MB
+ d2d83d7aade4 Downloading 66.06MB
+ d2d83d7aade4 Downloading 67.11MB
+ d2d83d7aade4 Downloading 67.11MB
+ d2d83d7aade4 Downloading 68.16MB
+ d2d83d7aade4 Downloading 69.21MB
+ d2d83d7aade4 Downloading 69.21MB
+ d2d83d7aade4 Downloading 70.25MB
+ d2d83d7aade4 Downloading 71.3MB
+ d2d83d7aade4 Downloading 72.35MB
+ d2d83d7aade4 Downloading 72.35MB
+ d2d83d7aade4 Downloading 74.45MB
+ d2d83d7aade4 Downloading 74.45MB
+ d2d83d7aade4 Downloading 75.5MB
+ d2d83d7aade4 Downloading 76.55MB
+ d2d83d7aade4 Downloading 77.59MB
+ d2d83d7aade4 Downloading 78.64MB
+ d2d83d7aade4 Downloading 79.69MB
+ d2d83d7aade4 Downloading 80.74MB
+ d2d83d7aade4 Downloading 80.74MB
+ d2d83d7aade4 Downloading 81.79MB
+ d2d83d7aade4 Downloading 82.84MB
+ d2d83d7aade4 Downloading 83.89MB
+ d2d83d7aade4 Downloading 83.89MB
+ d2d83d7aade4 Downloading 84.93MB
+ d2d83d7aade4 Downloading 85.98MB
+ d2d83d7aade4 Downloading 87.03MB
+ d2d83d7aade4 Downloading 88.08MB
+ d2d83d7aade4 Downloading 88.08MB
+ d2d83d7aade4 Downloading 89.13MB
+ d2d83d7aade4 Downloading 90.18MB
+ d2d83d7aade4 Downloading 91.23MB
+ d2d83d7aade4 Downloading 91.23MB
+ d2d83d7aade4 Downloading 92.27MB
+ d2d83d7aade4 Downloading 93.32MB
+ d2d83d7aade4 Downloading 94.37MB
+ d2d83d7aade4 Downloading 94.37MB
+ d2d83d7aade4 Downloading 95.42MB
+ d2d83d7aade4 Downloading 95.42MB
+ d2d83d7aade4 Downloading 96.47MB
+ d2d83d7aade4 Downloading 97.52MB
+ d2d83d7aade4 Downloading 97.52MB
+ d2d83d7aade4 Downloading 98.57MB
+ d2d83d7aade4 Downloading 99.61MB
+ d2d83d7aade4 Downloading 99.61MB
+ d2d83d7aade4 Downloading 100.7MB
+ d2d83d7aade4 Downloading 101.7MB
+ d2d83d7aade4 Downloading 101.7MB
+ d2d83d7aade4 Downloading 102.8MB
+ d2d83d7aade4 Downloading 103.8MB
+ d2d83d7aade4 Downloading 103.8MB
+ d2d83d7aade4 Downloading 104.9MB
+ d2d83d7aade4 Downloading 105.9MB
+ d2d83d7aade4 Downloading 107MB
+ d2d83d7aade4 Downloading 108MB
+ d2d83d7aade4 Downloading 108MB
+ d2d83d7aade4 Downloading 109.1MB
+ d2d83d7aade4 Downloading 110MB
+ d2d83d7aade4 Download complete 0B
+ d2d83d7aade4 Extracting 1B
+ d2d83d7aade4 Extracting 1B
+ d2d83d7aade4 Extracting 1B
+ d2d83d7aade4 Extracting 1B
+ d2d83d7aade4 Extracting 1B
+ d2d83d7aade4 Extracting 1B
+ d2d83d7aade4 Extracting 1B
+ d2d83d7aade4 Extracting 1B
+ d2d83d7aade4 Extracting 1B
+ d2d83d7aade4 Extracting 1B
+ d2d83d7aade4 Extracting 1B
+ d2d83d7aade4 Extracting 2B
+ d2d83d7aade4 Extracting 2B
+ 838d2ff395c6 Pull complete 0B
+ f8e67922bbd3 Pull complete 0B
+ 5c6aa4285f57 Pull complete 0B
+ 7f9d1a6d4d56 Pull complete 0B
+ c98c17fcbe32 Pull complete 0B
+ d2d83d7aade4 Pull complete 0B
+ Image postgres:17-alpine Pulled 
+ Network soup-test-integration-660736b8bf_queue Creating 
+ Volume soup-test-integration-660736b8bf_pgdata Creating 
+ Volume soup-test-integration-660736b8bf_pgdata Creating 
+ Network soup-test-integration-660736b8bf_queue Creating 
+ Volume soup-test-integration-660736b8bf_pgdata Created 
+ Volume soup-test-integration-660736b8bf_pgdata Created 
+ Network soup-test-integration-660736b8bf_queue Created 
+ Network soup-test-integration-660736b8bf_queue Created 
+ Container soup-test-integration-660736b8bf-db-1 Creating 
+ Container soup-test-integration-660736b8bf-db-1 Created 
+ Container soup-test-integration-660736b8bf-migrate-1 Creating 
+ Container soup-test-integration-660736b8bf-migrate-1 Created 
+ Container soup-test-integration-660736b8bf-api-1 Creating 
+ Container soup-test-integration-660736b8bf-api-1 Created 
+ Container soup-test-integration-660736b8bf-db-1 Starting 
+ Container soup-test-integration-660736b8bf-db-1 Started 
+ Container soup-test-integration-660736b8bf-db-1 Waiting 
+ Container soup-test-integration-660736b8bf-db-1 Healthy 
+ Container soup-test-integration-660736b8bf-migrate-1 Starting 
+ Container soup-test-integration-660736b8bf-migrate-1 Started 
+ Container soup-test-integration-660736b8bf-migrate-1 Waiting 
+ Container soup-test-integration-660736b8bf-migrate-1 Exited 
+ Container soup-test-integration-660736b8bf-api-1 Starting 
+ Container soup-test-integration-660736b8bf-api-1 Started 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml port api 8080
+127.0.0.1:62014
+
+exit=0
+
+$ docker info --format {{json .ServerVersion}} {{json .OSType}} {{json .Architecture}} CPUs={{.NCPU}} Memory={{.MemTotal}}
+"29.9.2" "linux" "aarch64" CPUs=8 Memory=8319705088
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml ps -q
+d66b939c99859d7d2857db809a39c8e8ebd574db9a95486c18ab9f3a952603fe
+3f9f5e0166d54fa96ca7faaaa430bc49fbc265c861a043926dda4a92f5494ab5
+
+exit=0
+
+$ docker stats --no-stream --format {{json .}} d66b939c99859d7d2857db809a39c8e8ebd574db9a95486c18ab9f3a952603fe 3f9f5e0166d54fa96ca7faaaa430bc49fbc265c861a043926dda4a92f5494ab5
+{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"d66b939c99859d7d2857db809a39c8e8ebd574db9a95486c18ab9f3a952603fe","ID":"d66b939c9985","MemPerc":"0.13%","MemUsage":"10.38MiB / 7.748GiB","Name":"soup-test-integration-660736b8bf-api-1","NetIO":"2.58kB / 1.73kB","PIDs":"9"}
+{"BlockIO":"0B / 52.9MB","CPUPerc":"1.15%","Container":"3f9f5e0166d54fa96ca7faaaa430bc49fbc265c861a043926dda4a92f5494ab5","ID":"3f9f5e0166d5","MemPerc":"0.43%","MemUsage":"33.91MiB / 7.748GiB","Name":"soup-test-integration-660736b8bf-db-1","NetIO":"5.88kB / 2.94kB","PIDs":"13"}
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml images --format json
+[{"ID":"sha256:ad09bc2c91d0c3a40de5886549f842dff2382f5ed7cc2fbdc5492a65a1473b7f","ContainerName":"soup-test-integration-660736b8bf-api-1","Repository":"soup-queue","Tag":"local","Platform":"linux/arm64","Size":74367777,"Created":"2026-11-11T09:05:12.504544751Z","LastTagTime":"2026-11-11T09:05:13.459639669Z"},{"ID":"sha256:ad09bc2c91d0c3a40de5886549f842dff2382f5ed7cc2fbdc5492a65a1473b7f","ContainerName":"soup-test-integration-660736b8bf-migrate-1","Repository":"soup-queue","Tag":"local","Platform":"linux/arm64","Size":74367777,"Created":"2026-11-11T09:05:12.504544751Z","LastTagTime":"2026-11-11T09:05:13.459639669Z"},{"ID":"sha256:3540c0362c809df084ffac0ae69fe794515f9de92692f02178bcdce0ef0302ac","ContainerName":"soup-test-integration-660736b8bf-db-1","Repository":"postgres","Tag":"17-alpine","Platform":"linux/arm64/v8","Size":414812043,"Created":"2026-11-05T19:03:57.181599785Z","LastTagTime":"2026-11-11T09:08:44.144698002Z"}]
+
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml run --rm --no-deps -e TEST_DATABASE_URL -e ALLOW_TEST_TRUNCATE=yes --entrypoint /app/storage.test worker -test.v -test.count=1
+=== RUN   TestDoubleClaim
+--- PASS: TestDoubleClaim (0.05s)
+=== RUN   TestConcurrentDuplicate
+--- PASS: TestConcurrentDuplicate (0.04s)
+=== RUN   TestZombieAndExhaustion
+--- PASS: TestZombieAndExhaustion (0.03s)
+=== RUN   TestCancelCompleteRace
+    store_test.go:188: race outcomes: map[cancelled:70 succeeded:30]
+--- PASS: TestCancelCompleteRace (0.24s)
+=== RUN   TestAtomicRollback
+--- PASS: TestAtomicRollback (0.02s)
+=== RUN   TestReadCommittedAndLockWaitExpiry
+--- PASS: TestReadCommittedAndLockWaitExpiry (0.62s)
+=== RUN   TestRetryBudgetAndCancelOrders
+--- PASS: TestRetryBudgetAndCancelOrders (0.06s)
+PASS
+ Container soup-test-integration-660736b8bf-worker-run-5b512be9b7fc Creating 
+ Container soup-test-integration-660736b8bf-worker-run-5b512be9b7fc Created 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c TRUNCATE job_effects,jobs RESTART IDENTITY
+TRUNCATE TABLE
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml up -d --no-build --scale worker=2 worker
+ Container soup-test-integration-660736b8bf-db-1 Running 
+ Container soup-test-integration-660736b8bf-worker-2 Creating 
+ Container soup-test-integration-660736b8bf-worker-1 Creating 
+ Container soup-test-integration-660736b8bf-worker-1 Created 
+ Container soup-test-integration-660736b8bf-worker-2 Created 
+ Container soup-test-integration-660736b8bf-db-1 Waiting 
+ Container soup-test-integration-660736b8bf-db-1 Healthy 
+ Container soup-test-integration-660736b8bf-migrate-1 Starting 
+ Container soup-test-integration-660736b8bf-migrate-1 Started 
+ Container soup-test-integration-660736b8bf-migrate-1 Waiting 
+ Container soup-test-integration-660736b8bf-migrate-1 Exited 
+ Container soup-test-integration-660736b8bf-worker-2 Starting 
+ Container soup-test-integration-660736b8bf-worker-2 Started 
+ Container soup-test-integration-660736b8bf-worker-1 Starting 
+ Container soup-test-integration-660736b8bf-worker-1 Started 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml up -d --no-build --scale worker=1 worker
+ Container soup-test-integration-660736b8bf-worker-1 Running 
+ Container soup-test-integration-660736b8bf-db-1 Running 
+ Container soup-test-integration-660736b8bf-worker-2 Stopping 
+ Container soup-test-integration-660736b8bf-worker-2 Stopped 
+ Container soup-test-integration-660736b8bf-worker-2 Removing 
+ Container soup-test-integration-660736b8bf-worker-2 Removed 
+ Container soup-test-integration-660736b8bf-db-1 Waiting 
+ Container soup-test-integration-660736b8bf-db-1 Healthy 
+ Container soup-test-integration-660736b8bf-migrate-1 Starting 
+ Container soup-test-integration-660736b8bf-migrate-1 Started 
+ Container soup-test-integration-660736b8bf-migrate-1 Waiting 
+ Container soup-test-integration-660736b8bf-migrate-1 Exited 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml ps -q worker
+1385f4608cf1a0445d8992b57151da0629f00bf291da58f78b84925832b2bb3a
+
+exit=0
+
+$ docker inspect --format {{json .Config.Labels}} 1385f4608cf1a0445d8992b57151da0629f00bf291da58f78b84925832b2bb3a
+{"com.docker.compose.config-hash":"1596cfe9d897bb5afc9f76b6382679ce5d47a2af91b54fbe977986d16e15f011","com.docker.compose.container-number":"1","com.docker.compose.depends_on":"migrate:service_completed_successfully:false","com.docker.compose.image":"sha256:3f8c69c0a53dd653597d4041cf4c072b8b44bf17ab081452559e98540dbee293","com.docker.compose.oneoff":"False","com.docker.compose.project":"soup-test-integration-660736b8bf","com.docker.compose.project.config_files":"/Users/denis/vs_code/SOUP_BACK/compose.yaml,/Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml","com.docker.compose.project.environment_file":"/dev/null","com.docker.compose.project.working_dir":"/Users/denis/vs_code/SOUP_BACK","com.docker.compose.service":"worker","com.docker.compose.version":"5.6.1"}
+
+exit=0
+
+$ docker pause 1385f4608cf1a0445d8992b57151da0629f00bf291da58f78b84925832b2bb3a
+1385f4608cf1a0445d8992b57151da0629f00bf291da58f78b84925832b2bb3a
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE id=58 AND lease_until<clock_timestamp()
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml run -d --no-deps worker
+62790d162ab17a9fd534806f7875cae673cf8f937628750a14671c663d9a37f4
+ Container soup-test-integration-660736b8bf-worker-run-ed0261680886 Creating 
+ Container soup-test-integration-660736b8bf-worker-run-ed0261680886 Created 
+
+exit=0
+
+$ docker inspect --format {{json .Config.Labels}} 62790d162ab17a9fd534806f7875cae673cf8f937628750a14671c663d9a37f4
+{"com.docker.compose.config-hash":"699a54b2eb405a809032f0453ab43217054ba0b9ae8c5a089d0e71dc155bb6b6","com.docker.compose.depends_on":"","com.docker.compose.image":"sha256:3f8c69c0a53dd653597d4041cf4c072b8b44bf17ab081452559e98540dbee293","com.docker.compose.oneoff":"True","com.docker.compose.project":"soup-test-integration-660736b8bf","com.docker.compose.project.config_files":"/Users/denis/vs_code/SOUP_BACK/compose.yaml,/Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml","com.docker.compose.project.environment_file":"/dev/null","com.docker.compose.project.working_dir":"/Users/denis/vs_code/SOUP_BACK","com.docker.compose.service":"worker","com.docker.compose.slug":"ed026168088681578f713aca3b3d1ffb78b17315bfb7af4095624e2b9ae0d1b7","com.docker.compose.version":"5.6.1"}
+
+exit=0
+
+$ docker unpause 1385f4608cf1a0445d8992b57151da0629f00bf291da58f78b84925832b2bb3a
+1385f4608cf1a0445d8992b57151da0629f00bf291da58f78b84925832b2bb3a
+
+exit=0
+
+$ docker logs 1385f4608cf1a0445d8992b57151da0629f00bf291da58f78b84925832b2bb3a
+2026/11/11 09:08:54 INFO claimed job_id=55 token=1 attempt=1 process_wall_time=2026-11-11T09:08:54.330Z
+2026/11/11 09:08:54 INFO attempt committed job_id=55 token=1
+2026/11/11 09:08:54 INFO claimed job_id=55 token=2 attempt=2 process_wall_time=2026-11-11T09:08:54.348Z
+2026/11/11 09:08:54 INFO attempt committed job_id=55 token=2
+2026/11/11 09:08:54 INFO claimed job_id=55 token=3 attempt=3 process_wall_time=2026-11-11T09:08:54.360Z
+2026/11/11 09:08:54 INFO attempt committed job_id=55 token=3
+2026/11/11 09:08:56 INFO claimed job_id=58 token=1 attempt=1 process_wall_time=2026-11-11T09:08:56.862Z
+2026/11/11 09:09:03 WARN ownership lost or heartbeat unavailable job_id=58 token=1
+
+exit=0
+
+$ docker inspect --format {{json .Config.Labels}} 62790d162ab17a9fd534806f7875cae673cf8f937628750a14671c663d9a37f4
+{"com.docker.compose.config-hash":"699a54b2eb405a809032f0453ab43217054ba0b9ae8c5a089d0e71dc155bb6b6","com.docker.compose.depends_on":"","com.docker.compose.image":"sha256:3f8c69c0a53dd653597d4041cf4c072b8b44bf17ab081452559e98540dbee293","com.docker.compose.oneoff":"True","com.docker.compose.project":"soup-test-integration-660736b8bf","com.docker.compose.project.config_files":"/Users/denis/vs_code/SOUP_BACK/compose.yaml,/Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml","com.docker.compose.project.environment_file":"/dev/null","com.docker.compose.project.working_dir":"/Users/denis/vs_code/SOUP_BACK","com.docker.compose.service":"worker","com.docker.compose.slug":"ed026168088681578f713aca3b3d1ffb78b17315bfb7af4095624e2b9ae0d1b7","com.docker.compose.version":"5.6.1"}
+
+exit=0
+
+$ docker rm -f 62790d162ab17a9fd534806f7875cae673cf8f937628750a14671c663d9a37f4
+62790d162ab17a9fd534806f7875cae673cf8f937628750a14671c663d9a37f4
+
+exit=0
+
+$ docker unpause 1385f4608cf1a0445d8992b57151da0629f00bf291da58f78b84925832b2bb3a
+Error response from daemon: Container 1385f4608cf1a0445d8992b57151da0629f00bf291da58f78b84925832b2bb3a is not paused
+
+exit=1
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT coalesce(json_agg(t),'[]'::json) FROM (SELECT j.id,j.idempotency_key,j.status,j.attempts,j.max_attempts,j.token, j.lease_until, e.token AS effect_token, (SELECT count(*) FROM job_effects x WHERE x.job_id=j.id) AS effects FROM jobs j LEFT JOIN job_effects e ON e.job_id=j.id ORDER BY j.id) t
+[{"id":1,"idempotency_key":"duplicate","status":"cancelled","attempts":0,"max_attempts":5,"token":1,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":50,"idempotency_key":"page-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":51,"idempotency_key":"page-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":52,"idempotency_key":"page-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":53,"idempotency_key":"page-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":54,"idempotency_key":"page-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":55,"idempotency_key":"retry-success","status":"succeeded","attempts":3,"max_attempts":3,"token":3,"lease_until":null,"effect_token":3,"effects":1}, 
+ {"id":56,"idempotency_key":"retry-failure","status":"failed","attempts":2,"max_attempts":2,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":57,"idempotency_key":"double-process","status":"cancelled","attempts":1,"max_attempts":5,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":58,"idempotency_key":"zombie-process","status":"succeeded","attempts":2,"max_attempts":5,"token":2,"lease_until":null,"effect_token":2,"effects":1}]
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml stop worker
+ Container soup-test-integration-660736b8bf-worker-1 Stopping 
+ Container soup-test-integration-660736b8bf-worker-1 Stopped 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml run -d --no-deps -e TEST_CLOCK_OFFSET=24h worker
+1d9c8a94921894e3381bcbf9cddb4d3284af9ad0dc84f4e618d37c258f7c4508
+ Container soup-test-integration-660736b8bf-worker-run-48034394b22e Creating 
+ Container soup-test-integration-660736b8bf-worker-run-48034394b22e Created 
+
+exit=0
+
+$ docker inspect --format {{json .Config.Labels}} 1d9c8a94921894e3381bcbf9cddb4d3284af9ad0dc84f4e618d37c258f7c4508
+{"com.docker.compose.config-hash":"32194ce9e93eb75a0a9a0e1177cd010f203035c4764c9b6d3418af28783ee646","com.docker.compose.depends_on":"","com.docker.compose.image":"sha256:3f8c69c0a53dd653597d4041cf4c072b8b44bf17ab081452559e98540dbee293","com.docker.compose.oneoff":"True","com.docker.compose.project":"soup-test-integration-660736b8bf","com.docker.compose.project.config_files":"/Users/denis/vs_code/SOUP_BACK/compose.yaml,/Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml","com.docker.compose.project.environment_file":"/dev/null","com.docker.compose.project.working_dir":"/Users/denis/vs_code/SOUP_BACK","com.docker.compose.service":"worker","com.docker.compose.slug":"48034394b22e3da0a4ad286e181799632d07f7e90dc3ca367bc7deef4aef34bb","com.docker.compose.version":"5.6.1"}
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml run -d --no-deps -e TEST_CLOCK_OFFSET=-24h worker
+ae023a6ea0677c6798b9063adb10dab0a65aa4a4a34afb472c5041a7a30ce1a9
+ Container soup-test-integration-660736b8bf-worker-run-f7f8b0b0d8dc Creating 
+ Container soup-test-integration-660736b8bf-worker-run-f7f8b0b0d8dc Created 
+
+exit=0
+
+$ docker inspect --format {{json .Config.Labels}} ae023a6ea0677c6798b9063adb10dab0a65aa4a4a34afb472c5041a7a30ce1a9
+{"com.docker.compose.config-hash":"d9d2dac5551ff4ec627c867087e1968f89a3230b94255dc5a47269c192fb0679","com.docker.compose.depends_on":"","com.docker.compose.image":"sha256:3f8c69c0a53dd653597d4041cf4c072b8b44bf17ab081452559e98540dbee293","com.docker.compose.oneoff":"True","com.docker.compose.project":"soup-test-integration-660736b8bf","com.docker.compose.project.config_files":"/Users/denis/vs_code/SOUP_BACK/compose.yaml,/Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml","com.docker.compose.project.environment_file":"/dev/null","com.docker.compose.project.working_dir":"/Users/denis/vs_code/SOUP_BACK","com.docker.compose.service":"worker","com.docker.compose.slug":"f7f8b0b0d8dc8d9b96931e2f34262236c74f520488cc20f97711c5fe82ae7908","com.docker.compose.version":"5.6.1"}
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+8
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+8
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+6
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+6
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+4
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+4
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+2
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+2
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT coalesce(json_agg(t),'[]'::json) FROM (SELECT attempts FROM jobs WHERE idempotency_key LIKE 'skew-%') t
+[{"attempts":1}, 
+ {"attempts":1}, 
+ {"attempts":1}, 
+ {"attempts":1}, 
+ {"attempts":1}, 
+ {"attempts":1}, 
+ {"attempts":1}, 
+ {"attempts":1}]
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT coalesce(json_agg(t),'[]'::json) FROM (SELECT j.id,j.idempotency_key,j.status,j.attempts,j.max_attempts,j.token, j.lease_until, e.token AS effect_token, (SELECT count(*) FROM job_effects x WHERE x.job_id=j.id) AS effects FROM jobs j LEFT JOIN job_effects e ON e.job_id=j.id ORDER BY j.id) t
+[{"id":1,"idempotency_key":"duplicate","status":"cancelled","attempts":0,"max_attempts":5,"token":1,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":50,"idempotency_key":"page-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":51,"idempotency_key":"page-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":52,"idempotency_key":"page-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":53,"idempotency_key":"page-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":54,"idempotency_key":"page-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":55,"idempotency_key":"retry-success","status":"succeeded","attempts":3,"max_attempts":3,"token":3,"lease_until":null,"effect_token":3,"effects":1}, 
+ {"id":56,"idempotency_key":"retry-failure","status":"failed","attempts":2,"max_attempts":2,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":57,"idempotency_key":"double-process","status":"cancelled","attempts":1,"max_attempts":5,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":58,"idempotency_key":"zombie-process","status":"succeeded","attempts":2,"max_attempts":5,"token":2,"lease_until":null,"effect_token":2,"effects":1}, 
+ {"id":59,"idempotency_key":"skew-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":60,"idempotency_key":"skew-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":61,"idempotency_key":"skew-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":62,"idempotency_key":"skew-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":63,"idempotency_key":"skew-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":64,"idempotency_key":"skew-5","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":65,"idempotency_key":"skew-6","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":66,"idempotency_key":"skew-7","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}]
+
+exit=0
+
+$ docker inspect --format {{json .Config.Labels}} 1d9c8a94921894e3381bcbf9cddb4d3284af9ad0dc84f4e618d37c258f7c4508
+{"com.docker.compose.config-hash":"32194ce9e93eb75a0a9a0e1177cd010f203035c4764c9b6d3418af28783ee646","com.docker.compose.depends_on":"","com.docker.compose.image":"sha256:3f8c69c0a53dd653597d4041cf4c072b8b44bf17ab081452559e98540dbee293","com.docker.compose.oneoff":"True","com.docker.compose.project":"soup-test-integration-660736b8bf","com.docker.compose.project.config_files":"/Users/denis/vs_code/SOUP_BACK/compose.yaml,/Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml","com.docker.compose.project.environment_file":"/dev/null","com.docker.compose.project.working_dir":"/Users/denis/vs_code/SOUP_BACK","com.docker.compose.service":"worker","com.docker.compose.slug":"48034394b22e3da0a4ad286e181799632d07f7e90dc3ca367bc7deef4aef34bb","com.docker.compose.version":"5.6.1"}
+
+exit=0
+
+$ docker rm -f 1d9c8a94921894e3381bcbf9cddb4d3284af9ad0dc84f4e618d37c258f7c4508
+1d9c8a94921894e3381bcbf9cddb4d3284af9ad0dc84f4e618d37c258f7c4508
+
+exit=0
+
+$ docker inspect --format {{json .Config.Labels}} ae023a6ea0677c6798b9063adb10dab0a65aa4a4a34afb472c5041a7a30ce1a9
+{"com.docker.compose.config-hash":"d9d2dac5551ff4ec627c867087e1968f89a3230b94255dc5a47269c192fb0679","com.docker.compose.depends_on":"","com.docker.compose.image":"sha256:3f8c69c0a53dd653597d4041cf4c072b8b44bf17ab081452559e98540dbee293","com.docker.compose.oneoff":"True","com.docker.compose.project":"soup-test-integration-660736b8bf","com.docker.compose.project.config_files":"/Users/denis/vs_code/SOUP_BACK/compose.yaml,/Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml","com.docker.compose.project.environment_file":"/dev/null","com.docker.compose.project.working_dir":"/Users/denis/vs_code/SOUP_BACK","com.docker.compose.service":"worker","com.docker.compose.slug":"f7f8b0b0d8dc8d9b96931e2f34262236c74f520488cc20f97711c5fe82ae7908","com.docker.compose.version":"5.6.1"}
+
+exit=0
+
+$ docker rm -f ae023a6ea0677c6798b9063adb10dab0a65aa4a4a34afb472c5041a7a30ce1a9
+ae023a6ea0677c6798b9063adb10dab0a65aa4a4a34afb472c5041a7a30ce1a9
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml start worker
+ Container soup-test-integration-660736b8bf-db-1 Waiting 
+ Container soup-test-integration-660736b8bf-db-1 Healthy 
+ Container soup-test-integration-660736b8bf-migrate-1 Starting 
+ Container soup-test-integration-660736b8bf-migrate-1 Started 
+ Container soup-test-integration-660736b8bf-migrate-1 Waiting 
+ Container soup-test-integration-660736b8bf-migrate-1 Exited 
+ Container soup-test-integration-660736b8bf-worker-1 Starting 
+ Container soup-test-integration-660736b8bf-worker-1 Started 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname='soup' AND pid<>pg_backend_pid()
+t
+t
+t
+t
+t
+t
+t
+t
+t
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml stop db
+ Container soup-test-integration-660736b8bf-db-1 Stopping 
+ Container soup-test-integration-660736b8bf-db-1 Stopped 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml start db
+ Container soup-test-integration-660736b8bf-db-1 Starting 
+ Container soup-test-integration-660736b8bf-db-1 Started 
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+1
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT count(*) FROM jobs WHERE status IN ('queued','running')
+0
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml exec -T db psql -X -U soup -d soup -v ON_ERROR_STOP=1 -At -c SELECT coalesce(json_agg(t),'[]'::json) FROM (SELECT j.id,j.idempotency_key,j.status,j.attempts,j.max_attempts,j.token, j.lease_until, e.token AS effect_token, (SELECT count(*) FROM job_effects x WHERE x.job_id=j.id) AS effects FROM jobs j LEFT JOIN job_effects e ON e.job_id=j.id ORDER BY j.id) t
+[{"id":1,"idempotency_key":"duplicate","status":"cancelled","attempts":0,"max_attempts":5,"token":1,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":50,"idempotency_key":"page-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":51,"idempotency_key":"page-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":52,"idempotency_key":"page-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":53,"idempotency_key":"page-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":54,"idempotency_key":"page-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":55,"idempotency_key":"retry-success","status":"succeeded","attempts":3,"max_attempts":3,"token":3,"lease_until":null,"effect_token":3,"effects":1}, 
+ {"id":56,"idempotency_key":"retry-failure","status":"failed","attempts":2,"max_attempts":2,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":57,"idempotency_key":"double-process","status":"cancelled","attempts":1,"max_attempts":5,"token":2,"lease_until":null,"effect_token":null,"effects":0}, 
+ {"id":58,"idempotency_key":"zombie-process","status":"succeeded","attempts":2,"max_attempts":5,"token":2,"lease_until":null,"effect_token":2,"effects":1}, 
+ {"id":59,"idempotency_key":"skew-0","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":60,"idempotency_key":"skew-1","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":61,"idempotency_key":"skew-2","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":62,"idempotency_key":"skew-3","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":63,"idempotency_key":"skew-4","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":64,"idempotency_key":"skew-5","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":65,"idempotency_key":"skew-6","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":66,"idempotency_key":"skew-7","status":"succeeded","attempts":1,"max_attempts":5,"token":1,"lease_until":null,"effect_token":1,"effects":1}, 
+ {"id":67,"idempotency_key":"db-outage","status":"succeeded","attempts":2,"max_attempts":5,"token":2,"lease_until":null,"effect_token":2,"effects":1}]
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml logs --no-color --timestamps
+api-1  | 2026-11-11T09:08:47.914142296Z 2026/11/11 09:08:47 INFO API started address=:8080
+db-1   | 2026-11-11T09:08:44.670050461Z The files belonging to this database system will be owned by user "postgres".
+db-1   | 2026-11-11T09:08:44.670078211Z This user must also own the server process.
+db-1   | 2026-11-11T09:08:44.670079919Z 
+db-1   | 2026-11-11T09:08:44.670186961Z The database cluster will be initialized with locale "en_US.utf8".
+db-1   | 2026-11-11T09:08:44.670194336Z The default database encoding has accordingly been set to "UTF8".
+db-1   | 2026-11-11T09:08:44.670195169Z The default text search configuration will be set to "english".
+db-1   | 2026-11-11T09:08:44.670196044Z 
+db-1   | 2026-11-11T09:08:44.670196669Z Data page checksums are disabled.
+db-1   | 2026-11-11T09:08:44.670197461Z 
+db-1   | 2026-11-11T09:08:44.670198086Z fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db-1   | 2026-11-11T09:08:44.674772502Z creating subdirectories ... ok
+db-1   | 2026-11-11T09:08:44.674782127Z selecting dynamic shared memory implementation ... posix
+db-1   | 2026-11-11T09:08:44.688349627Z selecting default "max_connections" ... 100
+db-1   | 2026-11-11T09:08:44.703649336Z selecting default "shared_buffers" ... 128MB
+db-1   | 2026-11-11T09:08:44.728371127Z selecting default time zone ... UTC
+db-1   | 2026-11-11T09:08:44.728862169Z creating configuration files ... ok
+db-1   | 2026-11-11T09:08:44.819968961Z running bootstrap script ... ok
+db-1   | 2026-11-11T09:08:44.928215003Z sh: locale: not found
+db-1   | 2026-11-11T09:08:44.928227544Z 2026-11-11 09:08:44.928 UTC [35] WARNING:  no usable system locales were found
+db-1   | 2026-11-11T09:08:45.154335711Z performing post-bootstrap initialization ... ok
+db-1   | 2026-11-11T09:08:45.233693711Z syncing data to disk ... ok
+db-1   | 2026-11-11T09:08:45.233709044Z 
+db-1   | 2026-11-11T09:08:45.233710419Z 
+db-1   | 2026-11-11T09:08:45.233711128Z Success. You can now start the database server using:
+db-1   | 2026-11-11T09:08:45.233712753Z 
+db-1   | 2026-11-11T09:08:45.233713544Z     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db-1   | 2026-11-11T09:08:45.233714336Z 
+db-1   | 2026-11-11T09:08:45.233712669Z initdb: warning: enabling "trust" authentication for local connections
+db-1   | 2026-11-11T09:08:45.233721544Z initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+db-1   | 2026-11-11T09:08:45.264462086Z waiting for server to start....2026-11-11 09:08:45.264 UTC [41] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1   | 2026-11-11T09:08:45.265225711Z 2026-11-11 09:08:45.265 UTC [41] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1   | 2026-11-11T09:08:45.268039419Z 2026-11-11 09:08:45.267 UTC [44] LOG:  database system was shut down at 2026-11-11 09:08:45 UTC
+db-1   | 2026-11-11T09:08:45.271625128Z 2026-11-11 09:08:45.271 UTC [41] LOG:  database system is ready to accept connections
+db-1   | 2026-11-11T09:08:45.352655753Z  done
+db-1   | 2026-11-11T09:08:45.352666628Z server started
+db-1   | 2026-11-11T09:08:45.403669503Z CREATE DATABASE
+db-1   | 2026-11-11T09:08:45.403932003Z 
+db-1   | 2026-11-11T09:08:45.403939336Z 
+db-1   | 2026-11-11T09:08:45.403940294Z /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db-1   | 2026-11-11T09:08:45.403941919Z 
+db-1   | 2026-11-11T09:08:45.404691169Z waiting for server to shut down....2026-11-11 09:08:45.404 UTC [41] LOG:  received fast shutdown request
+db-1   | 2026-11-11T09:08:45.405667253Z 2026-11-11 09:08:45.405 UTC [41] LOG:  aborting any active transactions
+db-1   | 2026-11-11T09:08:45.407974169Z 2026-11-11 09:08:45.407 UTC [41] LOG:  background worker "logical replication launcher" (PID 47) exited with exit code 1
+worker-1  | 2026-11-11T09:08:54.330684007Z 2026/11/11 09:08:54 INFO claimed job_id=55 token=1 attempt=1 process_wall_time=2026-11-11T09:08:54.330Z
+db-1      | 2026-11-11T09:08:45.408097544Z 2026-11-11 09:08:45.408 UTC [42] LOG:  shutting down
+worker-1  | 2026-11-11T09:08:54.347329299Z 2026/11/11 09:08:54 INFO attempt committed job_id=55 token=1
+worker-1  | 2026-11-11T09:08:54.348489007Z 2026/11/11 09:08:54 INFO claimed job_id=55 token=2 attempt=2 process_wall_time=2026-11-11T09:08:54.348Z
+db-1      | 2026-11-11T09:08:45.408718211Z 2026-11-11 09:08:45.408 UTC [42] LOG:  checkpoint starting: shutdown immediate
+db-1      | 2026-11-11T09:08:45.451434878Z 2026-11-11 09:08:45.451 UTC [42] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.020 s, sync=0.022 s, total=0.044 s; sync files=301, longest=0.010 s, average=0.001 s; distance=4266 kB, estimate=4266 kB; lsn=0/191E830, redo lsn=0/191E830
+db-1      | 2026-11-11T09:08:45.456080128Z 2026-11-11 09:08:45.455 UTC [41] LOG:  database system is shut down
+db-1      | 2026-11-11T09:08:45.509019669Z  done
+db-1      | 2026-11-11T09:08:45.509038503Z server stopped
+worker-1  | 2026-11-11T09:08:54.359808257Z 2026/11/11 09:08:54 INFO attempt committed job_id=55 token=2
+worker-1  | 2026-11-11T09:08:54.360997465Z 2026/11/11 09:08:54 INFO claimed job_id=55 token=3 attempt=3 process_wall_time=2026-11-11T09:08:54.360Z
+worker-1  | 2026-11-11T09:08:54.419540049Z 2026/11/11 09:08:54 INFO attempt committed job_id=55 token=3
+worker-1  | 2026-11-11T09:08:56.863197800Z 2026/11/11 09:08:56 INFO claimed job_id=58 token=1 attempt=1 process_wall_time=2026-11-11T09:08:56.862Z
+worker-1  | 2026-11-11T09:09:03.384514678Z 2026/11/11 09:09:03 WARN ownership lost or heartbeat unavailable job_id=58 token=1
+worker-1  | 2026-11-11T09:09:11.130405376Z 2026/11/11 09:09:11 INFO claimed job_id=67 token=1 attempt=1 process_wall_time=2026-11-11T09:09:11.130Z
+worker-1  | 2026-11-11T09:09:11.531070543Z 2026/11/11 09:09:11 WARN ownership lost or heartbeat unavailable job_id=67 token=1
+worker-1  | 2026-11-11T09:09:11.629441543Z 2026/11/11 09:09:11 WARN claim unavailable
+worker-1  | 2026-11-11T09:09:11.660801709Z 2026/11/11 09:09:11 WARN claim unavailable
+db-1      | 2026-11-11T09:08:45.509635294Z 
+db-1      | 2026-11-11T09:08:45.509642628Z PostgreSQL init process complete; ready for start up.
+worker-1  | 2026-11-11T09:09:11.691724168Z 2026/11/11 09:09:11 WARN claim unavailable
+db-1      | 2026-11-11T09:08:45.509644086Z 
+db-1      | 2026-11-11T09:08:45.524394378Z 2026-11-11 09:08:45.524 UTC [1] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1      | 2026-11-11T09:08:45.524476878Z 2026-11-11 09:08:45.524 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1      | 2026-11-11T09:08:45.524479169Z 2026-11-11 09:08:45.524 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1      | 2026-11-11T09:08:45.525999336Z 2026-11-11 09:08:45.525 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1      | 2026-11-11T09:08:45.528004128Z 2026-11-11 09:08:45.527 UTC [57] LOG:  database system was shut down at 2026-11-11 09:08:45 UTC
+worker-1  | 2026-11-11T09:09:13.146484710Z 2026/11/11 09:09:13 INFO claimed job_id=67 token=2 attempt=2 process_wall_time=2026-11-11T09:09:13.146Z
+worker-1  | 2026-11-11T09:09:17.157957920Z 2026/11/11 09:09:17 INFO attempt committed job_id=67 token=2
+db-1      | 2026-11-11T09:08:45.530603669Z 2026-11-11 09:08:45.530 UTC [1] LOG:  database system is ready to accept connections
+db-1      | 2026-11-11T09:08:51.653150006Z 2026-11-11 09:08:51.652 UTC [127] ERROR:  injected effect failure
+db-1      | 2026-11-11T09:08:51.653163547Z 2026-11-11 09:08:51.652 UTC [127] CONTEXT:  PL/pgSQL function reject_effect() line 1 at RAISE
+db-1      | 2026-11-11T09:08:51.653166006Z 2026-11-11 09:08:51.652 UTC [127] STATEMENT:  INSERT INTO job_effects(job_id,token,result) VALUES($1,$2,jsonb_build_object('model',$3::text))
+db-1      | 2026-11-11T09:09:11.320961251Z 2026-11-11 09:09:11.320 UTC [139] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.320979251Z 2026-11-11 09:09:11.320 UTC [140] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.320980751Z 2026-11-11 09:09:11.320 UTC [69] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.320981876Z 2026-11-11 09:09:11.320 UTC [141] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.320982917Z 2026-11-11 09:09:11.320 UTC [142] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.320984084Z 2026-11-11 09:09:11.320 UTC [143] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.320986917Z 2026-11-11 09:09:11.320 UTC [144] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.321094042Z 2026-11-11 09:09:11.321 UTC [145] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.321300834Z 2026-11-11 09:09:11.321 UTC [407] FATAL:  terminating connection due to administrator command
+db-1      | 2026-11-11T09:09:11.418097126Z 2026-11-11 09:09:11.418 UTC [1] LOG:  received fast shutdown request
+db-1      | 2026-11-11T09:09:11.419343918Z 2026-11-11 09:09:11.419 UTC [1] LOG:  aborting any active transactions
+db-1      | 2026-11-11T09:09:11.421830751Z 2026-11-11 09:09:11.421 UTC [1] LOG:  background worker "logical replication launcher" (PID 60) exited with exit code 1
+db-1      | 2026-11-11T09:09:11.422095918Z 2026-11-11 09:09:11.422 UTC [55] LOG:  shutting down
+db-1      | 2026-11-11T09:09:11.422851126Z 2026-11-11 09:09:11.422 UTC [55] LOG:  checkpoint starting: shutdown immediate
+db-1      | 2026-11-11T09:09:11.436586376Z 2026-11-11 09:09:11.436 UTC [55] LOG:  checkpoint complete: wrote 91 buffers (0.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.009 s, total=0.015 s; sync files=156, longest=0.003 s, average=0.001 s; distance=553 kB, estimate=553 kB; lsn=0/19A8EA0, redo lsn=0/19A8EA0
+db-1      | 2026-11-11T09:09:11.440011626Z 2026-11-11 09:09:11.439 UTC [1] LOG:  database system is shut down
+db-1      | 2026-11-11T09:09:11.678145376Z 
+db-1      | 2026-11-11T09:09:11.678156543Z PostgreSQL Database directory appears to contain a database; Skipping initialization
+db-1      | 2026-11-11T09:09:11.678158084Z 
+db-1      | 2026-11-11T09:09:11.694287001Z 2026-11-11 09:09:11.694 UTC [1] LOG:  starting PostgreSQL 17.11 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1      | 2026-11-11T09:09:11.694323793Z 2026-11-11 09:09:11.694 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1      | 2026-11-11T09:09:11.694327459Z 2026-11-11 09:09:11.694 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1      | 2026-11-11T09:09:11.695400459Z 2026-11-11 09:09:11.695 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1      | 2026-11-11T09:09:11.697351876Z 2026-11-11 09:09:11.697 UTC [29] LOG:  database system was shut down at 2026-11-11 09:09:11 UTC
+db-1      | 2026-11-11T09:09:11.700082209Z 2026-11-11 09:09:11.699 UTC [1] LOG:  database system is ready to accept connections
+
+exit=0
+
+$ docker compose --env-file /dev/null -p soup-test-integration-660736b8bf -f /Users/denis/vs_code/SOUP_BACK/compose.yaml -f /Users/denis/vs_code/SOUP_BACK/results/20261111T090825Z-soup-test-integration-660736b8bf/compose.test.yaml down --volumes --remove-orphans
+ Container soup-test-integration-660736b8bf-worker-1 Stopping 
+ Container soup-test-integration-660736b8bf-api-1 Stopping 
+ Container soup-test-integration-660736b8bf-worker-1 Stopped 
+ Container soup-test-integration-660736b8bf-worker-1 Removing 
+ Container soup-test-integration-660736b8bf-worker-1 Removed 
+ Container soup-test-integration-660736b8bf-api-1 Stopped 
+ Container soup-test-integration-660736b8bf-api-1 Removing 
+ Container soup-test-integration-660736b8bf-api-1 Removed 
+ Container soup-test-integration-660736b8bf-migrate-1 Stopping 
+ Container soup-test-integration-660736b8bf-migrate-1 Stopped 
+ Container soup-test-integration-660736b8bf-migrate-1 Removing 
+ Container soup-test-integration-660736b8bf-migrate-1 Removed 
+ Container soup-test-integration-660736b8bf-db-1 Stopping 
+ Container soup-test-integration-660736b8bf-db-1 Stopped 
+ Container soup-test-integration-660736b8bf-db-1 Removing 
+ Container soup-test-integration-660736b8bf-db-1 Removed 
+ Network soup-test-integration-660736b8bf_queue Removing 
+ Volume soup-test-integration-660736b8bf_pgdata Removing 
+ Volume soup-test-integration-660736b8bf_pgdata Removed 
+ Network soup-test-integration-660736b8bf_queue Removed 
+
+exit=0

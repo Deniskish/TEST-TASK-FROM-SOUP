@@ -1,0 +1,146 @@
+rule_files: [alerts.yaml]
+evaluation_interval: 5s
+tests:
+  - name: PostgreSQLUnavailable
+    interval: 5s
+    input_series:
+      - series: "soup_postgres_available"
+        values: "0+0x240"
+    alert_rule_test:
+      - eval_time: 60s
+        alertname: PostgreSQLUnavailable
+        exp_alerts:
+          - exp_labels: {"severity": "critical"}
+            exp_annotations: {}
+  - name: RabbitMQUnavailable
+    interval: 5s
+    input_series:
+      - series: "up{job=\"rabbitmq\"}"
+        values: "0+0x240"
+    alert_rule_test:
+      - eval_time: 60s
+        alertname: RabbitMQUnavailable
+        exp_alerts:
+          - exp_labels: {"job": "rabbitmq", "severity": "critical"}
+            exp_annotations: {}
+  - name: NoWorkers
+    interval: 5s
+    input_series:
+      - series: "rabbitmq_queue_consumers{queue=\"soup.jobs\"}"
+        values: "0+0x240"
+    alert_rule_test:
+      - eval_time: 60s
+        alertname: NoWorkers
+        exp_alerts:
+          - exp_labels: {"severity": "critical"}
+            exp_annotations: {}
+  - name: QueueGrowing
+    interval: 5s
+    input_series:
+      - series: "soup_jobs{state=\"queued\"}"
+        values: "0+10x240"
+    alert_rule_test:
+      - eval_time: 900s
+        alertname: QueueGrowing
+        exp_alerts:
+          - exp_labels: {"state": "queued", "severity": "warning"}
+            exp_annotations: {}
+  - name: ProcessingStalled
+    interval: 5s
+    input_series:
+      - series: "soup_jobs{state=\"queued\"}"
+        values: "10+0x240"
+      - series: "soup_jobs{state=\"succeeded\"}"
+        values: "0+0x240"
+    alert_rule_test:
+      - eval_time: 300s
+        alertname: ProcessingStalled
+        exp_alerts:
+          - exp_labels: {"state": "queued", "severity": "critical"}
+            exp_annotations: {}
+  - name: OutboxStalled
+    interval: 5s
+    input_series:
+      - series: "soup_outbox_backlog"
+        values: "10+0x240"
+    alert_rule_test:
+      - eval_time: 300s
+        alertname: OutboxStalled
+        exp_alerts:
+          - exp_labels: {"severity": "warning"}
+            exp_annotations: {}
+  - name: HTTPFailures
+    interval: 5s
+    input_series:
+      - series: "soup_http_requests_total{status=\"200\"}"
+        values: "0+90x240"
+      - series: "soup_http_requests_total{status=\"500\"}"
+        values: "0+10x240"
+    alert_rule_test:
+      - eval_time: 300s
+        alertname: HTTPFailures
+        exp_alerts:
+          - exp_labels: {"severity": "warning"}
+            exp_annotations: {}
+  - name: ManyRetries
+    interval: 5s
+    input_series:
+      - series: "soup_retries_total"
+        values: "0+10x240"
+    alert_rule_test:
+      - eval_time: 300s
+        alertname: ManyRetries
+        exp_alerts:
+          - exp_labels: {"severity": "warning"}
+            exp_annotations: {}
+  - name: RabbitDiskLow
+    interval: 5s
+    input_series:
+      - series: "rabbitmq_disk_space_available_bytes"
+        values: "1000000000+0x240"
+    alert_rule_test:
+      - eval_time: 120s
+        alertname: RabbitDiskLow
+        exp_alerts:
+          - exp_labels: {"severity": "critical"}
+            exp_annotations: {}
+  - name: HealthySystem
+    interval: 5s
+    input_series:
+      - series: soup_postgres_available
+        values: '1+0x240'
+      - series: 'up{job="rabbitmq"}'
+        values: '1+0x240'
+      - series: 'rabbitmq_queue_consumers{queue="soup.jobs"}'
+        values: '4+0x240'
+      - series: 'soup_jobs{state="queued"}'
+        values: '0+0x240'
+      - series: 'soup_jobs{state="succeeded"}'
+        values: '0+10x240'
+      - series: soup_outbox_backlog
+        values: '0+0x240'
+      - series: 'soup_http_requests_total{status="200"}'
+        values: '0+500x240'
+      - series: 'soup_http_requests_total{status="500"}'
+        values: '0+0x240'
+      - series: soup_retries_total
+        values: '0+0x240'
+      - series: rabbitmq_disk_space_available_bytes
+        values: '10000000000+0x240'
+    alert_rule_test:
+      - {eval_time: 900s, alertname: PostgreSQLUnavailable, exp_alerts: []}
+      - {eval_time: 900s, alertname: RabbitMQUnavailable, exp_alerts: []}
+      - {eval_time: 900s, alertname: NoWorkers, exp_alerts: []}
+      - {eval_time: 900s, alertname: QueueGrowing, exp_alerts: []}
+      - {eval_time: 900s, alertname: ProcessingStalled, exp_alerts: []}
+      - {eval_time: 900s, alertname: OutboxStalled, exp_alerts: []}
+      - {eval_time: 900s, alertname: HTTPFailures, exp_alerts: []}
+      - {eval_time: 900s, alertname: ManyRetries, exp_alerts: []}
+      - {eval_time: 900s, alertname: RabbitDiskLow, exp_alerts: []}
+  - name: PendingNotFiring
+    interval: 5s
+    input_series:
+      - series: soup_postgres_available
+        values: '0+0x20'
+    alert_rule_test:
+      - {eval_time: 5s, alertname: PostgreSQLUnavailable, exp_alerts: []}

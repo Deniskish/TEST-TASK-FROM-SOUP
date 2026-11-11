@@ -1,0 +1,2 @@
+2026-11-11T12:21:35.242220509Z 2026/11/11 12:21:35 INFO claimed job_id=58 token=2 attempt=2 process_wall_time=2026-11-11T12:21:35.241Z
+2026-11-11T12:21:39.311744052Z 2026/11/11 12:21:39 INFO attempt committed job_id=58 token=2

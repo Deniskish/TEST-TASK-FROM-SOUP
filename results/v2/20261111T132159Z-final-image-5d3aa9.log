@@ -1,0 +1,118 @@
+ Image soup-queue:local Building 
+ Image soup-queue:local Building 
+ Image soup-queue:local Building 
+ Image soup-queue:local Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.81kB done
+#1 DONE 0.0s
+
+#2 [api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 548B 0.0s done
+#2 DONE 0.0s
+
+#3 [migrate internal] load metadata for docker.io/library/golang:1.27.4-alpine
+#3 DONE 2.8s
+
+#4 [api internal] load metadata for docker.io/library/alpine:3.23
+#4 DONE 2.8s
+
+#5 [publisher internal] load .dockerignore
+#5 transferring context: 81B 0.0s done
+#5 DONE 0.0s
+
+#6 [migrate stage-1 1/3] FROM docker.io/library/alpine:3.23@sha256:469c9ea410b9215eaee7976ba6c0639039b444be8e5d638f7abbada189971eb2
+#6 resolve docker.io/library/alpine:3.23@sha256:469c9ea410b9215eaee7976ba6c0639039b444be8e5d638f7abbada189971eb2 0.0s done
+#6 DONE 0.0s
+
+#7 [migrate build 1/7] FROM docker.io/library/golang:1.27.4-alpine@sha256:0a5f7fe796599ff487605987432e7619ae45beeb2fba4c2ce0b907879932aebf
+#7 resolve docker.io/library/golang:1.27.4-alpine@sha256:0a5f7fe796599ff487605987432e7619ae45beeb2fba4c2ce0b907879932aebf 0.0s done
+#7 DONE 0.0s
+
+#8 [migrate internal] load build context
+#8 transferring context: 66.74kB done
+#8 DONE 0.0s
+
+#9 [api build 3/7] COPY go.mod go.sum ./
+#9 CACHED
+
+#10 [api build 2/7] WORKDIR /src
+#10 CACHED
+
+#11 [api build 4/7] RUN go mod download
+#11 CACHED
+
+#12 [worker build 5/7] COPY . .
+#12 DONE 0.0s
+
+#13 [worker build 6/7] RUN CGO_ENABLED=0 go build -trimpath -o /out/api ./cmd/api && CGO_ENABLED=0 go build -trimpath -o /out/worker ./cmd/worker && CGO_ENABLED=0 go build -trimpath -o /out/publisher ./cmd/publisher
+#13 DONE 13.4s
+
+#14 [migrate build 7/7] RUN CGO_ENABLED=0 go test -c -o /out/storage.test ./internal/storage
+#14 DONE 10.6s
+
+#15 [migrate stage-1 2/3] RUN addgroup -g 10001 app && adduser -D -u 10001 -G app app
+#15 CACHED
+
+#15 [api stage-1 2/3] RUN addgroup -g 10001 app && adduser -D -u 10001 -G app app
+#15 CACHED
+
+#16 [migrate stage-1 3/3] COPY --from=build /out/ /app/
+#16 DONE 0.1s
+
+#17 [worker] exporting to image
+#17 exporting layers
+#17 exporting layers 2.4s done
+#17 exporting manifest sha256:01a47858ab0c4620eec19d2b171586230a545923389330abeab02b10fe1a543a 0.0s done
+#17 exporting config sha256:3ff30489732621fdb5ec90cbb08e0a539d1698c38af737a869c1313b3c01a281 0.0s done
+#17 exporting attestation manifest sha256:cc92d63309bfbbc92dda78f55e51a85f4f63dfaf2c841740705680ca2e9bd70a 0.0s done
+#17 exporting manifest list sha256:d9814227f7c73f4466ea6ae3ffb4047694e8cf8d83668ce956a8cd3770409ff0 0.0s done
+#17 naming to docker.io/library/soup-queue:local done
+#17 unpacking to docker.io/library/soup-queue:local
+#17 unpacking to docker.io/library/soup-queue:local 0.6s done
+#17 DONE 3.0s
+
+#18 [api] exporting to image
+#18 exporting layers 2.4s done
+#18 exporting manifest sha256:ee3bbee1ee403a698df4b8a0fd684aacfefb0e5f7a1ccf602ac8ec0f41688d53 0.0s done
+#18 exporting config sha256:f10c6addd8e1fcbe3a04c8537ad13188cf56a316ba7055434f91d05610910e31 0.0s done
+#18 exporting attestation manifest sha256:8994bb73740b39d5fb68c13fa9fc403aa6d61c36acc0d7f8cb631329d4047252 0.0s done
+#18 exporting manifest list sha256:7766f37c69e1166dfc5bbd878b0b3e46fb65403c356a4559065f31aafeb27491 0.0s done
+#18 naming to docker.io/library/soup-queue:local done
+#18 unpacking to docker.io/library/soup-queue:local 0.6s done
+#18 DONE 3.1s
+
+#19 [migrate] exporting to image
+#19 exporting layers 2.4s done
+#19 exporting manifest sha256:bcafe9e9958c00d9b29c08a485bcb3072243828b1f9b64e85ea2a4a04f78401b 0.0s done
+#19 exporting config sha256:d46e7c4fdcdca6f2a42a22545dbee6b60528b221d3c6192419d7e2b00164b18a 0.0s done
+#19 exporting attestation manifest sha256:eb155a537be5c3154f680409a28070de5d4ecebc5ee53a35d542a7611e8e2047 0.0s done
+#19 exporting manifest list sha256:c8139d2ddd2b48ab18a6b23195af005435489a49320daba8f52728b3942b069c 0.0s done
+#19 naming to docker.io/library/soup-queue:local done
+#19 unpacking to docker.io/library/soup-queue:local 0.6s done
+#19 DONE 3.1s
+
+#20 [publisher] exporting to image
+#20 exporting layers 2.4s done
+#20 exporting manifest sha256:2c40d2158b8bef0e887038da568cdcb15836e85a1ab9bd14b4cb53616b41b7e1 0.0s done
+#20 exporting config sha256:343513d19edbb35286c82d18f0c81fc89c890bdb8445bcfd19fe862ba33e083f 0.0s done
+#20 exporting attestation manifest sha256:02515158fec0efddd683233748e06d20052f14c0a91b448f3f4006e98d39d971 0.0s done
+#20 exporting manifest list sha256:882fda20e686126960318e01cd6c80ebcb680964e44b4560f36fc4749e8c3460 0.0s done
+#20 naming to docker.io/library/soup-queue:local done
+#20 unpacking to docker.io/library/soup-queue:local 0.6s done
+#20 DONE 3.1s
+
+#21 [worker] resolving provenance for metadata file
+#21 DONE 0.0s
+
+#22 [api] resolving provenance for metadata file
+#22 DONE 0.0s
+
+#23 [migrate] resolving provenance for metadata file
+#23 DONE 0.0s
+
+#24 [publisher] resolving provenance for metadata file
+#24 DONE 0.0s
+ Image soup-queue:local Built 
+ Image soup-queue:local Built 
+ Image soup-queue:local Built 
+ Image soup-queue:local Built 

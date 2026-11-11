@@ -1,0 +1,8 @@
+?   	soup-job-queue/cmd/api	[no test files]
+?   	soup-job-queue/cmd/worker	[no test files]
+ok  	soup-job-queue/internal/api	1.824s
+ok  	soup-job-queue/internal/config	1.493s
+ok  	soup-job-queue/internal/jobs	1.634s
+ok  	soup-job-queue/internal/storage	2.028s
+?   	soup-job-queue/internal/worker	[no test files]
+?   	soup-job-queue/migrations	[no test files]

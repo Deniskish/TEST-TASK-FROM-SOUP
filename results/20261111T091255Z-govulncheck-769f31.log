@@ -1,0 +1,83 @@
+go: downloading golang.org/x/vuln v1.9.0
+go: downloading golang.org/x/telemetry v0.0.0-20261010193011-f71dc92da45e
+go: downloading golang.org/x/mod v0.42.0
+go: downloading golang.org/x/sync v0.24.0
+=== Symbol Results ===
+
+Vulnerability #1: GO-2026-6859
+    HTTP/1 server crash due to MaxBytesReader header race in net/http
+  More info: https://pkg.go.dev/vuln/GO-2026-6859
+  Standard library
+    Found in: net/http@go1.27.3
+    Fixed in: net/http@go1.27.4
+    Example traces found:
+      #1: cmd/api/main.go:30:3: api.run calls http2.transportResponseBody.Close, which eventually calls http.CanonicalHeaderKey
+      #2: cmd/api/main.go:26:16: api.run calls http.Client.Get
+      #3: internal/api/api.go:27:16: api.API.Handler calls http.ServeMux.HandleFunc
+      #4: cmd/api/main.go:73:19: api.run calls http.Server.Close
+      #5: cmd/api/main.go:60:43: api.run calls http.Server.ListenAndServe
+      #6: cmd/api/main.go:72:26: api.run calls http.Server.Shutdown
+      #7: cmd/api/main.go:30:3: api.run calls http.body.Close
+      #8: internal/storage/store.go:63:23: storage.scan calls json.Unmarshal, which eventually calls http.body.Read
+      #9: cmd/api/main.go:30:3: api.run calls http.bodyEOFSignal.Close
+      #10: internal/storage/store.go:34:10: storage.Open calls pgxpool.Pool.Close, which eventually calls http.bodyEOFSignal.Read
+      #11: internal/storage/store.go:34:10: storage.Open calls pgxpool.Pool.Close, which eventually calls http.bodyLocked.Read
+      #12: internal/storage/store.go:93:27: storage.Store.List calls pgxpool.Pool.Query, which eventually calls http.bufioFlushWriter.Write
+      #13: cmd/api/main.go:30:3: api.run calls http.cancelTimerBody.Close
+      #14: internal/storage/store.go:34:10: storage.Open calls pgxpool.Pool.Close, which eventually calls http.cancelTimerBody.Read
+      #15: cmd/api/main.go:30:3: api.run calls http2.transportResponseBody.Close, which eventually calls http.checkConnErrorWriter.Write
+      #16: cmd/api/main.go:30:3: api.run calls http2.transportResponseBody.Close, which eventually calls http.chunkWriter.Write
+      #17: internal/storage/store.go:34:10: storage.Open calls pgxpool.Pool.Close, which eventually calls http.connReader.Read
+      #18: cmd/api/main.go:30:3: api.run calls http2.transportResponseBody.Close, which eventually calls http.expectContinueReader.Close
+      #19: internal/storage/store.go:63:23: storage.scan calls json.Unmarshal, which eventually calls http.expectContinueReader.Read
+      #20: cmd/api/main.go:30:3: api.run calls http.gzipReader.Close
+      #21: internal/storage/store.go:34:10: storage.Open calls pgxpool.Pool.Close, which eventually calls http.gzipReader.Read
+      #22: internal/storage/store.go:34:10: storage.Open calls pgxpool.Pool.Close, which eventually calls http.loggingConn.Read
+      #23: cmd/api/main.go:30:3: api.run calls http2.transportResponseBody.Close, which eventually calls http.loggingConn.Write
+      #24: cmd/api/main.go:30:3: api.run calls http2.transportResponseBody.Close, which eventually calls http.maxBytesReader.Close
+      #25: internal/storage/store.go:63:23: storage.scan calls json.Unmarshal, which eventually calls http.maxBytesReader.Read
+      #26: internal/storage/store.go:34:10: storage.Open calls pgxpool.Pool.Close, which eventually calls http.onceCloseListener.Close
+      #27: internal/storage/store.go:34:10: storage.Open calls pgxpool.Pool.Close, which eventually calls http.persistConn.Read
+      #28: cmd/api/main.go:30:3: api.run calls http2.transportResponseBody.Close, which eventually calls http.persistConnWriter.Write
+      #29: cmd/api/main.go:30:3: api.run calls http2.transportResponseBody.Close, which eventually calls http.readTrackingBody.Close
+      #30: internal/storage/store.go:63:23: storage.scan calls json.Unmarshal, which eventually calls http.readTrackingBody.Read
+      #31: internal/storage/store.go:34:10: storage.Open calls pgxpool.Pool.Close, which eventually calls http.readWriteCloserBody.Read
+      #32: internal/storage/store.go:93:27: storage.Store.List calls pgxpool.Pool.Query, which eventually calls http.response.Write
+      #33: internal/storage/store.go:69:30: storage.Store.Create calls json.Marshal, which eventually calls http.transportReadFromServerError.Error
+
+Vulnerability #2: GO-2026-6629
+    Panic parsing crafted input in x/text/secure/precis in golang.org/x/text
+  More info: https://pkg.go.dev/vuln/GO-2026-6629
+  Module: golang.org/x/text
+    Found in: golang.org/x/text@v0.24.0
+    Fixed in: golang.org/x/text@v0.41.0
+    Example traces found:
+      #1: internal/storage/store.go:29:33: storage.Open calls pgxpool.NewWithConfig, which eventually calls precis.Profile.Bytes
+
+Vulnerability #3: GO-2026-5970
+    Infinite loop on invalid input in golang.org/x/text
+  More info: https://pkg.go.dev/vuln/GO-2026-5970
+  Module: golang.org/x/text
+    Found in: golang.org/x/text@v0.24.0
+    Fixed in: golang.org/x/text@v0.39.0
+    Example traces found:
+      #1: internal/storage/store.go:29:33: storage.Open calls pgxpool.NewWithConfig, which eventually calls norm.Form.Properties
+      #2: internal/storage/store.go:29:33: storage.Open calls pgxpool.NewWithConfig, which eventually calls norm.Form.Span
+      #3: internal/storage/store.go:29:33: storage.Open calls pgxpool.NewWithConfig, which eventually calls norm.Form.Transform
+
+Vulnerability #4: GO-2026-5004
+    SQL Injection via placeholder confusion with dollar quoted string literals
+    in github.com/jackc/pgx
+  More info: https://pkg.go.dev/vuln/GO-2026-5004
+  Module: github.com/jackc/pgx/v5
+    Found in: github.com/jackc/pgx/v5@v5.7.6
+    Fixed in: github.com/jackc/pgx/v5@v5.9.2
+    Example traces found:
+      #1: internal/storage/store.go:93:27: storage.Store.List calls pgxpool.Pool.Query, which eventually calls sanitize.SanitizeSQL
+
+Your code is affected by 4 vulnerabilities from 2 modules and the Go standard library.
+This scan also found 2 vulnerabilities in packages you import and 20
+vulnerabilities in modules you require, but your code doesn't appear to call
+these vulnerabilities.
+Use '-show verbose' for more details.
+exit status 3

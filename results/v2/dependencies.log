@@ -1,0 +1,7 @@
+go: downloading go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.38.0
+go: downloading go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp v1.38.0
+go: downloading github.com/prometheus/client_golang v1.23.2
+go: downloading github.com/rabbitmq/amqp091-go v1.10.0
+go: go.opentelemetry.io/otel@v1.38.0: Get "https://proxy.golang.org/go.opentelemetry.io/otel/@v/v1.38.0.info": EOF
+go: go.opentelemetry.io/otel/sdk@v1.38.0: Get "https://proxy.golang.org/go.opentelemetry.io/otel/sdk/@v/v1.38.0.info": EOF
+go: go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp@v1.38.0: verifying module: go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp@v1.38.0: Get "https://sum.golang.org/lookup/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp@v1.38.0": EOF

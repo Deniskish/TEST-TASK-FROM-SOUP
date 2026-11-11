@@ -1,0 +1,32 @@
+{
+  "kind": "race",
+  "seed": 42,
+  "project": "soup-test-race-7b8819a6b3",
+  "started_at": "2026-11-11T13:51:47.449013+00:00",
+  "python": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "host": "macOS-15.1-arm64-arm-64bit-Mach-O",
+  "passed": false,
+  "workers": 0,
+  "lease": "2s",
+  "heartbeat": "400ms",
+  "api_pool": 8,
+  "worker_pool": 8,
+  "api_url": "http://127.0.0.1:55276",
+  "docker_info": "\"29.9.2\" \"linux\" \"aarch64\" CPUs=8 Memory=8319705088",
+  "resources": "{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"1.93%\",\"Container\":\"91a331153a745bca3621fe11bd0a89c0d92a1a7023305eb61190b98d9a8e901e\",\"ID\":\"91a331153a74\",\"MemPerc\":\"0.13%\",\"MemUsage\":\"10.6MiB / 7.748GiB\",\"Name\":\"soup-test-race-7b8819a6b3-api-1\",\"NetIO\":\"2.89kB / 2.06kB\",\"PIDs\":\"9\"}\n{\"BlockIO\":\"0B / 53MB\",\"CPUPerc\":\"4.10%\",\"Container\":\"fce011cc8af398c252cd7406bd006ee91063af031177cadcc435b0ed8e2d5163\",\"ID\":\"fce011cc8af3\",\"MemPerc\":\"0.38%\",\"MemUsage\":\"29.81MiB / 7.748GiB\",\"Name\":\"soup-test-race-7b8819a6b3-db-1\",\"NetIO\":\"11.1kB / 6.02kB\",\"PIDs\":\"8\"}\n{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"0.53%\",\"Container\":\"130f8cd1fe9a8c9c6fd696caa15709cc9e68fce5ed7ee243f7a56852bab03b92\",\"ID\":\"130f8cd1fe9a\",\"MemPerc\":\"0.11%\",\"MemUsage\":\"8.492MiB / 7.748GiB\",\"Name\":\"soup-test-race-7b8819a6b3-publisher-1\",\"NetIO\":\"6.7kB / 8.18kB\",\"PIDs\":\"9\"}\n{\"BlockIO\":\"0B / 602kB\",\"CPUPerc\":\"77.33%\",\"Container\":\"61a476b02867032354de439dac543f1ddcf2cebe6a4e39ebe784e56dee0edfc2\",\"ID\":\"61a476b02867\",\"MemPerc\":\"1.71%\",\"MemUsage\":\"135.6MiB / 7.748GiB\",\"Name\":\"soup-test-race-7b8819a6b3-rabbitmq-1\",\"NetIO\":\"3.66kB / 1.62kB\",\"PIDs\":\"37\"}",
+  "image_ids": "[{\"ID\":\"sha256:3540c0362c809df084ffac0ae69fe794515f9de92692f02178bcdce0ef0302ac\",\"ContainerName\":\"soup-test-race-7b8819a6b3-db-1\",\"Repository\":\"postgres\",\"Tag\":\"17-alpine\",\"Platform\":\"linux/arm64/v8\",\"Size\":414812043,\"Created\":\"2026-11-05T19:03:57.181599785Z\",\"LastTagTime\":\"2026-11-11T09:08:44.144698002Z\"},{\"ID\":\"sha256:e0acbe579de4676b515e947b5894f6b4612f8df5acedf7b4f25b426dd392ddd1\",\"ContainerName\":\"soup-test-race-7b8819a6b3-api-1\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":177212821,\"Created\":\"2026-11-11T13:27:24.008057544Z\",\"LastTagTime\":\"2026-11-11T13:27:26.721115712Z\"},{\"ID\":\"sha256:e0acbe579de4676b515e947b5894f6b4612f8df5acedf7b4f25b426dd392ddd1\",\"ContainerName\":\"soup-test-race-7b8819a6b3-publisher-1\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":177212821,\"Created\":\"2026-11-11T13:27:24.008057544Z\",\"LastTagTime\":\"2026-11-11T13:27:26.721115712Z\"},{\"ID\":\"sha256:e0acbe579de4676b515e947b5894f6b4612f8df5acedf7b4f25b426dd392ddd1\",\"ContainerName\":\"soup-test-race-7b8819a6b3-migrate-1\",\"Repository\":\"soup-queue\",\"Tag\":\"local\",\"Platform\":\"linux/arm64\",\"Size\":177212821,\"Created\":\"2026-11-11T13:27:24.008057544Z\",\"LastTagTime\":\"2026-11-11T13:27:26.721115712Z\"},{\"ID\":\"sha256:e1763bfb4a15f9646f9bad2fbae857f4499614577d1165450331189efdb6ea3b\",\"ContainerName\":\"soup-test-race-7b8819a6b3-rabbitmq-1\",\"Repository\":\"rabbitmq\",\"Tag\":\"4.1-management\",\"Platform\":\"linux/arm64/v8\",\"Size\":397576256,\"Created\":\"2026-10-27T00:31:30.793767048Z\",\"LastTagTime\":\"2026-11-11T13:17:27.493290755Z\"}]",
+  "invariant_errors": [
+    "not terminal {'id': 1, 'idempotency_key': 'outbox', 'status': 'queued', 'attempts': 0, 'max_attempts': 5, 'token': 0, 'lease_until': None, 'effect_token': None, 'effects': 0}"
+  ],
+  "states": {
+    "queued": 1,
+    "running": 0,
+    "succeeded": 0,
+    "failed": 0,
+    "cancelled": 0
+  },
+  "reclaimed_jobs": 0,
+  "effects": 0,
+  "error": "[\"not terminal {'id': 1, 'idempotency_key': 'outbox', 'status': 'queued', 'attempts': 0, 'max_attempts': 5, 'token': 0, 'lease_until': None, 'effect_token': None, 'effects': 0}\"]",
+  "ended_at": "2026-11-11T13:52:05.128246+00:00"
+}

@@ -1,8 +1,0 @@
-go: downloading github.com/jackc/pgx/v5 v5.12.0
-go: downloading golang.org/x/text v0.41.0
-go: downloading github.com/jackc/puddle/v2 v2.2.3
-go: downloading github.com/stretchr/testify v1.11.1
-go: upgraded github.com/jackc/pgx/v5 v5.7.6 => v5.12.0
-go: upgraded github.com/jackc/puddle/v2 v2.2.2 => v2.2.3
-go: upgraded golang.org/x/sync v0.13.0 => v0.22.0
-go: upgraded golang.org/x/text v0.24.0 => v0.41.0

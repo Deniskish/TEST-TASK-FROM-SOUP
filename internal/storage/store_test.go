@@ -61,6 +61,9 @@ func invariant(t *testing.T, s *Store) {
 		t.Fatalf("invariant violations=%d err=%v", n, e)
 	}
 }
+
+// TestDoubleClaim одновременно запускает 16 Claim для одной задачи и требует ровно одного победителя.
+// Проверяет конкуренцию на уровне PostgreSQL, без доставки RabbitMQ.
 func TestDoubleClaim(t *testing.T) {
 	s := testStore(t)
 	create(t, s, "double", 5)
@@ -83,6 +86,9 @@ func TestDoubleClaim(t *testing.T) {
 		t.Fatalf("claims=%d", won)
 	}
 }
+
+// TestConcurrentDuplicate одновременно создаёт задачу 24 раза с одним ключом и требует один ID.
+// Повтор того же ключа с другим содержимым должен вернуть конфликт.
 func TestConcurrentDuplicate(t *testing.T) {
 	s := testStore(t)
 	start := make(chan struct{})
@@ -115,6 +121,9 @@ func TestConcurrentDuplicate(t *testing.T) {
 		t.Fatal(e)
 	}
 }
+
+// TestZombieAndExhaustion делает аренду просроченной записью в БД и проверяет отказ старым Heartbeat/Finish,
+// рост fencing token при повторном claim и failed при исчерпании попыток. Процесс здесь не замораживается.
 func TestZombieAndExhaustion(t *testing.T) {
 	s := testStore(t)
 	ctx := context.Background()
@@ -157,6 +166,9 @@ func TestZombieAndExhaustion(t *testing.T) {
 	}
 	invariant(t, s)
 }
+
+// TestCancelCompleteRace сто раз одновременно вызывает Cancel и Finish и проверяет согласованность
+// конечного состояния с эффектом. Не требует, чтобы в одном прогоне встретились оба исхода гонки.
 func TestCancelCompleteRace(t *testing.T) {
 	s := testStore(t)
 	ctx := context.Background()
@@ -187,6 +199,9 @@ func TestCancelCompleteRace(t *testing.T) {
 	}
 	t.Logf("race outcomes: %v", counts)
 }
+
+// TestAtomicRollback триггером вызывает ошибку вставки эффекта и проверяет откат Finish:
+// задача остаётся running, частично зафиксированного успеха нет.
 func TestAtomicRollback(t *testing.T) {
 	s := testStore(t)
 	ctx := context.Background()
@@ -209,6 +224,9 @@ func TestAtomicRollback(t *testing.T) {
 	}
 	invariant(t, s)
 }
+
+// TestReadCommittedAndLockWaitExpiry проверяет READ COMMITTED и удерживает блокировку дольше аренды.
+// Finish после ожидания должен отклонить просроченного владельца, а не использовать время до блокировки.
 func TestReadCommittedAndLockWaitExpiry(t *testing.T) {
 	s := testStore(t)
 	ctx := context.Background()
@@ -241,6 +259,9 @@ func TestReadCommittedAndLockWaitExpiry(t *testing.T) {
 	}
 	invariant(t, s)
 }
+
+// TestRetryBudgetAndCancelOrders проверяет failed после исчерпания попыток и оба последовательных порядка:
+// Cancel запрещает Finish, а успешный Finish запрещает последующую отмену.
 func TestRetryBudgetAndCancelOrders(t *testing.T) {
 	s := testStore(t)
 	ctx := context.Background()
@@ -276,6 +297,8 @@ func TestRetryBudgetAndCancelOrders(t *testing.T) {
 	invariant(t, s)
 }
 
+// TestOutboxAtomicity проверяет создание outbox вместе с задачей, затем триггером ломает вставку события.
+// В этом случае Create должен вернуть ошибку, а запись jobs не должна сохраниться.
 func TestOutboxAtomicity(t *testing.T) {
 	s := testStore(t)
 	ctx := context.Background()

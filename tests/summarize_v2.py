@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Создаёт сводку V2; исходные логи и результаты V1 не меняет."""
+"""Строит индекс V2 по summary.json и кодам завершения команд.
+Обновляет только results/v2/INDEX.md; не запускает тесты и не меняет исходные логи.
+"""
 import json
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]

@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Independent HTTP/DB assertions plus actual paused-worker and DB-outage scenarios."""
+"""Интеграционные проверки настоящих HTTP API, PostgreSQL и контейнеров.
+
+Проверяет контракт API, идемпотентность, повторы, отмену, pause/resume воркера,
+отказ БД и краткую перегрузку. Запускает Go-тесты хранилища и проверяет валидатор
+на намеренно испорченных данных. Работает только с одноразовым Compose-проектом.
+"""
 import argparse
 import concurrent.futures
 import json

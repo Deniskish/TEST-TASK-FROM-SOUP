@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Record exact combined command output without replacing previous runs."""
+"""Запускает переданную команду и сохраняет её stdout/stderr и код завершения
+в новые файлы results/v2. Не выполняет собственных проверок и не заменяет старые логи.
+"""
 import datetime
 import pathlib
 import subprocess

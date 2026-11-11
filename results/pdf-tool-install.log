@@ -1,9 +1,0 @@
-WARNING: Cache entry deserialization failed, entry ignored
-Collecting pypdf
-  Downloading pypdf-7.0.1-py3-none-any.whl.metadata (7.6 kB)
-Downloading pypdf-7.0.1-py3-none-any.whl (416 kB)
-Installing collected packages: pypdf
-Successfully installed pypdf-7.0.1
-
-[notice] A new release of pip is available: 26.1.1 -> 26.3
-[notice] To update, run: /Users/denis/vs_code/SOUP_BACK/.venv/bin/python3.14 -m pip install --upgrade pip

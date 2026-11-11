@@ -1,0 +1,126 @@
+{"time": "2026-11-11T16:05:02.464115+00:00", "event": "run_started", "directory": "/Users/denis/vs_code/SOUP_BACK/results/v2/20261111T160502Z-chaos-attached-240bde6881bb", "attached": true, "api_url": "http://127.0.0.1:8080", "auth_mode": "unauthenticated-local-opt-in"}
+{"time": "2026-11-11T16:05:02.829866+00:00", "event": "ready", "attached": true, "url": "http://127.0.0.1:8080", "workers": 8}
+{"time": "2026-11-11T16:05:02.952854+00:00", "event": "chaos_started", "jobs": 10000, "workers": 8, "duplicate_posts": 5000, "cancel_requests": 2000, "kill_interval_seconds": 2.0, "attached": true}
+{"time": "2026-11-11T16:05:03.731288+00:00", "event": "posts_progress", "completed_requests": 2000, "unique_jobs": 1931}
+{"time": "2026-11-11T16:05:04.084663+00:00", "event": "posts_progress", "completed_requests": 3000, "unique_jobs": 2844}
+{"time": "2026-11-11T16:05:05.095179+00:00", "event": "worker_kill_requested", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "elapsed_seconds": 2.1423232500092126}
+{"time": "2026-11-11T16:05:05.360362+00:00", "event": "posts_progress", "completed_requests": 6000, "unique_jobs": 5409}
+{"time": "2026-11-11T16:05:05.408990+00:00", "event": "signal", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "signal": "KILL"}
+{"time": "2026-11-11T16:05:05.891827+00:00", "event": "worker_restarted", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "elapsed_seconds": 2.9389613329985877, "restart_duration_seconds": 0.7966380829893751}
+{"time": "2026-11-11T16:05:05.951485+00:00", "event": "posts_progress", "completed_requests": 7000, "unique_jobs": 6209}
+{"time": "2026-11-11T16:05:06.709729+00:00", "event": "posts_progress", "completed_requests": 9000, "unique_jobs": 7721}
+{"time": "2026-11-11T16:05:07.084382+00:00", "event": "worker_kill_requested", "container": "68627e7dfe3b2a84ec9240382d4eae82b93aa4b64b16a6857ec13f8e6be6d6a0", "elapsed_seconds": 4.131511125000543}
+{"time": "2026-11-11T16:05:07.119595+00:00", "event": "posts_progress", "completed_requests": 10000, "unique_jobs": 8440}
+{"time": "2026-11-11T16:05:07.354594+00:00", "event": "signal", "container": "68627e7dfe3b2a84ec9240382d4eae82b93aa4b64b16a6857ec13f8e6be6d6a0", "signal": "KILL"}
+{"time": "2026-11-11T16:05:07.575299+00:00", "event": "posts_progress", "completed_requests": 11000, "unique_jobs": 9141}
+{"time": "2026-11-11T16:05:07.715514+00:00", "event": "worker_restarted", "container": "68627e7dfe3b2a84ec9240382d4eae82b93aa4b64b16a6857ec13f8e6be6d6a0", "elapsed_seconds": 4.762635541002965, "restart_duration_seconds": 0.6311244160024216}
+{"time": "2026-11-11T16:05:09.057829+00:00", "event": "worker_kill_requested", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "elapsed_seconds": 6.1049452500010375}
+{"time": "2026-11-11T16:05:09.330924+00:00", "event": "signal", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "signal": "KILL"}
+{"time": "2026-11-11T16:05:09.688793+00:00", "event": "worker_restarted", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "elapsed_seconds": 6.735895416000858, "restart_duration_seconds": 0.6309501659998205}
+{"time": "2026-11-11T16:05:11.062509+00:00", "event": "worker_kill_requested", "container": "e345cadb0bbb8ef58548a06d06db9f1b31b8dfb652fdf681af89543900810269", "elapsed_seconds": 8.109603791002883}
+{"time": "2026-11-11T16:05:11.562431+00:00", "event": "signal", "container": "e345cadb0bbb8ef58548a06d06db9f1b31b8dfb652fdf681af89543900810269", "signal": "KILL"}
+{"time": "2026-11-11T16:05:11.960989+00:00", "event": "worker_restarted", "container": "e345cadb0bbb8ef58548a06d06db9f1b31b8dfb652fdf681af89543900810269", "elapsed_seconds": 9.008041583001614, "restart_duration_seconds": 0.898437791998731}
+{"time": "2026-11-11T16:05:13.038523+00:00", "event": "worker_kill_requested", "container": "823e2080f42ff642fd4f5fae142dd4bdbb38a0208b4c26d6605cd3dec39beae6", "elapsed_seconds": 10.085593041003449}
+{"time": "2026-11-11T16:05:13.246391+00:00", "event": "signal", "container": "823e2080f42ff642fd4f5fae142dd4bdbb38a0208b4c26d6605cd3dec39beae6", "signal": "KILL"}
+{"time": "2026-11-11T16:05:13.826620+00:00", "event": "worker_restarted", "container": "823e2080f42ff642fd4f5fae142dd4bdbb38a0208b4c26d6605cd3dec39beae6", "elapsed_seconds": 10.873664166007075, "restart_duration_seconds": 0.7880711250036256}
+{"time": "2026-11-11T16:05:15.059573+00:00", "event": "worker_kill_requested", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "elapsed_seconds": 12.106637332995888}
+{"time": "2026-11-11T16:05:15.341139+00:00", "event": "signal", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "signal": "KILL"}
+{"time": "2026-11-11T16:05:15.724546+00:00", "event": "worker_restarted", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "elapsed_seconds": 12.77155729100923, "restart_duration_seconds": 0.6649199580133427}
+{"time": "2026-11-11T16:05:17.125445+00:00", "event": "worker_kill_requested", "container": "e345cadb0bbb8ef58548a06d06db9f1b31b8dfb652fdf681af89543900810269", "elapsed_seconds": 14.17248679100885}
+{"time": "2026-11-11T16:05:17.336901+00:00", "event": "signal", "container": "e345cadb0bbb8ef58548a06d06db9f1b31b8dfb652fdf681af89543900810269", "signal": "KILL"}
+{"time": "2026-11-11T16:05:17.595667+00:00", "event": "worker_restarted", "container": "e345cadb0bbb8ef58548a06d06db9f1b31b8dfb652fdf681af89543900810269", "elapsed_seconds": 14.642324583008303, "restart_duration_seconds": 0.46983779199945275}
+{"time": "2026-11-11T16:05:19.055400+00:00", "event": "worker_kill_requested", "container": "e345cadb0bbb8ef58548a06d06db9f1b31b8dfb652fdf681af89543900810269", "elapsed_seconds": 16.102425375007442}
+{"time": "2026-11-11T16:05:19.293260+00:00", "event": "signal", "container": "e345cadb0bbb8ef58548a06d06db9f1b31b8dfb652fdf681af89543900810269", "signal": "KILL"}
+{"time": "2026-11-11T16:05:19.848181+00:00", "event": "worker_restarted", "container": "e345cadb0bbb8ef58548a06d06db9f1b31b8dfb652fdf681af89543900810269", "elapsed_seconds": 16.8951929580071, "restart_duration_seconds": 0.7927675829996588}
+{"time": "2026-11-11T16:05:21.037563+00:00", "event": "worker_kill_requested", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "elapsed_seconds": 18.08458020800026}
+{"time": "2026-11-11T16:05:21.377275+00:00", "event": "signal", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "signal": "KILL"}
+{"time": "2026-11-11T16:05:21.614462+00:00", "event": "worker_restarted", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "elapsed_seconds": 18.661432041000808, "restart_duration_seconds": 0.5768518330005463}
+{"time": "2026-11-11T16:05:23.044197+00:00", "event": "worker_kill_requested", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "elapsed_seconds": 20.091195250002784}
+{"time": "2026-11-11T16:05:23.283810+00:00", "event": "signal", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "signal": "KILL"}
+{"time": "2026-11-11T16:05:23.521554+00:00", "event": "worker_restarted", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "elapsed_seconds": 20.568531750002876, "restart_duration_seconds": 0.4773365000000922}
+{"time": "2026-11-11T16:05:25.069424+00:00", "event": "worker_kill_requested", "container": "823e2080f42ff642fd4f5fae142dd4bdbb38a0208b4c26d6605cd3dec39beae6", "elapsed_seconds": 22.116415374999633}
+{"time": "2026-11-11T16:05:25.307309+00:00", "event": "signal", "container": "823e2080f42ff642fd4f5fae142dd4bdbb38a0208b4c26d6605cd3dec39beae6", "signal": "KILL"}
+{"time": "2026-11-11T16:05:25.562247+00:00", "event": "worker_restarted", "container": "823e2080f42ff642fd4f5fae142dd4bdbb38a0208b4c26d6605cd3dec39beae6", "elapsed_seconds": 22.609226041007787, "restart_duration_seconds": 0.49281066600815393}
+{"time": "2026-11-11T16:05:27.041944+00:00", "event": "worker_kill_requested", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "elapsed_seconds": 24.08891033299733}
+{"time": "2026-11-11T16:05:27.274507+00:00", "event": "signal", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "signal": "KILL"}
+{"time": "2026-11-11T16:05:27.501379+00:00", "event": "worker_restarted", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "elapsed_seconds": 24.548341625006287, "restart_duration_seconds": 0.4594312920089578}
+{"time": "2026-11-11T16:05:29.051282+00:00", "event": "worker_kill_requested", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "elapsed_seconds": 26.098215791003895}
+{"time": "2026-11-11T16:05:29.307559+00:00", "event": "signal", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "signal": "KILL"}
+{"time": "2026-11-11T16:05:29.561128+00:00", "event": "worker_restarted", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "elapsed_seconds": 26.608080165999127, "restart_duration_seconds": 0.5098643749952316}
+{"time": "2026-11-11T16:05:31.040083+00:00", "event": "worker_kill_requested", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "elapsed_seconds": 28.08703958299884}
+{"time": "2026-11-11T16:05:31.236513+00:00", "event": "signal", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "signal": "KILL"}
+{"time": "2026-11-11T16:05:31.449205+00:00", "event": "worker_restarted", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "elapsed_seconds": 28.496139875001973, "restart_duration_seconds": 0.40910029200313147}
+{"time": "2026-11-11T16:05:33.034810+00:00", "event": "worker_kill_requested", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "elapsed_seconds": 30.08175112500612}
+{"time": "2026-11-11T16:05:33.232439+00:00", "event": "signal", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "signal": "KILL"}
+{"time": "2026-11-11T16:05:33.609102+00:00", "event": "worker_restarted", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "elapsed_seconds": 30.656017916000565, "restart_duration_seconds": 0.574266790994443}
+{"time": "2026-11-11T16:05:35.040111+00:00", "event": "worker_kill_requested", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "elapsed_seconds": 32.08704966600635}
+{"time": "2026-11-11T16:05:35.301915+00:00", "event": "signal", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "signal": "KILL"}
+{"time": "2026-11-11T16:05:35.564214+00:00", "event": "worker_restarted", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "elapsed_seconds": 32.611125208000885, "restart_duration_seconds": 0.5240755419945344}
+{"time": "2026-11-11T16:05:37.043389+00:00", "event": "worker_kill_requested", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "elapsed_seconds": 34.09030316599819}
+{"time": "2026-11-11T16:05:37.239849+00:00", "event": "signal", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "signal": "KILL"}
+{"time": "2026-11-11T16:05:37.516644+00:00", "event": "worker_restarted", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "elapsed_seconds": 34.56355925000389, "restart_duration_seconds": 0.47325608400569763}
+{"time": "2026-11-11T16:05:39.039453+00:00", "event": "worker_kill_requested", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "elapsed_seconds": 36.086361749999924}
+{"time": "2026-11-11T16:05:39.268708+00:00", "event": "signal", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "signal": "KILL"}
+{"time": "2026-11-11T16:05:39.488454+00:00", "event": "worker_restarted", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "elapsed_seconds": 36.53535387500597, "restart_duration_seconds": 0.44899212500604335}
+{"time": "2026-11-11T16:05:41.043680+00:00", "event": "worker_kill_requested", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "elapsed_seconds": 38.09058470799937}
+{"time": "2026-11-11T16:05:41.243739+00:00", "event": "signal", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "signal": "KILL"}
+{"time": "2026-11-11T16:05:41.464578+00:00", "event": "worker_restarted", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "elapsed_seconds": 38.51146791600331, "restart_duration_seconds": 0.42088320800394285}
+{"time": "2026-11-11T16:05:43.087312+00:00", "event": "worker_kill_requested", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "elapsed_seconds": 40.13420333300019}
+{"time": "2026-11-11T16:05:43.281882+00:00", "event": "signal", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "signal": "KILL"}
+{"time": "2026-11-11T16:05:43.526761+00:00", "event": "worker_restarted", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "elapsed_seconds": 40.5736367500067, "restart_duration_seconds": 0.4394334170065122}
+{"time": "2026-11-11T16:05:45.033566+00:00", "event": "worker_kill_requested", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "elapsed_seconds": 42.08044241600146}
+{"time": "2026-11-11T16:05:45.219168+00:00", "event": "signal", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "signal": "KILL"}
+{"time": "2026-11-11T16:05:45.452306+00:00", "event": "worker_restarted", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "elapsed_seconds": 42.499172666008235, "restart_duration_seconds": 0.41873025000677444}
+{"time": "2026-11-11T16:05:47.027606+00:00", "event": "worker_kill_requested", "container": "e345cadb0bbb8ef58548a06d06db9f1b31b8dfb652fdf681af89543900810269", "elapsed_seconds": 44.07446099999652}
+{"time": "2026-11-11T16:05:47.227769+00:00", "event": "signal", "container": "e345cadb0bbb8ef58548a06d06db9f1b31b8dfb652fdf681af89543900810269", "signal": "KILL"}
+{"time": "2026-11-11T16:05:47.442099+00:00", "event": "worker_restarted", "container": "e345cadb0bbb8ef58548a06d06db9f1b31b8dfb652fdf681af89543900810269", "elapsed_seconds": 44.488955499997246, "restart_duration_seconds": 0.4144945000007283}
+{"time": "2026-11-11T16:05:49.035098+00:00", "event": "worker_kill_requested", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "elapsed_seconds": 46.08195137500297}
+{"time": "2026-11-11T16:05:49.225148+00:00", "event": "signal", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "signal": "KILL"}
+{"time": "2026-11-11T16:05:49.510223+00:00", "event": "worker_restarted", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "elapsed_seconds": 46.55705745800515, "restart_duration_seconds": 0.4751060830021743}
+{"time": "2026-11-11T16:05:51.033421+00:00", "event": "worker_kill_requested", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "elapsed_seconds": 48.080261915994924}
+{"time": "2026-11-11T16:05:51.229722+00:00", "event": "signal", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "signal": "KILL"}
+{"time": "2026-11-11T16:05:51.499979+00:00", "event": "worker_restarted", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "elapsed_seconds": 48.546796583003015, "restart_duration_seconds": 0.46653466700809076}
+{"time": "2026-11-11T16:05:53.033765+00:00", "event": "worker_kill_requested", "container": "68627e7dfe3b2a84ec9240382d4eae82b93aa4b64b16a6857ec13f8e6be6d6a0", "elapsed_seconds": 50.080589416000294}
+{"time": "2026-11-11T16:05:53.238935+00:00", "event": "signal", "container": "68627e7dfe3b2a84ec9240382d4eae82b93aa4b64b16a6857ec13f8e6be6d6a0", "signal": "KILL"}
+{"time": "2026-11-11T16:05:53.427757+00:00", "event": "worker_restarted", "container": "68627e7dfe3b2a84ec9240382d4eae82b93aa4b64b16a6857ec13f8e6be6d6a0", "elapsed_seconds": 50.47456800000509, "restart_duration_seconds": 0.3939785840047989}
+{"time": "2026-11-11T16:05:55.048867+00:00", "event": "worker_kill_requested", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "elapsed_seconds": 52.09567262500059}
+{"time": "2026-11-11T16:05:55.277745+00:00", "event": "signal", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "signal": "KILL"}
+{"time": "2026-11-11T16:05:55.475111+00:00", "event": "worker_restarted", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "elapsed_seconds": 52.521906958005275, "restart_duration_seconds": 0.42623433300468605}
+{"time": "2026-11-11T16:05:57.021554+00:00", "event": "worker_kill_requested", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "elapsed_seconds": 54.068312666000566}
+{"time": "2026-11-11T16:05:57.209618+00:00", "event": "signal", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "signal": "KILL"}
+{"time": "2026-11-11T16:05:57.406064+00:00", "event": "worker_restarted", "container": "93185db5b2cf4e2f322a41bf24ddc89dd8982eaab1debb872b697b5344961c69", "elapsed_seconds": 54.452850790999946, "restart_duration_seconds": 0.38453812499938067}
+{"time": "2026-11-11T16:05:59.066434+00:00", "event": "worker_kill_requested", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "elapsed_seconds": 56.113215290999506}
+{"time": "2026-11-11T16:05:59.247727+00:00", "event": "signal", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "signal": "KILL"}
+{"time": "2026-11-11T16:05:59.451420+00:00", "event": "worker_restarted", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "elapsed_seconds": 56.4981878749968, "restart_duration_seconds": 0.38497258399729617}
+{"time": "2026-11-11T16:06:01.063563+00:00", "event": "worker_kill_requested", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "elapsed_seconds": 58.11033312500513}
+{"time": "2026-11-11T16:06:01.290400+00:00", "event": "signal", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "signal": "KILL"}
+{"time": "2026-11-11T16:06:01.533438+00:00", "event": "worker_restarted", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "elapsed_seconds": 58.58019129099557, "restart_duration_seconds": 0.46985816599044483}
+{"time": "2026-11-11T16:06:03.064678+00:00", "event": "worker_kill_requested", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "elapsed_seconds": 60.11143466600333}
+{"time": "2026-11-11T16:06:03.289882+00:00", "event": "signal", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "signal": "KILL"}
+{"time": "2026-11-11T16:06:03.507009+00:00", "event": "worker_restarted", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "elapsed_seconds": 60.553750416002, "restart_duration_seconds": 0.44231574999867007}
+{"time": "2026-11-11T16:06:05.061577+00:00", "event": "worker_kill_requested", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "elapsed_seconds": 62.10831108300772}
+{"time": "2026-11-11T16:06:05.291936+00:00", "event": "signal", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "signal": "KILL"}
+{"time": "2026-11-11T16:06:05.516275+00:00", "event": "worker_restarted", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "elapsed_seconds": 62.562999125002534, "restart_duration_seconds": 0.45468804199481383}
+{"time": "2026-11-11T16:06:07.040061+00:00", "event": "worker_kill_requested", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "elapsed_seconds": 64.08677820800222}
+{"time": "2026-11-11T16:06:07.228736+00:00", "event": "signal", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "signal": "KILL"}
+{"time": "2026-11-11T16:06:07.462134+00:00", "event": "worker_restarted", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "elapsed_seconds": 64.50884229100484, "restart_duration_seconds": 0.4220640830026241}
+{"time": "2026-11-11T16:06:09.026462+00:00", "event": "worker_kill_requested", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "elapsed_seconds": 66.07317150000017}
+{"time": "2026-11-11T16:06:09.215222+00:00", "event": "signal", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "signal": "KILL"}
+{"time": "2026-11-11T16:06:09.406332+00:00", "event": "worker_restarted", "container": "3de21711a5691f1d7a42a3b12855de9958f838b7b9c0df6edff9b5c770f25b54", "elapsed_seconds": 66.45302937499946, "restart_duration_seconds": 0.37985787499928847}
+{"time": "2026-11-11T16:06:11.029537+00:00", "event": "worker_kill_requested", "container": "68627e7dfe3b2a84ec9240382d4eae82b93aa4b64b16a6857ec13f8e6be6d6a0", "elapsed_seconds": 68.07623674999923}
+{"time": "2026-11-11T16:06:11.217654+00:00", "event": "signal", "container": "68627e7dfe3b2a84ec9240382d4eae82b93aa4b64b16a6857ec13f8e6be6d6a0", "signal": "KILL"}
+{"time": "2026-11-11T16:06:11.457351+00:00", "event": "worker_restarted", "container": "68627e7dfe3b2a84ec9240382d4eae82b93aa4b64b16a6857ec13f8e6be6d6a0", "elapsed_seconds": 68.5040327500028, "restart_duration_seconds": 0.42779600000358187}
+{"time": "2026-11-11T16:06:13.046153+00:00", "event": "worker_kill_requested", "container": "68627e7dfe3b2a84ec9240382d4eae82b93aa4b64b16a6857ec13f8e6be6d6a0", "elapsed_seconds": 70.09283316599613}
+{"time": "2026-11-11T16:06:13.243636+00:00", "event": "signal", "container": "68627e7dfe3b2a84ec9240382d4eae82b93aa4b64b16a6857ec13f8e6be6d6a0", "signal": "KILL"}
+{"time": "2026-11-11T16:06:13.546598+00:00", "event": "worker_restarted", "container": "68627e7dfe3b2a84ec9240382d4eae82b93aa4b64b16a6857ec13f8e6be6d6a0", "elapsed_seconds": 70.59326354099903, "restart_duration_seconds": 0.5004303750029067}
+{"time": "2026-11-11T16:06:15.048794+00:00", "event": "worker_kill_requested", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "elapsed_seconds": 72.0954629159969}
+{"time": "2026-11-11T16:06:15.272103+00:00", "event": "signal", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "signal": "KILL"}
+{"time": "2026-11-11T16:06:15.599450+00:00", "event": "worker_restarted", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "elapsed_seconds": 72.64609762500913, "restart_duration_seconds": 0.550634709012229}
+{"time": "2026-11-11T16:06:17.057225+00:00", "event": "worker_kill_requested", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "elapsed_seconds": 74.10387066600379}
+{"time": "2026-11-11T16:06:17.258586+00:00", "event": "signal", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "signal": "KILL"}
+{"time": "2026-11-11T16:06:17.485116+00:00", "event": "worker_restarted", "container": "1fdc88baaea28848c20292c2ff248a27f71b602fb9e70473c4ddfa768e01bdd2", "elapsed_seconds": 74.53175529099826, "restart_duration_seconds": 0.4278846249944763}
+{"time": "2026-11-11T16:06:19.043881+00:00", "event": "worker_kill_requested", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "elapsed_seconds": 76.09051908300899}
+{"time": "2026-11-11T16:06:19.268503+00:00", "event": "signal", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "signal": "KILL"}
+{"time": "2026-11-11T16:06:19.518460+00:00", "event": "worker_restarted", "container": "07854ecbcfb016442c5db9314a2c0911ac85c12a5bebf7e679f7f3ea724a56d3", "elapsed_seconds": 76.56508200000098, "restart_duration_seconds": 0.4745629169919994}
+{"time": "2026-11-11T16:06:20.053267+00:00", "event": "chaos_verified", "states": {"queued": 0, "running": 0, "succeeded": 8107, "failed": 0, "cancelled": 1893}, "kills": 38, "effects": 8107, "reclaimed_jobs": 25, "accepted": 10000, "duplicate_verified": 5000, "cancellation_http_200": 1893, "cancellation_http_409": 107, "elapsed_seconds": 77.09989679099817}
+{"time": "2026-11-11T16:06:20.057060+00:00", "event": "run_finished", "passed": true, "summary": "/Users/denis/vs_code/SOUP_BACK/results/v2/20261111T160502Z-chaos-attached-240bde6881bb/summary.json", "deployment_not_removed": true, "existing_workers_may_have_been_restarted": true}

@@ -1,6 +1,9 @@
+# Проверки правил promtool на заданных временных рядах, без запущенных сервисов.
+# Проверяют выражения, метки и задержку firing; не проверяют доставку уведомлений.
 rule_files: [alerts.yaml]
 evaluation_interval: 5s
 tests:
+  # Нулевая доступность PostgreSQL должна вызвать critical к 60-й секунде.
   - name: PostgreSQLUnavailable
     interval: 5s
     input_series:
@@ -12,6 +15,7 @@ tests:
         exp_alerts:
           - exp_labels: {"severity": "critical"}
             exp_annotations: {}
+  # Неуспешный scrape RabbitMQ должен вызвать critical с меткой job к 60-й секунде.
   - name: RabbitMQUnavailable
     interval: 5s
     input_series:
@@ -23,6 +27,7 @@ tests:
         exp_alerts:
           - exp_labels: {"job": "rabbitmq", "severity": "critical"}
             exp_annotations: {}
+  # Отсутствие потребителей soup.jobs должно вызвать critical.
   - name: NoWorkers
     interval: 5s
     input_series:
@@ -34,6 +39,7 @@ tests:
         exp_alerts:
           - exp_labels: {"severity": "critical"}
             exp_annotations: {}
+  # Очередь растёт на 10 задач каждые 5 секунд; после устойчивого роста ожидается warning.
   - name: QueueGrowing
     interval: 5s
     input_series:
@@ -45,6 +51,7 @@ tests:
         exp_alerts:
           - exp_labels: {"state": "queued", "severity": "warning"}
             exp_annotations: {}
+  # При 10 ожидающих задачах число succeeded не растёт; ожидается critical.
   - name: ProcessingStalled
     interval: 5s
     input_series:
@@ -58,6 +65,7 @@ tests:
         exp_alerts:
           - exp_labels: {"state": "queued", "severity": "critical"}
             exp_annotations: {}
+  # Неизменный backlog из 10 событий должен вызвать warning.
   - name: OutboxStalled
     interval: 5s
     input_series:
@@ -69,6 +77,7 @@ tests:
         exp_alerts:
           - exp_labels: {"severity": "warning"}
             exp_annotations: {}
+  # 10% ответов имеют статус 500; ожидается warning после выдержки порога.
   - name: HTTPFailures
     interval: 5s
     input_series:
@@ -82,6 +91,7 @@ tests:
         exp_alerts:
           - exp_labels: {"severity": "warning"}
             exp_annotations: {}
+  # Счётчик повторов растёт на 10 за 5 секунд; ожидается warning.
   - name: ManyRetries
     interval: 5s
     input_series:
@@ -93,6 +103,7 @@ tests:
         exp_alerts:
           - exp_labels: {"severity": "warning"}
             exp_annotations: {}
+  # Свободно 1 000 000 000 байт, меньше порога 1 GiB; ожидается critical.
   - name: RabbitDiskLow
     interval: 5s
     input_series:
@@ -104,6 +115,7 @@ tests:
         exp_alerts:
           - exp_labels: {"severity": "critical"}
             exp_annotations: {}
+  # На заданных здоровых рядах ни одно из девяти правил не должно сработать.
   - name: HealthySystem
     interval: 5s
     input_series:
@@ -137,6 +149,7 @@ tests:
       - {eval_time: 900s, alertname: HTTPFailures, exp_alerts: []}
       - {eval_time: 900s, alertname: ManyRetries, exp_alerts: []}
       - {eval_time: 900s, alertname: RabbitDiskLow, exp_alerts: []}
+  # После 5 секунд недоступности БД период for ещё не истёк: firing быть не должно.
   - name: PendingNotFiring
     interval: 5s
     input_series:

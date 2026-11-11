@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Verify default Compose replicas, exposed ports and one completed request."""
+"""Краткая проверка стандартного Docker Compose: четыре воркера, закрытый порт БД,
+API на loopback и успешное выполнение одной задачи с проверкой эффекта в БД.
+"""
 import argparse
 import json
 from common import run

@@ -1,4 +1,9 @@
-"""Stdlib-only harness. All destructive Docker actions are confined to a fresh project."""
+"""Общий стенд для интеграционных, нагрузочных и аварийных тестов.
+
+Создаёт одноразовый Compose-проект, выполняет HTTP/SQL-запросы, сохраняет логи
+и проверяет инварианты по БД. Перед сигналом контейнеру сверяет проект и сервис.
+Это вспомогательный модуль, а не самостоятельный тест.
+"""
 import concurrent.futures
 import datetime
 import json

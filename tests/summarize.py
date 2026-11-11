@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Derived index only. Never rewrites raw run artifacts."""
+"""Строит историческую сводку V1 из результатов в results/.
+Обновляет производные отчёты; исходные файлы запусков не переписывает. Это не тест.
+"""
 import json
 import pathlib
 from collections import Counter

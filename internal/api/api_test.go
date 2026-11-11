@@ -6,6 +6,8 @@ import (
 	"testing"
 )
 
+// TestRejectBeforeDatabase проверяет отклонение запросов с неверной авторизацией, ключом, Content-Type, JSON или размером тела.
+// Хранилище не задано: перечисленные ошибки должны обрабатываться до обращения к БД.
 func TestRejectBeforeDatabase(t *testing.T) {
 	h := (&API{Token: "secret"}).Handler()
 	for _, tc := range []struct {

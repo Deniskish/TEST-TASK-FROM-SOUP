@@ -2,6 +2,8 @@ package config
 
 import "testing"
 
+// TestRejectUnsafeConfiguration проверяет загрузку конфигурации по умолчанию и отказ для недопустимого
+// размера пула, интервалов heartbeat/poll и длительности аренды.
 func TestRejectUnsafeConfiguration(t *testing.T) {
 	t.Setenv("DATABASE_URL", "postgres://local/db")
 	for _, name := range []string{"DB_MAX_CONNS", "LEASE_DURATION", "HEARTBEAT_INTERVAL", "POLL_INTERVAL", "TEST_CLOCK_OFFSET"} {

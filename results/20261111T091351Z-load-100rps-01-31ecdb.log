@@ -1,4 +1,0 @@
-{"time": "2026-11-11T09:13:51.641282+00:00", "event": "run_started", "directory": "/Users/denis/vs_code/SOUP_BACK/results/20261111T091351Z-soup-test-load-8d648fd9ac", "seed": 42}
-{"time": "2026-11-11T09:13:58.464187+00:00", "event": "ready", "url": "http://127.0.0.1:65347", "workers": 8}
-{"time": "2026-11-11T09:14:58.910362+00:00", "event": "load_measured", "achieved_rps": 100.000832993588, "successful": 6000, "errors": 0, "p50_ms": 2.1196250017965212, "p95_ms": 2.939083002274856, "p99_ms": 4.495667002629489, "completed_at_load_end": 6000, "remaining_at_load_end": 0}
-{"time": "2026-11-11T09:14:59.718764+00:00", "event": "run_finished", "passed": true, "summary": "/Users/denis/vs_code/SOUP_BACK/results/20261111T091351Z-soup-test-load-8d648fd9ac/summary.json"}

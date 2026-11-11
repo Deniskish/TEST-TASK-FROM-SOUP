@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Broker faults and actual observability checks in a disposable Compose project."""
+"""Проверки RabbitMQ и наблюдаемости на одноразовом Compose-стенде.
+
+Дублирует сообщения, проверяет DLQ, останавливает брокер и БД, убивает publisher
+и воркер после COMMIT до ACK. Проверяет состояние БД, реальные метрики Prometheus,
+дашборд Grafana через API, тестовый webhook и сквозную трассу в Tempo.
+"""
 import argparse,base64,json,time,urllib.request,urllib.error
 from common import run
 from integration import wait_for
